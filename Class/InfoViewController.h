@@ -16,5 +16,6 @@
 
 - (IBAction)CloseWindow:(id)sender;
 - (IBAction)refreshConnectInternet:(id)sender;
+//- (IBAction)openBrowser:(id)sender;
 
 @end

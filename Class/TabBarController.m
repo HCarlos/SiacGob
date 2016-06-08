@@ -19,11 +19,13 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        //OptionsViewController *vc = [[OptionsViewController alloc] initWithNibName:@"OptionsViewController" bundle:nil];
-        //[self dismissViewControllerAnimated:YES completion:nil];
-        //[self initWithNibName:vc bundle:nil ];
+
+//        OptionsViewController *vc = [[OptionsViewController alloc] initWithNibName:@"OptionsViewController" bundle:nil];
+//        [self dismissViewControllerAnimated:YES completion:nil];
+//        [self initWithNibName:vc bundle:nil ];
+
         
-        NSLog(@"Intro");
+        NSLog(@"Intro...");
     }
     return self;
 }
@@ -36,8 +38,14 @@
 
 - (void)didReceiveMemoryWarning
 {
+	NSLog(@"TabBar falla en %s", __func__);
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+	if (self.isViewLoaded && !self.view.window) {
+        //self.view = nil;
+    }
 }
+
+
+
 
 @end

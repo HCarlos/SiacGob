@@ -1,0 +1,79 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            30:30:30:30:31:30:30:30:30:30:30:31:30:33:39:33:33:30:35:34
+        Signature Algorithm: sha1WithRSAEncryption
+        Issuer: CN=A.C. del Servicio de Administraci\xC3\xB3n Tributaria, O=Servicio de Administraci\xC3\xB3n Tributaria/emailAddress=acods@sat.gob.mx/streetAddress=Av. Hidalgo 77, Col. Guerrero/postalCode=06300, C=MX, ST=Distrito Federal, L=Cuauhtemoc/unstructuredName=Responsable: Fernando Mart\xC3\xADnez Coss
+        Validity
+            Not Before: Jul  5 14:02:19 2011 GMT
+            Not After : Oct  2 14:02:19 2013 GMT
+        Subject: CN=SISTEMA INFORMATIVO DE TABASCO SA DE CV/name=SISTEMA INFORMATIVO DE TABASCO SA DE CV, O=SISTEMA INFORMATIVO DE TABASCO SA DE CV, C=MX/x500UniqueIdentifier=SIT010509694 / OOVM520218HR5/serialNumber= / OOVM520218HDFRNR00
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+            RSA Public Key: (1024 bit)
+                Modulus (1024 bit):
+                    00:ed:4e:9c:52:9b:ea:8f:3c:8b:71:c5:41:69:46:
+                    ed:8a:2c:02:0b:74:1a:e3:67:49:31:13:00:b3:59:
+                    d9:40:85:cf:6e:7f:05:da:0f:3e:ef:1b:97:35:f8:
+                    77:b0:76:87:85:d4:68:f7:5c:b6:e1:38:1e:cb:91:
+                    58:e5:f5:bc:9f:ae:2d:fc:9a:bc:57:20:3c:32:c6:
+                    16:02:35:c8:b3:d2:1c:e5:5c:6c:57:38:df:45:da:
+                    1c:1e:26:fc:57:e2:97:5e:74:d6:ec:8b:28:10:4e:
+                    e9:e9:6f:97:5e:c3:a7:90:d8:3d:49:5b:f2:e7:f4:
+                    f3:2f:5d:2b:02:14:fd:97:bf
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: critical
+                CA:FALSE
+            X509v3 Key Usage: 
+                Digital Signature, Non Repudiation, Data Encipherment, Key Agreement
+            Netscape Cert Type: 
+                SSL Client, S/MIME
+            X509v3 Extended Key Usage: 
+                E-mail Protection, TLS Web Client Authentication
+    Signature Algorithm: sha1WithRSAEncryption
+        5b:08:4f:11:a1:33:65:36:2f:bc:09:0c:51:04:df:f7:c9:e0:
+        3f:92:ea:30:75:60:be:71:ab:2b:91:0c:0e:64:ed:e3:e5:6f:
+        3a:ec:10:32:20:7f:64:7f:6c:95:42:9d:64:b3:5d:9d:45:e8:
+        61:d1:a7:74:84:0b:da:b7:ac:aa:15:e5:2b:13:a0:1f:7e:fb:
+        05:b4:b3:d4:e1:ef:a3:cc:65:da:94:50:43:f5:c4:bc:37:dd:
+        3a:77:a6:3b:8b:36:a3:30:47:88:e4:ba:97:29:b5:5e:71:a8:
+        d7:87:09:c7:86:ea:01:c8:ff:43:36:76:1f:b3:1f:df:e8:50:
+        cc:b0:a0:ed:df:fa:18:90:3d:2c:17:cf:82:1c:b4:b8:05:e8:
+        e5:05:7b:ad:16:44:d4:10:01:9a:c5:d7:6c:97:dd:7e:57:1c:
+        79:66:21:bf:d9:c9:0d:f5:ec:ee:90:da:70:c8:e6:01:f4:51:
+        91:a3:eb:9d:f6:42:f4:44:43:4f:a3:6a:cc:ca:7c:3c:05:e3:
+        8f:11:da:6c:5b:60:f1:95:7f:5c:6f:d7:59:03:af:84:aa:5b:
+        f6:e2:d2:04:dd:f3:ef:e5:80:f3:fe:23:4b:54:79:63:3b:63:
+        b6:26:94:f2:b5:04:7f:cd:4f:d8:4f:84:2f:e7:b0:b6:79:33:
+        e9:00:d4:1e
+
+
+-----BEGIN CERTIFICATE-----
+
+MIIEfDCCA2SgAwIBAgIUMDAwMDEwMDAwMDAxMDM5MzMwNTQwDQYJKoZIhvcNAQEF
+BQAwggE2MTgwNgYDVQQDDC9BLkMuIGRlbCBTZXJ2aWNpbyBkZSBBZG1pbmlzdHJh
+Y2nDs24gVHJpYnV0YXJpYTEvMC0GA1UECgwmU2VydmljaW8gZGUgQWRtaW5pc3Ry
+YWNpw7NuIFRyaWJ1dGFyaWExHzAdBgkqhkiG9w0BCQEWEGFjb2RzQHNhdC5nb2Iu
+bXgxJjAkBgNVBAkMHUF2LiBIaWRhbGdvIDc3LCBDb2wuIEd1ZXJyZXJvMQ4wDAYD
+VQQRDAUwNjMwMDELMAkGA1UEBhMCTVgxGTAXBgNVBAgMEERpc3RyaXRvIEZlZGVy
+YWwxEzARBgNVBAcMCkN1YXVodGVtb2MxMzAxBgkqhkiG9w0BCQIMJFJlc3BvbnNh
+YmxlOiBGZXJuYW5kbyBNYXJ0w61uZXogQ29zczAeFw0xMTA3MDUxNDAyMTlaFw0x
+MzEwMDIxNDAyMTlaMIHqMTAwLgYDVQQDEydTSVNURU1BIElORk9STUFUSVZPIERF
+IFRBQkFTQ08gU0EgREUgQ1YxMDAuBgNVBCkTJ1NJU1RFTUEgSU5GT1JNQVRJVk8g
+REUgVEFCQVNDTyBTQSBERSBDVjEwMC4GA1UEChMnU0lTVEVNQSBJTkZPUk1BVElW
+TyBERSBUQUJBU0NPIFNBIERFIENWMQswCQYDVQQGEwJNWDElMCMGA1UELRMcU0lU
+MDEwNTA5Njk0IC8gT09WTTUyMDIxOEhSNTEeMBwGA1UEBRMVIC8gT09WTTUyMDIx
+OEhERlJOUjAwMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDtTpxSm+qPPItx
+xUFpRu2KLAILdBrjZ0kxEwCzWdlAhc9ufwXaDz7vG5c1+HewdoeF1Gj3XLbhOB7L
+kVjl9byfri38mrxXIDwyxhYCNciz0hzlXGxXON9F2hweJvxX4pdedNbsiygQTunp
+b5dew6eQ2D1JW/Ln9PMvXSsCFP2XvwIDAQABo08wTTAMBgNVHRMBAf8EAjAAMAsG
+A1UdDwQEAwID2DARBglghkgBhvhCAQEEBAMCBaAwHQYDVR0lBBYwFAYIKwYBBQUH
+AwQGCCsGAQUFBwMCMA0GCSqGSIb3DQEBBQUAA4IBAQBbCE8RoTNlNi+8CQxRBN/3
+yeA/kuowdWC+casrkQwOZO3j5W867BAyIH9kf2yVQp1ks12dRehh0ad0hAvat6yq
+FeUrE6AffvsFtLPU4e+jzGXalFBD9cS8N906d6Y7izajMEeI5LqXKbVecajXhwnH
+huoByP9DNnYfsx/f6FDMsKDt3/oYkD0sF8+CHLS4BejlBXutFkTUEAGaxddsl91+
+Vxx5ZiG/2ckN9ezukNpwyOYB9FGRo+ud9kL0RENPo2rMynw8BeOPEdpsW2DxlX9c
+b9dZA6+Eqlv24tIE3fPv5YDz/iNLVHljO2O2JpTytQR/zU/YT4Qv57C2eTPpANQe
+-----END CERTIFICATE-----

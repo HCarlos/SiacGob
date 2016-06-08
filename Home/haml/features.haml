@@ -1,0 +1,507 @@
+!!! 5
+/[if lt IE 7] <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7">
+/[if IE 7]    <html lang="en" class="no-js lt-ie9 lt-ie8">
+/[if IE 8]    <html lang="en" class="no-js lt-ie9">
+<!--[if gt IE 8]><!-->
+%html{'lang' => 'en', 'class' => 'no-js'}<>
+	<!--<![endif]-->
+
+	%head
+		%meta{"charset" => "utf-8"}
+		%title Features | Simiot, Bootstrap theme
+		%meta{"content" => "width=device-width, initial-scale=1.0", "name" => "viewport"}
+		%meta{"content" => "", "name" => "description"}
+		%meta{"content" => "ppparticularity.com", "name" => "author"}
+
+		%link{"href" => "css/style-t1.css", "rel" => "stylesheet"}
+
+		%script{"src" => "js/libs/modernizr.min.js"}
+
+		%link{"href" => "ico/favicon.ico", "rel" => "shortcut icon"}
+		%link{"href" => "ico/apple-touch-icon.png", "rel" => "apple-touch-icon"}
+		%link{"href" => "ico/apple-touch-icon-72x72.png", "rel" => "apple-touch-icon", "sizes" => "72x72"}
+		%link{"href" => "ico/apple-touch-icon-114x114.png", "rel" => "apple-touch-icon", "sizes" => "114x114"}
+
+	%body.documentation{"data-spy" => "scroll", "data-target" => ".documentation-nav"}
+
+
+		/ .................................... $header ....................................
+		%header.navbar-fixed-top
+			.container
+				.navbar
+					.navbar-inner
+						%a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
+							%i.icon-reorder
+
+						%a.brand.span3{:href => "index.html"}
+							%img{:src => "img/logo-t1.png", :alt => ""}/
+
+						%nav.nav-collapse.collapse
+							%ul.nav.primary-nav.pull-right
+								%li<
+									%a{:href => "index.html"} Home
+								%li<
+									%a{:href => "about.html"} About
+								%li<
+									%a{:href => "services.html"} Services
+								%li.dropdown
+									%a.dropdown-toggle{:href => "#", "data-toggle" => "dropdown"}
+										Portfolio
+										%b.caret
+									%ul.dropdown-menu
+										%li<
+											%a{:href => "portfolio-3.html"} 3 columns
+										%li<
+											%a{:href => "portfolio-4.html"} 4 columns
+										%li<
+											%a{:href => "portfolio-item.html"} Portfolio item
+								%li.dropdown
+									%a.dropdown-toggle{:href => "#", "data-toggle" => "dropdown"}
+										Pages
+										%b.caret
+									%ul.dropdown-menu
+										%li<
+											%a{:href => "page-content-sidebar.html"} Content sidebar
+										%li<
+											%a{:href => "page-sidebar-content.html"} Sidebar content
+										%li<
+											%a{:href => "page-sidebar-content-sidebar.html"} Sidebar content sidebar
+										%li<
+											%a{:href => "page-content-sidebar-sidebar.html"} Content sidebar sidebar
+										%li<
+											%a{:href => "page-sidebar-sidebar-content.html"} Sidebar sidebar content
+								%li<
+									%a{:href => "contact.html"} Contact
+								%li.active.dropdown
+									%a.dropdown-toggle{:href => "#", "data-toggle" => "dropdown"}
+										More
+										%b.caret
+									%ul.dropdown-menu
+										%li.active<
+											%a{:href => "features.html"} Features
+										%li<
+											%a{:href => "feature-slider.html"} Slider
+										%li<
+											%a{:href => "feature-video.html"} Video
+										%li<
+											%a{:href => "feature-masonry-isotope.html"} Masonry - Isotope
+										%li<
+											%a{:href => "feature-gallery.html"} Gallery
+										%li<
+											%a{:href => "feature-pricing.html"} Pricing
+										%li<
+											%a{:href => "news.html"} News
+										%li<
+											%a{:href => "news-item.html"} News item
+										%li<
+											%a{:href => "feature-miscellanea.html"} Miscellanea
+										%li<
+											%a{:href => "colors.html"} Colors
+
+
+
+
+
+		/ .................................... $breadcrumb ....................................
+		%section.section-breadcrumb.section-color-graylighter
+			.container
+				%ul.breadcrumb
+					%li<
+						%a{:href => "index.html"} Home
+						%span.divider> /
+					%li.active Features
+
+
+
+
+
+		/ .................................... $Content ....................................
+		%section.section-content
+			.container
+				.row
+					.span3.documentation-nav.affix.hidden-phone
+						%ul.nav.nav-pills.nav-stacked
+							%li.active<
+								%a{:href => "#section-bootstrap"}
+									%i.icon-angle-right.pull-right
+									Bootstrap
+							%li<
+								%a{:href => "#section-html5-css3"}
+									%i.icon-angle-right.pull-right
+									HTML5 + CSS3
+							%li<
+								%a{:href => "#section-haml-less"}
+									%i.icon-angle-right.pull-right
+									HAML + LESS
+							%li<
+								%a{:href => "#section-responsive"}
+									%i.icon-angle-right.pull-right
+									Responsive
+							%li<
+								%a{:href => "#section-fontawesome"}
+									%i.icon-angle-right.pull-right
+									Font Awesome
+							%li<
+								%a{:href => "#section-fitvids"}
+									%i.icon-angle-right.pull-right
+									FitVids
+							%li<
+								%a{:href => "#section-flexslider"}
+									%i.icon-angle-right.pull-right
+									FlexSlider
+							%li<
+								%a{:href => "#section-masonry"}
+									%i.icon-angle-right.pull-right
+									Masonry
+							%li<
+								%a{:href => "#section-isotope"}
+									%i.icon-angle-right.pull-right
+									Isotope
+							%li<
+								%a{:href => "#section-hoverdir"}
+									%i.icon-angle-right.pull-right
+									Hoverdir
+							%li<
+								%a{:href => "#section-fancybox"}
+									%i.icon-angle-right.pull-right
+									Fancybox
+
+					.span6.offset3
+						%h2.section-title
+							Features
+							%small
+								No more
+								%i "Lorem ipsum"
+
+
+
+						/ .................................... $Bootstrap ....................................
+						%section.section-content.section-bootstrap#section-bootstrap
+							%h3.section-title
+								Bootstrap
+								%small ...for real!
+
+							:markdown
+								This theme is based upon Twitter Bootstrap. We made sure we've exploited all of its potential, making it easy for you to get whatever you need, with minimal effort and modifications. We also kept all of its conventions; we knew it would've been more fun for you to do things, rather than learning a new logic.
+
+
+
+
+						/ .................................... $HTML5 CSS3 ....................................
+						%section.section-content.section-html5-css3#section-html5-css3
+							%h3.section-title
+								HTML5 + CSS3
+								%small power to the W3C
+
+							:markdown
+								We wrote this theme using clear and simple HTML5 and CSS3 syntaxes. Resulting code is valid, properly indented and well commented.
+
+
+
+
+
+						/ .................................... $HAML LESS ....................................
+						%section.section-content.section-haml-less#section-haml-less
+							%h3.section-title
+								HAML + LESS
+								%small do more with less
+
+							:markdown
+								We wrote the **HTML** code for this theme using **[HAML](http://haml.info/)**, a template language which simplifies and speeds markup creation.
+							.row
+								.span7
+									%pre
+										:preserve
+											%section.section-content
+											    .container
+											        .row
+											            .span3
+											                %p Text text text
+											            .span9
+											                %p More text text more text
+							:markdown
+								Don't worry, though; you don't need to know anything about it. HTML files are ready to use.
+							%p &nbsp;
+							:markdown
+								The **CSS** of this theme is written using **[LESS](http://lesscss.org/)**, a preprocessor which allows to exploit all of Bootstrap potential.
+							.row
+								.span7
+									%pre
+										:preserve
+											.section-content {
+											    position: relative;
+											    padding: 5em 0;
+											    border-bottom: 1px solid @grayLighter;
+
+											    .section-title {
+											        line-height: 1.25em;
+											        margin-bottom: 1em;
+											        font-weight: normal;
+											    }
+											}
+							:markdown
+								Of course, it's not mandatory that you also use LESS - although we strongly recommended it; you can achieve whatever you need by simply editing our clear CSS code.
+
+
+
+
+
+						/ .................................... $Responsive ....................................
+						%section.section-content.section-responsive#section-responsive
+							%h3.section-title
+								Responsive
+								%small #RWD
+							:markdown
+								When you change window's width, Bootstrap automatically adapts columns' width and placement, possibly by means of serialization. This template does this and more for you.
+							:markdown
+								When you vary the width and **height** of the window, we also modify the font-size, so that all spaces are filled with text snippets and images, always achieving visually appealing layouts.
+							.row
+								.span7
+									%pre
+										:preserve
+											@media (min-width: 1200px) and (min-height: 800px)
+											{
+											    html { font-size: 18px; }
+											}
+							%p
+								%a.btn.btn-small.fancybox{:href => "img/documentation/responsive-rct-l.jpg"} View example
+
+
+
+
+
+						/ .................................... $FontAwesome ....................................
+						%section.section-content.section-fontawesome#section-fontawesome
+							%h3.section-title
+								Font Awesome
+								%small really awesome
+
+							:markdown
+								Why using rastered images when we can exploit powerful font icons?
+								**[Font Awesome](http://fortawesome.github.com/Font-Awesome/)** is the best solution to combine with Twitter Bootstrap.
+							.row
+								.span7
+									%pre
+										:preserve
+											&lt;!-- simple icon --&gt;
+											&lt;p&gt;
+											    &lt;i class=&quot;icon-envelope&quot;&gt;&lt;/i&gt;
+											    text text text
+											&lt;/p&gt;
+
+											&lt;!-- button with icon --&gt;
+											&lt;a class=&quot;btn&quot; href=&quot;#&quot;&gt;
+											    &lt;i class=&quot;icon-envelope&quot;&gt;&lt;/i&gt;
+											&lt;/a&gt;
+
+											&lt;!-- button with text and icon --&gt;
+											&lt;a class=&quot;btn&quot; href=&quot;#&quot;&gt;
+											    &lt;i class=&quot;icon-envelope&quot;&gt;&lt;/i&gt;
+											    text text
+											&lt;/a&gt;
+							:markdown
+								It's easy to integrate and use, and you don't need to know anything more than what you already know!
+
+
+
+
+
+						/ .................................... $FitVids ....................................
+						%section.section-content.section-fitvids#section-fitvids
+							%h3.section-title
+								FitVids
+								%small fluid width video embeds
+
+							:markdown
+								A theme can not be considered responsive if all of its content does not resize properly, depending on the device on which it is displayed. That's why we have chosen **[FitVids](http://fitvidsjs.com/)**, a simple, lightweight jQuery plugin which allows for fluid videos to be displayed.
+							.row
+								.span7
+									%pre
+										:preserve
+											&lt;div class=&quot;fitvids&quot;&gt;
+											    &lt;iframe src=&quot;...&quot;&gt;&lt;/iframe&gt;
+											&lt;/div&gt;
+							:markdown
+								Nothing could be simpler...
+
+
+
+
+
+
+						/ .................................... $FlexSlider ....................................
+						%section.section-content.section-flexslider#section-flexslider
+							%h3.section-title
+								FlexSlider
+								%small only the best
+
+							:markdown
+								**[FlexSlider](http://flexslider.woothemes.com/)** is the best responsive slider. Period.
+							.row
+								.span7
+									%pre
+										:preserve
+											&lt;div class=&quot;flexslider&quot;&gt;
+											  &lt;ul class=&quot;slides&quot;&gt;
+											    &lt;li&gt;&lt;img src=&quot;image.jpg&quot;&gt;&lt;/li&gt;
+											    &lt;li&gt;&lt;img src=&quot;image.jpg&quot;&gt;&lt;/li&gt;
+											    &lt;li&gt;&lt;img src=&quot;image.jpg&quot;&gt;&lt;/li&gt;
+											    &lt;li&gt;&lt;img src=&quot;image.jpg&quot;&gt;&lt;/li&gt;
+											  &lt;/ul&gt;
+											&lt;/div&gt;
+							:markdown
+								It's easy to use and ready for responsive design, the best solution for sites requiring the maximum degree of compatibility with desktop and mobile devices.
+
+
+
+
+						/ .................................... $Masonry ....................................
+						%section.section-content.section-masonry#section-masonry
+							%h3.section-title
+								Masonry
+								%small align everything
+
+							:markdown
+								**[Masonry](http://masonry.desandro.com/)** is a dynamic layout plugin for jQuery. The flip-side of CSS floats.
+								When you need to [align a series of boxes](feature-masonry-isotope.html#section-masonry) there is no better solution than this. It's easy to use and offers an high degree of compatibility with older browsers.
+							.row
+								.span7
+									%pre
+										:preserve
+											&lt;div class=&quot;masonry&quot; id=&quot;container-masonry&quot;&gt;
+											    &lt;div class=&quot;span3 masonry-item&quot;&gt;
+											        &lt;!-- content goes here --&gt;
+											    &lt;/div&gt;
+											    &lt;div class=&quot;span3 masonry-item&quot;&gt;
+											        &lt;!-- content goes here --&gt;
+											    &lt;/div&gt;
+											    ...
+											&lt;/div&gt;
+							:markdown
+								If you're wondering what would happen if the same content had been [displayed without this plugin](feature-masonry-isotope.html#section-masonry-without) ...take a look here!
+
+
+
+						/ .................................... $Isotope ....................................
+						%section.section-content.section-isotope#section-isotope
+							%h3.section-title
+								Isotope
+								%small filter everything
+
+							:markdown
+								If you need to filter content via Javascript **[Isotope](http://isotope.metafizzy.co/)** is the perfect solution.
+							.row
+								.span7
+									%pre
+										:preserve
+											&lt;div class=&quot;isotope&quot; id=&quot;container-isotope&quot;&gt;
+											    &lt;div class=&quot;span3 isotope-item filter-x&quot;&gt;
+											        &lt;!-- content goes here --&gt;
+											    &lt;/div&gt;
+											    &lt;div class=&quot;span3 isotope-item filter-y&quot;&gt;
+											        &lt;!-- content goes here --&gt;
+											    &lt;/div&gt;
+											    ...
+											&lt;/div&gt;
+							:markdown
+								As you can see in [this example](feature-masonry-isotope.html#section-isotope), the plugin has been optimized to run well at any resolution without sacrificing aesthetics and performance.
+
+
+
+
+						/ .................................... $Hoverdir ....................................
+						%section.section-content.section-hoverdir#section-hoverdir
+							%h3.section-title
+								Hoverdir
+								%small direction-aware hover effect
+
+							:markdown
+								Direction-Aware Hover Effect
+							.row
+								.span7
+									%pre
+										:preserve
+											&lt;div class=&quot;hoverdir&quot;&gt;
+											    &lt;div class=&quot;hoverdir-item&quot;&gt;
+											        &lt;img src=&quot;image.jpg&quot;&gt;
+											        &lt;div class=&quot;hoverdir-bg&quot;&gt;
+											            &lt;div class=&quot;hoverdir-content&quot;&gt;
+											                &lt;!-- buttons goes here --&gt;
+											            &lt;/div&gt;
+											        &lt;/div&gt;
+											    &lt;/div&gt;
+											&lt;/div&gt;
+							:markdown
+								A [nice effect](feature-gallery.html#section-hoverdir-gallery) to use in a gallery. Fully customizable and easy to integrate into any page.
+
+
+
+
+
+
+						/ .................................... $Fancybox ....................................
+						%section.section-content.section-fancybox#section-fancybox
+							%h3.section-title
+								Fancybox
+								%small zooming everything
+
+							:markdown
+								[FancyBox](http://fancyapps.com/fancybox/) offers a nice and elegant way to add zooming functionality for images, html content and multi-media on your webpages. It is built on the top of the popular JavaScript framework jQuery and it is both easy to implement and customize.
+							.row
+								.span7
+									%pre
+										:preserve
+											&lt;a class=&quot;fancybox&quot; href=&quot;big-image.jpg&quot;&gt;
+											    &lt;img src=&quot;image.jpg&quot;&gt;
+											&lt;/a&gt;
+							:markdown
+								Simply add the class "fancybox" to a link and magic happens!
+
+
+
+
+
+		/ .................................... $post-footer ....................................
+		.post-footer.section-content.section-content-mini.section-color-graydark
+			.container
+				%p.pull-right
+					Designed by
+					%a{:href => "http://ppparticularity.com"} ppparticularity
+				%p &copy; Simiot 2013 - All rights reserved
+
+
+
+
+
+		/ .................................... $scripts ....................................
+		-# jquery 1.9.1
+		%script{"src" => "js/libs/jquery.min.js"}
+
+		-# jquery ui map
+		%script{"src" => "http://maps.google.com/maps/api/js?sensor=true"}
+		%script{"src" => "js/libs/jquery.ui.map.min.js"}
+
+		-# Bootstrap js
+		%script{"src" => "bootstrap/js/bootstrap.min.js"}
+
+		-# Fancybox | A tool for displaying content in a "lightbox" that floats overtop of web page
+		%script{"src" => "js/libs/jquery.fancybox.min.js"}
+
+		-# Hoverdir | Direction-Aware Hover Effect
+		%script{"src" => "js/libs/jquery.hoverdir.min.js"}
+
+		-# Isotope | An exquisite jQuery plugin for magical layouts
+		%script{"src" => "js/libs/jquery.isotope.min.js"}
+
+		-# Masonry | A dynamic layout plugin for jQuery, the flip-side of CSS floats
+		%script{"src" => "js/libs/jquery.masonry.min.js"}
+
+		-# FitVids | A lightweight, easy-to-use jQuery plugin for fluid width video embeds
+		%script{"src" => "js/libs/jquery.fitvids.min.js"}
+
+		-# FlexSlider | The best responsive slider. Period
+		%script{"src" => "js/libs/jquery.flexslider.min.js"}
+
+		-# Scripts
+		%script{"src" => "js/script.js"}
+

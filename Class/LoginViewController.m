@@ -35,6 +35,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+	
     
     self.manager = [[CLLocationManager alloc] init];
     manager.distanceFilter = 1;
@@ -56,7 +57,7 @@
 
 - (IBAction)setLogin:(id)sender {
     if ([self.S validateEmail:self.txtUsername.text]){
-            int pl1 = [self.txtPassword.text length];
+            NSInteger pl1 = [self.txtPassword.text length];
         
                 if ((pl1 > 3 && pl1 <= 13) ){
                     [self Login];
@@ -107,8 +108,9 @@
     NSMutableDictionary *postDix=[[NSMutableDictionary alloc] init];
     [postDix setObject:[[NSString alloc] initWithFormat: @"%@",x] forKey:@"username"];
     [postDix setObject:[[NSString alloc] initWithFormat: @"%@",y] forKey:@"password"];
+    [postDix setObject:[[NSString alloc] initWithFormat: @"%@",self.S.tokenUser] forKey:@"tokenuser"];
     
-    NSURL *url = [NSURL URLWithString:@"http://dc.tabascoweb.com/php/01/setiOSLogin.php"];
+    NSURL *url = [NSURL URLWithString:@"http://siac.tabascoweb.com/php/01/setiOSLogin.php"];
     
     NSData *postData = [self generateFormDataFormPostDictionary:postDix];
     
@@ -116,7 +118,7 @@
     // Create the request
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     [request setHTTPMethod:@"POST"];
-    [request setValue:[NSString stringWithFormat:@"%d", postData.length] forHTTPHeaderField:@"Content-Length"];
+    [request setValue:[NSString stringWithFormat:@"%luu",(unsigned long) (unsigned long)postData.length] forHTTPHeaderField:@"Content-Length"];
     [request setValue:@"application/x-www-form-urlencoded charset=utf-8" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPBody:postData];
     
@@ -140,7 +142,7 @@
     if ([jsonObject isKindOfClass:[NSArray class]]) {
         NSArray *jsonArray = (NSArray *)jsonObject;
         //NSLog(@"jsonArray - %@",jsonArray);
-        //NSLog(@"%@",[[jsonArray objectAtIndex:0]objectForKey:@"msg"]);
+        NSLog(@"%@",[[jsonArray objectAtIndex:0]objectForKey:@"msg"]);
         NSString *msg = [[NSString alloc] initWithFormat:@"%@",[[jsonArray objectAtIndex:0]objectForKey:@"msg"]] ;
         if ([msg isEqualToString:@"OK"]){
             [S insertUser:self.txtUsername.text];

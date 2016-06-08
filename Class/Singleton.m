@@ -18,12 +18,13 @@
 
 @implementation Singleton
 
-@synthesize IdEmpresa,NombreEmpresa,rutaDB, DB,IdIO, Descripcion, IdMovto, Mes, Ano, arrAcum, viewAcum, loSelf,Modulo;
-@synthesize name,model,localizedModel,systemName,systemVersion,orientation,uniqueIdentifier,webView;
-@synthesize pathPList, dataPList, JS,IdUser;
+//@synthesize IdEmpresa,NombreEmpresa,rutaDB, DB,IdIO, Descripcion, IdMovto, Mes, Ano, arrAcum,viewAcum;
+@synthesize loSelf,Modulo,IdIO;
+@synthesize name,model,localizedModel,systemName,systemVersion,orientation,uniqueIdentifier,domicilio,webView;
+@synthesize pathPList, dataPList, JS,IdUser,IsDelete,limCant, limFrom, tokenUser;
 
 static Singleton* _sharedMySingleton = nil;
-extern NSString* CTSettingCopyMyPhoneNumber();
+//extern NSString* CTSettingCopyMyPhoneNumber();
 
 +(Singleton*)sharedMySingleton
 {
@@ -55,13 +56,15 @@ extern NSString* CTSettingCopyMyPhoneNumber();
 -(id)init {
 	self = [super init];
 	if (self != nil) {
+		
+		/*
         self.JS = @"";
         
-         self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 320, 320)];
-        [self.webView setDelegate:self];
+         self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
+        //[self.webView setDelegate:self];
         
-        [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.tabascoweb.com/images/web/stream.php"]]];
-         
+        [self.webView loadRequest:[NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://www.tabascoweb.com/images/web/stream.php"]]];
+         */
 	}
 	
 	return self;
@@ -69,15 +72,18 @@ extern NSString* CTSettingCopyMyPhoneNumber();
 
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
-    NSLog(@"ERROR LOADING WEBPAGE: %@", error);
+    //NSLog(@"ERROR LOADING WEBPAGE: %@", error);
 }
 - (void) webViewDidFinishLoad:(UIWebView*)webView
 {
-    NSLog(@"finished");
+    //NSLog(@"finished");
     self.JS = @"finished";
     if (self.IdIO==1){
         [self alertStatus:@"Atención" Mensaje:@"Conectado a Internet..." Button1:nil Button2:@"OK"];
     }
+	self.limFrom = 0;
+	self.limCant = 200;
+    self.tokenUser = @"";
 }
 
 
@@ -96,10 +102,20 @@ extern NSString* CTSettingCopyMyPhoneNumber();
 
 
 - (void)viewDidUnload {
+	self.loSelf = nil;
+
+	self.webView = nil;
+	self.JS = nil;
+	
+	//@synthesize name,model,localizedModel,systemName,systemVersion,orientation,uniqueIdentifier,webView;
+	//@synthesize pathPList, dataPList, JS,IdUser;
+
+	/*
 	self.NombreEmpresa = nil;
 	self.rutaDB = nil;
 	self.Descripcion = nil;
 	self.arrAcum = nil;
+	 */
 	
 //    [super viewDidUnload];
 	
@@ -120,9 +136,13 @@ extern NSString* CTSettingCopyMyPhoneNumber();
 
 
 -(CLLocation *) getLocation:(CLLocation *)Loc{
+
+	self.limFrom = 0;
+	self.limCant = 200;	
     
     self.loSelf = Loc;
     return Loc;
+	
 }
 
 -(NSString *) getDeviceData:(int )field{
@@ -149,7 +169,7 @@ extern NSString* CTSettingCopyMyPhoneNumber();
 
 -(NSString *) phoneNumber {
     
-	 NSString *phone = CTSettingCopyMyPhoneNumber();
+	NSString *phone = NULL; //CTSettingCopyMyPhoneNumber();
 
 	
 
@@ -161,7 +181,7 @@ extern NSString* CTSettingCopyMyPhoneNumber();
 		
 	
 	
-	NSLog(@"Cell Phone %@",phone );
+	//NSLog(@"Cell Phone %@",phone );
 	
 	
     return phone;
@@ -175,11 +195,11 @@ extern NSString* CTSettingCopyMyPhoneNumber();
     
     uint8_t digest[CC_SHA1_DIGEST_LENGTH];
     
-    CC_SHA1(data.bytes, data.length, digest);
+    CC_SHA1(data.bytes, (unsigned int)data.length, digest);
     
     NSMutableString* output = [NSMutableString stringWithCapacity:CC_SHA1_DIGEST_LENGTH * 2];
     
-    for(int i = 0; i < CC_SHA1_DIGEST_LENGTH; i++)
+    for(NSUInteger i = 0; i < CC_SHA1_DIGEST_LENGTH; i++)
         [output appendFormat:@"%02x", digest[i]];
     
     return output;
@@ -196,9 +216,9 @@ extern NSString* CTSettingCopyMyPhoneNumber();
     if (![fileManager fileExistsAtPath: pathPList])
     {
         pathPList = [documentsDirectory stringByAppendingPathComponent: [NSString stringWithFormat: @"ConfigSIACGOB.plist"] ];
-        NSLog(@"Creado" );
+        //NSLog(@"Creado" );
     }else{
-        NSLog(@"Ya estaba Creado" );
+        //NSLog(@"Ya estaba Creado" );
         
     }
     
@@ -293,5 +313,15 @@ extern NSString* CTSettingCopyMyPhoneNumber();
     return unique;
 }
 
+-(int)intInRangeMinimum:(int)min andMaximum:(int)max {
+    if (min > max) { return -1; }
+    int adjustedMax = (max + 1) - min; // arc4random returns within the set {min, (max - 1)}
+    int random = arc4random() % adjustedMax;
+    int result = random + min;
+    return result;
+}
+-(double)intInRangeDouble:(double)min andMaximum:(double)max {
+    return (double)rand()/RAND_MAX * (max - min) + min;
+}
 
 @end

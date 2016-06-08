@@ -17,42 +17,51 @@
 #define DBNAME  = @"dbNfP.sqlite";
 
 @interface Singleton : NSObject <UIWebViewDelegate, UIAlertViewDelegate>{
+	/*
 	int IdEmpresa;
 	NSString *NombreEmpresa;
 	NSString *rutaDB;
-	int IdIO;
 	NSString *Descripcion;
-    NSString *JS;
 	sqlite3 *DB;
 	int IdMovto;
 	int Mes;
 	int Ano;
 	NSMutableArray *arrAcum;
 	int viewAcum;
+	 */
+	int IdIO;
+    NSString *JS;
     CLLocation* loSelf;
     NSString *pathPList;
     NSMutableDictionary *dataPList;
     int Modulo;
     UIWebView* webView;
     int IdUser;
+	BOOL IsDelete;
     
 
 }
+/*
 @property (nonatomic, retain) NSString *rutaDB;
 @property (nonatomic, retain) NSString *NombreEmpresa;
 @property (nonatomic, retain) NSString *Descripcion;
-@property (nonatomic, retain) NSString *JS;
 @property (nonatomic) int IdEmpresa;
-@property (nonatomic) int IdIO;
 @property (nonatomic) int IdMovto;
 @property (nonatomic) int Mes;
 @property (nonatomic) int Ano;
 @property (nonatomic) sqlite3 *DB;
 @property (nonatomic, retain) NSMutableArray *arrAcum;
 @property (nonatomic) int viewAcum;
+ */
+@property (nonatomic) int IdIO;
+@property (nonatomic, retain) NSString *JS;
 @property (nonatomic, copy) CLLocation* loSelf;
 @property (nonatomic) int Modulo;
 @property (nonatomic) int IdUser;
+@property (nonatomic) int limFrom;
+@property (nonatomic) int limCant;
+
+@property (nonatomic) BOOL IsDelete;
 
 @property(nonatomic,readonly,retain) NSString    *name;              // e.g. "My iPhone"
 @property(nonatomic,readonly,retain) NSString    *model;             // e.g. @"iPhone", @"iPod Touch"
@@ -62,10 +71,13 @@
 @property(nonatomic,readonly) UIDeviceOrientation orientation;       // return current device orientation
 @property(nonatomic,readonly,retain) NSString    *uniqueIdentifier;  // a string unique to each device based on various 
 @property(nonatomic, readonly, retain) NSUUID *identifierForVendor;
+@property(nonatomic,retain) NSString *domicilio;            // domicilio
+@property(nonatomic,retain) NSString *tokenUser;              // e.g. "My iPhone"
+
 @property(nonatomic,readonly,retain) NSMutableDictionary *dataPList;
 @property(nonatomic,readonly,retain) NSString *pathPList;
-@property(nonatomic,retain) UIWebView* webView;
 
+@property(nonatomic,retain) UIWebView* webView;
 
 +(Singleton*)sharedMySingleton;
 
@@ -77,6 +89,9 @@
 
 -(NSString*) sha1:(NSString*)input;
 -(NSString *)makeUniqueString;
+
+-(int)intInRangeMinimum:(int)min andMaximum:(int)max;
+-(double)intInRangeDouble:(double)min andMaximum:(double)max;
 
 -(void)setPlist;
 -(void)insertUser:(NSString *) User;

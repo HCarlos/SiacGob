@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cfdi:Comprobante xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.2" serie="0" folio="12186" fecha="2012-10-23T12:23:45" sello="h6eFlWkk51ysjXMMw+OKhrrIVSl2Gl4hLK1kBPMOs++Us7AFd/60j8JgEI0rXgS5tFUNBkz+tPUvqcJwocRQ3f90hNn4PTgR38pwq//FlQNjK4zYzehzqh9iwfUyngB8lA72IpffYGHl2ScL0QoMzmTfoGDP+BtHga7EL3zXnX0=" formaDePago="TRANSFERENCIA" noCertificado="00001000000201032507" condicionesDePago="CREDITO 45 DIAS" subTotal="10079.23" certificado="MIIEuTCCA6GgAwIBAgIUMDAwMDEwMDAwMDAyMDEwMzI1MDcwDQYJKoZIhvcNAQEFBQAwggGVMTgwNgYDVQQDDC9BLkMuIGRlbCBTZXJ2aWNpbyBkZSBBZG1pbmlzdHJhY2nDs24gVHJpYnV0YXJpYTEvMC0GA1UECgwmU2VydmljaW8gZGUgQWRtaW5pc3RyYWNpw7NuIFRyaWJ1dGFyaWExODA2BgNVBAsML0FkbWluaXN0cmFjacOzbiBkZSBTZWd1cmlkYWQgZGUgbGEgSW5mb3JtYWNpw7NuMSEwHwYJKoZIhvcNAQkBFhJhc2lzbmV0QHNhdC5nb2IubXgxJjAkBgNVBAkMHUF2LiBIaWRhbGdvIDc3LCBDb2wuIEd1ZXJyZXJvMQ4wDAYDVQQRDAUwNjMwMDELMAkGA1UEBhMCTVgxGTAXBgNVBAgMEERpc3RyaXRvIEZlZGVyYWwxFDASBgNVBAcMC0N1YXVodMOpbW9jMRUwEwYDVQQtEwxTQVQ5NzA3MDFOTjMxPjA8BgkqhkiG9w0BCQIML1Jlc3BvbnNhYmxlOiBDZWNpbGlhIEd1aWxsZXJtaW5hIEdhcmPDrWEgR3VlcnJhMB4XDTEyMDUwODIzNTkwN1oXDTE2MDUwODIzNTkwN1owgfoxMzAxBgNVBAMTKlRST1FVRUxBRE9TIFkgTEFNSU5BRE9TIE1PTlRFUlJFWSBTQSBERSBDVjEzMDEGA1UEKRMqVFJPUVVFTEFET1MgWSBMQU1JTkFET1MgTU9OVEVSUkVZIFNBIERFIENWMTMwMQYDVQQKEypUUk9RVUVMQURPUyBZIExBTUlOQURPUyBNT05URVJSRVkgU0EgREUgQ1YxJTAjBgNVBC0THFRMTTg1MTIyMzM1QSAvIFJPR0g0MDA0MTUxMTAxHjAcBgNVBAUTFSAvIFJPR0g0MDA0MTVITkxEUkwwMjESMBAGA1UECxMJUHJpbmNpcGFsMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDQy9wcMwg1222EY7mJgE942uRFRu0e+0Kp7nB+VB23kHMl7p0dpfAFqUCdLTftYXiF1jFaIOrZmRnwYtlHFzu52mph4vZogf/oHA2dhVQJaRygTuxUWT7DsNwq5dSlERKcWpBHdAWMkhCP6abDXvUT180Fc1Zjyd6oZ2gLraFYsQIDAQABox0wGzAMBgNVHRMBAf8EAjAAMAsGA1UdDwQEAwIGwDANBgkqhkiG9w0BAQUFAAOCAQEAC4uEpKZUo55TiNNGklVv8Nt26acYaH6VHxinaE0cVt4NENMlBC/NQBb2U2QhUoapUYXUKsCBS9JfbJ2Oi+lTAEVJYiTEOkXRJZ1cQsuLWJDCIf9/OvEHpSY9LeJ91sJ8c+TaRKHlHhdSt1DxOAS0+SPAvghwMwGt5W7xnX571V2zCX0gwyiKdZ/iWABG21Bmw0Ys9p/uF7Dv6nNYRgM1MLoRn5WDReKIaupLc3IQ8OpCUIqhuJ4q817Ct1unkAoIQfYmIWko+zB4uT4Mf8U+5LxoGyXO5rxJ1uLCeilJCecEU0EU4ixzYeE4BdEBElvVJeDHu/fQG1sxeRQo9JPHsA==" Moneda="USD" total="10079.23" tipoDeComprobante="ingreso" metodoDePago="TRANSFERENCIA" LugarExpedicion="ALVARO OBREGON, MONTERREY" NumCtaPago="9600" xsi:schemaLocation="http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv32.xsd" xmlns:cfdi="http://www.sat.gob.mx/cfd/3">
+  <cfdi:Emisor rfc="TLM85122335A" nombre="TROQUELADOS Y LAMINADOS MONTERREY SA DE CV">
+    <cfdi:DomicilioFiscal calle="LADRON DE GUEVARA" noExterior="442" colonia="OTE DEL NORTE" municipio="Monterrey" estado="Nuevo Leon" pais="Mexico" codigoPostal="64500" />
+    <cfdi:ExpedidoEn calle="AV. REVOLUCI�N" noExterior="1321" colonia="MONTERREY, ALVARO OBREGON" municipio="ALVARO OBREGON" estado="MONTERREY" pais="M" codigoPostal="01049" />
+    <cfdi:RegimenFiscal Regimen="Régimen general de ley de personas morales" />
+  </cfdi:Emisor>
+  <cfdi:Receptor rfc="XEXX010101000" nombre="FRIEDRICH AIR CONDITIONING, CO.">
+    <cfdi:Domicilio calle="1001 REUNION PLACE" noExterior="SUITE 500" colonia="ZIP 78216" localidad="SAN ANTONIO" municipio="SAN ANTONIO" estado="TEXAS" pais="USA" />
+  </cfdi:Receptor>
+  <cfdi:Conceptos>
+    <cfdi:Concepto cantidad="69" unidad="PZ" descripcion="ASSY BSPAN LRG &quot;W&quot; BOLT W/DRAIN NGT" valorUnitario="21.69" importe="1496.89" />
+    <cfdi:Concepto cantidad="100" unidad="PZ" descripcion="BOX EXTERNAL RELAY" valorUnitario="2.02" importe="202.00" />
+    <cfdi:Concepto cantidad="90" unidad="PZ" descripcion="STIFFENER INNERWALL" valorUnitario="0.61" importe="54.63" />
+    <cfdi:Concepto cantidad="25" unidad="PZ" descripcion="BOTTOM PANEL  VPAK" valorUnitario="4.18" importe="104.55" />
+    <cfdi:Concepto cantidad="25" unidad="PZ" descripcion="MOTOR RISER FOR WELLING" valorUnitario="1.73" importe="43.35" />
+    <cfdi:Concepto cantidad="64" unidad="PZ" descripcion="ASSY BSPAN LRG &quot;X&quot; BOLT NGT" valorUnitario="20.94" importe="1340.42" />
+    <cfdi:Concepto cantidad="118" unidad="PZ" descripcion="ASSY BSPAN LRG &quot;W&quot; BOLT NGT" valorUnitario="20.94" importe="2471.39" />
+    <cfdi:Concepto cantidad="450" unidad="PZ" descripcion="PANEL, CONTROL LRG" valorUnitario="2.84" importe="1276.65" />
+    <cfdi:Concepto cantidad="56" unidad="PZ" descripcion="ASSY BSPAN LRG &quot;X&quot; BOLT NGT" valorUnitario="20.94" importe="1172.86" />
+    <cfdi:Concepto cantidad="51" unidad="PZ" descripcion="ASSY BSPAN LRG &quot;W&quot; BOLT W/DRN NGT" valorUnitario="21.69" importe="1106.39" />
+    <cfdi:Concepto cantidad="1" unidad="PZ" descripcion="SURCHARGE" valorUnitario="810.10" importe="810.10" />
+  </cfdi:Conceptos>
+  <cfdi:Impuestos totalImpuestosTrasladados="0.00" totalImpuestosRetenidos="0.00" />
+</cfdi:Comprobante>

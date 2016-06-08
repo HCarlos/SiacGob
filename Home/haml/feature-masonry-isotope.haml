@@ -1,0 +1,412 @@
+!!! 5
+/[if lt IE 7] <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7">
+/[if IE 7]    <html lang="en" class="no-js lt-ie9 lt-ie8">
+/[if IE 8]    <html lang="en" class="no-js lt-ie9">
+<!--[if gt IE 8]><!-->
+%html{'lang' => 'en', 'class' => 'no-js'}<>
+	<!--<![endif]-->
+
+	%head
+		%meta{"charset" => "utf-8"}
+		%title Masonry - Isotope | Simiot, Bootstrap theme
+		%meta{"content" => "width=device-width, initial-scale=1.0", "name" => "viewport"}
+		%meta{"content" => "", "name" => "description"}
+		%meta{"content" => "ppparticularity.com", "name" => "author"}
+
+		%link{"href" => "css/style-t1.css", "rel" => "stylesheet"}
+
+		%script{"src" => "js/libs/modernizr.min.js"}
+
+		%link{"href" => "ico/favicon.ico", "rel" => "shortcut icon"}
+		%link{"href" => "ico/apple-touch-icon.png", "rel" => "apple-touch-icon"}
+		%link{"href" => "ico/apple-touch-icon-72x72.png", "rel" => "apple-touch-icon", "sizes" => "72x72"}
+		%link{"href" => "ico/apple-touch-icon-114x114.png", "rel" => "apple-touch-icon", "sizes" => "114x114"}
+
+	%body.feature-isotope-masonry
+
+
+		/ .................................... $header ....................................
+		%header.navbar-fixed-top
+			.container
+				.navbar
+					.navbar-inner
+						%a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
+							%i.icon-reorder
+
+						%a.brand.span3{:href => "index.html"}
+							%img{:src => "img/logo-t1.png", :alt => ""}/
+
+						%nav.nav-collapse.collapse
+							%ul.nav.primary-nav.pull-right
+								%li<
+									%a{:href => "index.html"} Home
+								%li<
+									%a{:href => "about.html"} About
+								%li<
+									%a{:href => "services.html"} Services
+								%li.dropdown
+									%a.dropdown-toggle{:href => "#", "data-toggle" => "dropdown"}
+										Portfolio
+										%b.caret
+									%ul.dropdown-menu
+										%li<
+											%a{:href => "portfolio-3.html"} 3 columns
+										%li<
+											%a{:href => "portfolio-4.html"} 4 columns
+										%li<
+											%a{:href => "portfolio-item.html"} Portfolio item
+								%li.dropdown
+									%a.dropdown-toggle{:href => "#", "data-toggle" => "dropdown"}
+										Pages
+										%b.caret
+									%ul.dropdown-menu
+										%li<
+											%a{:href => "page-content-sidebar.html"} Content sidebar
+										%li<
+											%a{:href => "page-sidebar-content.html"} Sidebar content
+										%li<
+											%a{:href => "page-sidebar-content-sidebar.html"} Sidebar content sidebar
+										%li<
+											%a{:href => "page-content-sidebar-sidebar.html"} Content sidebar sidebar
+										%li<
+											%a{:href => "page-sidebar-sidebar-content.html"} Sidebar sidebar content
+								%li<
+									%a{:href => "contact.html"} Contact
+								%li.active.dropdown
+									%a.dropdown-toggle{:href => "#", "data-toggle" => "dropdown"}
+										More
+										%b.caret
+									%ul.dropdown-menu
+										%li<
+											%a{:href => "features.html"} Features
+										%li<
+											%a{:href => "feature-slider.html"} Slider
+										%li<
+											%a{:href => "feature-video.html"} Video
+										%li.active<
+											%a{:href => "feature-masonry-isotope.html"} Masonry - Isotope
+										%li<
+											%a{:href => "feature-gallery.html"} Gallery
+										%li<
+											%a{:href => "feature-pricing.html"} Pricing
+										%li<
+											%a{:href => "news.html"} News
+										%li<
+											%a{:href => "news-item.html"} News item
+										%li<
+											%a{:href => "feature-miscellanea.html"} Miscellanea
+										%li<
+											%a{:href => "colors.html"} Colors
+
+
+
+
+
+		/ .................................... $breadcrumb ....................................
+		%section.section-breadcrumb.section-color-graylighter
+			.container
+				%ul.breadcrumb
+					%li<
+						%a{:href => "index.html"} Home
+						%span.divider> /
+					%li.active Masonry - Isotope
+
+
+
+
+
+		/ .................................... $MASONRY ....................................
+		%section.section-content.section-masonry#section-masonry
+			.container
+				%h2.section-title
+					With Masonry
+					%small A dynamic layout plugin for jQuery. The flip-side of CSS floats
+				.row
+					#container-masonry.masonry
+						.span3.masonry-item
+							%p
+								%strong Natus consectetur id aspernatur
+								Qui iure aliquam labore magni minus odio soluta ullam delectus expedita maxime commodi animi eligendi cum tenetur incidunt debitis facere optio veritatis. Amet distinctio officiis ullam libero similique dolor tempora debitis odio tenetur.
+						.span3.masonry-item
+							%p
+								%strong Obcaecati maxime illo ad
+								Eos est necessitatibus vel harum in illum cumque totam modi officia aliquid rem odit accusantium magnam ab blanditiis expedita culpa vero illo. Praesentium similique nam eligendi reiciendis molestiae adipisci optio asperiores culpa fuga dicta ex voluptatibus quia nostrum explicabo minus repellat impedit sint voluptatem!
+						.span3.masonry-item
+							%p
+								%strong Repellendus optio illo architecto
+								Sequi tempore earum culpa adipisci cumque accusamus debitis facere unde obcaecati saepe provident quae sunt laudantium recusandae pariatur dolore non accusantium molestiae! Consectetur commodi earum obcaecati modi maxime perspiciatis minus et laborum tenetur quas temporibus rerum nisi repellendus excepturi nam quis dolore odio expedita?
+						.span3.masonry-item
+							%p
+								%strong Explicabo eaque nam enim
+								Amet placeat aspernatur cumque dolorem magnam ex a repellat sapiente molestiae temporibus odit ab nam. Eos inventore optio qui explicabo laudantium placeat.
+						.span3.masonry-item
+							%p
+								%strong Dolor atque animi magnam
+								Impedit eum commodi molestiae deleniti optio ratione ullam error voluptatibus eligendi dolores nesciunt voluptatem repudiandae quo possimus culpa ab iure vel aliquid! Necessitatibus animi ut quae odio eaque enim neque dolorum distinctio suscipit debitis sit adipisci aut architecto ipsum quos alias dolorem quibusdam dicta.
+						.span3.masonry-item
+							%p
+								%strong Expedita eligendi et atque
+								Earum inventore aspernatur quia saepe dicta. Temporibus tempora deleniti eius laboriosam ratione asperiores cum aut magni nihil distinctio nisi esse incidunt a.
+						.span3.masonry-item
+							%p
+								%strong Eius necessitatibus provident neque
+								Fuga eligendi ratione tempora voluptatibus saepe libero pariatur quo ipsum aperiam facilis rem at repellat temporibus hic facere sed delectus id ut? Deleniti adipisci velit voluptatum quisquam dolor voluptate quidem aperiam illum sequi mollitia nostrum harum blanditiis dignissimos consequuntur sit iure praesentium amet perferendis.
+						.span3.masonry-item
+							%p
+								%strong Blanditiis cupiditate perferendis ipsa
+								Ex expedita eaque magni iure praesentium aperiam qui laudantium iusto repudiandae dolorem assumenda rem excepturi id eius doloremque omnis voluptas dicta quas? 
+						.span3.masonry-item
+							%p
+								%strong Qui nulla magni impedit
+								Optio eius nam aliquam deserunt ut maxime iusto cumque officiis quisquam velit fuga aliquid ipsa veritatis molestiae odio ipsam eaque ex repellendus. Esse inventore quaerat maxime illo autem molestias consequatur earum quasi aperiam perspiciatis assumenda minima suscipit consectetur atque quas dolores ipsa eveniet hic.
+						.span3.masonry-item
+							%p
+								%strong Adipisci nulla nesciunt debitis
+								Unde esse illum atque eveniet vel obcaecati doloremque neque itaque delectus provident doloribus reprehenderit deleniti minima necessitatibus reiciendis amet incidunt. Praesentium maiores. 
+						.span3.masonry-item
+							%p
+								%strong Incidunt numquam enim consectetur
+								Minima nihil nostrum molestias ipsa mollitia aliquid quibusdam. Nulla esse inventore quos perspiciatis quaerat unde tempore eos earum consequuntur tenetur provident quibusdam! Tempore veniam cumque mollitia repellat soluta dignissimos sit alias ipsum dolores. Ipsa culpa odio natus harum tenetur commodi sunt reprehenderit possimus expedita.
+						.span3.masonry-item
+							%p
+								%strong Voluptate non quasi vel
+								Voluptatem repudiandae dolor incidunt quas eveniet id deserunt nulla reprehenderit nostrum. Voluptatum ullam ab amet sed aliquam praesentium eos ex doloremque repellat! Eum ratione dignissimos amet nam vero in quas deleniti laborum nemo a dicta officiis veritatis assumenda quis fugit quibusdam quae! Libero doloremque!
+
+
+
+
+
+
+		/ .................................... $MASONRY without ....................................
+		%section.section-content.section-masonry-without#section-masonry-without
+			.container
+				%h2.section-title
+					Without Masonry
+					%small The same content without the Masonry plugin
+				.row
+					.span3
+						%p
+							%strong Natus consectetur id aspernatur
+							Qui iure aliquam labore magni minus odio soluta ullam delectus expedita maxime commodi animi eligendi cum tenetur incidunt debitis facere optio veritatis. Amet distinctio officiis ullam libero similique dolor tempora debitis odio tenetur.
+					.span3
+						%p
+							%strong Obcaecati maxime illo ad
+							Eos est necessitatibus vel harum in illum cumque totam modi officia aliquid rem odit accusantium magnam ab blanditiis expedita culpa vero illo. Praesentium similique nam eligendi reiciendis molestiae adipisci optio asperiores culpa fuga dicta ex voluptatibus quia nostrum explicabo minus repellat impedit sint voluptatem!
+					.span3
+						%p
+							%strong Repellendus optio illo architecto
+							Sequi tempore earum culpa adipisci cumque accusamus debitis facere unde obcaecati saepe provident quae sunt laudantium recusandae pariatur dolore non accusantium molestiae! Consectetur commodi earum obcaecati modi maxime perspiciatis minus et laborum tenetur quas temporibus rerum nisi repellendus excepturi nam quis dolore odio expedita?
+					.span3
+						%p
+							%strong Explicabo eaque nam enim
+							Amet placeat aspernatur cumque dolorem magnam ex a repellat sapiente molestiae temporibus odit ab nam. Eos inventore optio qui explicabo laudantium placeat.
+					.span3
+						%p
+							%strong Dolor atque animi magnam
+							Impedit eum commodi molestiae deleniti optio ratione ullam error voluptatibus eligendi dolores nesciunt voluptatem repudiandae quo possimus culpa ab iure vel aliquid! Necessitatibus animi ut quae odio eaque enim neque dolorum distinctio suscipit debitis sit adipisci aut architecto ipsum quos alias dolorem quibusdam dicta.
+					.span3
+						%p
+							%strong Expedita eligendi et atque
+							Earum inventore aspernatur quia saepe dicta. Temporibus tempora deleniti eius laboriosam ratione asperiores cum aut magni nihil distinctio nisi esse incidunt a.
+					.span3
+						%p
+							%strong Eius necessitatibus provident neque
+							Fuga eligendi ratione tempora voluptatibus saepe libero pariatur quo ipsum aperiam facilis rem at repellat temporibus hic facere sed delectus id ut? Deleniti adipisci velit voluptatum quisquam dolor voluptate quidem aperiam illum sequi mollitia nostrum harum blanditiis dignissimos consequuntur sit iure praesentium amet perferendis.
+					.span3
+						%p
+							%strong Blanditiis cupiditate perferendis ipsa
+							Ex expedita eaque magni iure praesentium aperiam qui laudantium iusto repudiandae dolorem assumenda rem excepturi id eius doloremque omnis voluptas dicta quas? 
+					.span3
+						%p
+							%strong Qui nulla magni impedit
+							Optio eius nam aliquam deserunt ut maxime iusto cumque officiis quisquam velit fuga aliquid ipsa veritatis molestiae odio ipsam eaque ex repellendus. Esse inventore quaerat maxime illo autem molestias consequatur earum quasi aperiam perspiciatis assumenda minima suscipit consectetur atque quas dolores ipsa eveniet hic.
+					.span3
+						%p
+							%strong Adipisci nulla nesciunt debitis
+							Unde esse illum atque eveniet vel obcaecati doloremque neque itaque delectus provident doloribus reprehenderit deleniti minima necessitatibus reiciendis amet incidunt. Praesentium maiores. 
+					.span3
+						%p
+							%strong Incidunt numquam enim consectetur
+							Minima nihil nostrum molestias ipsa mollitia aliquid quibusdam. Nulla esse inventore quos perspiciatis quaerat unde tempore eos earum consequuntur tenetur provident quibusdam! Tempore veniam cumque mollitia repellat soluta dignissimos sit alias ipsum dolores. Ipsa culpa odio natus harum tenetur commodi sunt reprehenderit possimus expedita.
+					.span3
+						%p
+							%strong Voluptate non quasi vel
+							Voluptatem repudiandae dolor incidunt quas eveniet id deserunt nulla reprehenderit nostrum. Voluptatum ullam ab amet sed aliquam praesentium eos ex doloremque repellat! Eum ratione dignissimos amet nam vero in quas deleniti laborum nemo a dicta officiis veritatis assumenda quis fugit quibusdam quae! Libero doloremque!
+
+
+
+
+
+
+		/ .................................... $ISOTOPE ....................................
+		%section.section-content.section-isotope#section-isotope
+			.container
+				%h2.section-title
+					Isotope
+					%small An exquisite jQuery plugin for magical layouts
+				#filters
+					%ul.nav.nav-pills
+						%li.active
+							%a{:href => "#", "data-filter" => "*"} all
+						%li
+							%a{:href => "#", "data-filter" => ".filter-2"} quas ex
+						%li
+							%a{:href => "#", "data-filter" => ".filter-3"} deserunt nemo
+						%li
+							%a{:href => "#", "data-filter" => ".filter-p"} reiciendis
+				.row
+					#container-isotope.isotope
+						.span3.isotope-item.filter-p
+							%figure
+								%img{:src => "img/gallery/01rct-s.jpg", :alt => ""}/
+						.span3.isotope-item.filter-p.filter-2
+							%figure
+								%img{:src => "img/gallery/02rct-s.jpg", :alt => ""}/
+						.span3.isotope-item.filter-p.filter-3
+							%figure
+								%img{:src => "img/gallery/03rct-s.jpg", :alt => ""}/
+						.span3.isotope-item.filter-2
+							%figure
+								%img{:src => "img/gallery/04rct-s.jpg", :alt => ""}/
+						.span3.isotope-item.filter-p
+							%figure
+								%img{:src => "img/gallery/05rct-s.jpg", :alt => ""}/
+						.span3.isotope-item.filter-2.filter-3
+							%figure
+								%img{:src => "img/gallery/06rct-s.jpg", :alt => ""}/
+						.span3.isotope-item.filter-p
+							%figure
+								%img{:src => "img/gallery/07rct-s.jpg", :alt => ""}/
+						.span3.isotope-item.filter-2
+							%figure
+								%img{:src => "img/gallery/08rct-s.jpg", :alt => ""}/
+						.span3.isotope-item.filter-3
+							%figure
+								%img{:src => "img/gallery/09rct-s.jpg", :alt => ""}/
+						.span3.isotope-item.filter-2
+							%figure
+								%img{:src => "img/gallery/10rct-s.jpg", :alt => ""}/
+						.span3.isotope-item.filter-p
+							%figure
+								%img{:src => "img/gallery/11rct-s.jpg", :alt => ""}/
+						.span3.isotope-item.filter-2.filter-3
+							%figure
+								%img{:src => "img/gallery/12rct-s.jpg", :alt => ""}/
+
+
+
+
+
+		/ .................................... $footer ....................................
+		%footer.section-color-primarydark
+			.container
+				.row
+					.span3
+						.widget
+							%address
+								%strong Twitter, Inc.
+								%br/
+								795 Folsom Ave, Suite 600
+								%br/
+								San Francisco, CA 94107
+								%br/
+								%abbr{:title => "Phone"} P:
+								%a{:href => "#"} (123) 456-7890
+					.span3
+						.widget
+							%h5 Newsletter
+							%p Vel assumenda excepturi nostrum tenetur alias quibusdam maiores.
+							%form.form-vertical#newsletter-form
+								.control-group
+									%label{:for => "newsletter-email"}
+									%input.span3#newsletter-email{:type => "email", "placeholder" => "email"}/
+									%span.help-inline Insert valid email
+								%button.btn.btn-small{:type => "submit"} Subscribe
+						.widget
+							%h5 Follow us
+							%p.btn-group
+								%a.btn.btn-link{:href => "#"}
+									%i.icon-large.icon-facebook
+								%a.btn.btn-link{:href => "#"}
+									%i.icon-large.icon-twitter
+								%a.btn.btn-link{:href => "#"}
+									%i.icon-large.icon-linkedin
+								%a.btn.btn-link{:href => "#"}
+									%i.icon-large.icon-google-plus
+					.span3
+						.widget
+							%h5 Latest tweets
+							:markdown
+								Dignissimos odit repellendus assumenda vel distinctio.  
+								**1 hour ago**
+							:markdown
+								[@twitter](#) In asperiores beatae atque ex aut ullam omnis laborum eaque dolor sint veritatis illo.  
+								**1 day ago**
+							:markdown
+								Blanditiis laudantium [#aperiam](#) quae enim quisquam [#repellendus](#)  
+								**2 days ago**
+
+					.span3
+						.widget
+							%h5 Contact us
+							%form.form-vertical#contact-form
+								.control-group
+									%label{:for => "contact-name-surname"}
+									%input.span3#contact-name-surname{:type => "text", "placeholder" => "name surname"}/
+									%span.help-inline Insert name and surname
+								.control-group
+									%label{:for => "contact-email"}
+									%input.span3#contact-email{:type => "email", "placeholder" => "email"}/
+									%span.help-inline Insert valid email
+								%label{:for => "contact-message"}
+								%textarea.span3#contact-message{:name => "message", :rows => "5", "placeholder" => "message"}
+								%button.btn.btn-small{:type => "submit"} Send
+
+
+
+
+
+		/ .................................... $post-footer ....................................
+		.post-footer.section-content.section-content-mini.section-color-graydark
+			.container
+				%p.pull-right
+					Designed by
+					%a{:href => "http://ppparticularity.com"} ppparticularity
+				%p &copy; Simiot 2013 - All rights reserved
+
+
+
+
+
+		/ .................................... $scripts ....................................
+		-# jquery 1.9.1
+		%script{"src" => "js/libs/jquery.min.js"}
+
+		-# jquery ui map
+		%script{"src" => "http://maps.google.com/maps/api/js?sensor=true"}
+		%script{"src" => "js/libs/jquery.ui.map.min.js"}
+
+		-# Bootstrap js
+		%script{"src" => "bootstrap/js/bootstrap.min.js"}
+
+		-# Fancybox | A tool for displaying content in a "lightbox" that floats overtop of web page
+		%script{"src" => "js/libs/jquery.fancybox.min.js"}
+
+		-# Hoverdir | Direction-Aware Hover Effect
+		%script{"src" => "js/libs/jquery.hoverdir.min.js"}
+
+		-# Isotope | An exquisite jQuery plugin for magical layouts
+		%script{"src" => "js/libs/jquery.isotope.min.js"}
+
+		-# Masonry | A dynamic layout plugin for jQuery, the flip-side of CSS floats
+		%script{"src" => "js/libs/jquery.masonry.min.js"}
+
+		-# FitVids | A lightweight, easy-to-use jQuery plugin for fluid width video embeds
+		%script{"src" => "js/libs/jquery.fitvids.min.js"}
+
+		-# FlexSlider | The best responsive slider. Period
+		%script{"src" => "js/libs/jquery.flexslider.min.js"}
+
+		-# Scripts
+		%script{"src" => "js/script.js"}
+

@@ -1,0 +1,404 @@
+!!! 5
+/[if lt IE 7] <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7">
+/[if IE 7]    <html lang="en" class="no-js lt-ie9 lt-ie8">
+/[if IE 8]    <html lang="en" class="no-js lt-ie9">
+<!--[if gt IE 8]><!-->
+%html{'lang' => 'en', 'class' => 'no-js'}<>
+	<!--<![endif]-->
+
+	%head
+		%meta{"charset" => "utf-8"}
+		%title Home | Simiot, Bootstrap theme
+		%meta{"content" => "width=device-width, initial-scale=1.0", "name" => "viewport"}
+		%meta{"content" => "", "name" => "description"}
+		%meta{"content" => "ppparticularity.com", "name" => "author"}
+
+		%link{"href" => "css/style-t1.css", "rel" => "stylesheet"}
+
+		%script{"src" => "js/libs/modernizr.min.js"}
+
+		%link{"href" => "ico/favicon.ico", "rel" => "shortcut icon"}
+		%link{"href" => "ico/apple-touch-icon.png", "rel" => "apple-touch-icon"}
+		%link{"href" => "ico/apple-touch-icon-72x72.png", "rel" => "apple-touch-icon", "sizes" => "72x72"}
+		%link{"href" => "ico/apple-touch-icon-114x114.png", "rel" => "apple-touch-icon", "sizes" => "114x114"}
+
+	%body.home
+
+
+		/ .................................... $header ....................................
+		%header.navbar-fixed-top
+			.container
+				.navbar
+					.navbar-inner
+						%a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
+							%i.icon-reorder
+
+						%a.brand.span3{:href => "index.html"}
+							%img{:src => "img/logo-t1.png", :alt => ""}/
+
+						%nav.nav-collapse.collapse
+							%ul.nav.primary-nav.pull-right
+								%li.active<
+									%a{:href => "index.html"} Home
+								%li<
+									%a{:href => "about.html"} About
+								%li<
+									%a{:href => "services.html"} Services
+								%li.dropdown
+									%a.dropdown-toggle{:href => "#", "data-toggle" => "dropdown"}
+										Portfolio
+										%b.caret
+									%ul.dropdown-menu
+										%li<
+											%a{:href => "portfolio-3.html"} 3 columns
+										%li<
+											%a{:href => "portfolio-4.html"} 4 columns
+										%li<
+											%a{:href => "portfolio-item.html"} Portfolio item
+								%li.dropdown
+									%a.dropdown-toggle{:href => "#", "data-toggle" => "dropdown"}
+										Pages
+										%b.caret
+									%ul.dropdown-menu
+										%li<
+											%a{:href => "page-content-sidebar.html"} Content sidebar
+										%li<
+											%a{:href => "page-sidebar-content.html"} Sidebar content
+										%li<
+											%a{:href => "page-sidebar-content-sidebar.html"} Sidebar content sidebar
+										%li<
+											%a{:href => "page-content-sidebar-sidebar.html"} Content sidebar sidebar
+										%li<
+											%a{:href => "page-sidebar-sidebar-content.html"} Sidebar sidebar content
+								%li<
+									%a{:href => "contact.html"} Contact
+								%li.dropdown
+									%a.dropdown-toggle{:href => "#", "data-toggle" => "dropdown"}
+										More
+										%b.caret
+									%ul.dropdown-menu
+										%li<
+											%a{:href => "features.html"} Features
+										%li<
+											%a{:href => "feature-slider.html"} Slider
+										%li<
+											%a{:href => "feature-video.html"} Video
+										%li<
+											%a{:href => "feature-masonry-isotope.html"} Masonry - Isotope
+										%li<
+											%a{:href => "feature-gallery.html"} Gallery
+										%li<
+											%a{:href => "feature-pricing.html"} Pricing
+										%li<
+											%a{:href => "news.html"} News
+										%li<
+											%a{:href => "news-item.html"} News item
+										%li<
+											%a{:href => "feature-miscellanea.html"} Miscellanea
+										%li<
+											%a{:href => "colors.html"} Colors
+
+
+
+		/ .................................... $jumbotron ....................................
+		%section.section-content.section-jumbotron#section-jumbotron
+			.container
+				.row
+					.span5.offset1
+						%img{:src => "img/ipad.png", :alt => ""}/
+					.span5._offset1
+						.slogan
+							%h1 BOOTSTRAP #RWD
+							%p.lead A really responsive theme written in HTML5/CSS3 with the power of HAML/LESS and a fistful of cool plugins!
+							%p
+								%a.btn.btn-large.btn-primary{:href => "features.html"} Features
+
+
+
+
+
+		/ .................................... $Services ....................................
+		%section.section-content.section-services#section-services
+			.container
+				.row
+					.span3
+						%h2.section-title
+							Services
+							%small Qui labore quae consequuntur animi natus recusandae molestias
+						%p
+							%a.btn.btn-small.btn-primary{:href => "services.html"}
+								%i.icon-search
+								View all
+					.span9
+						.row
+							.span3
+								.text-center
+									%figure
+										%a{:href => "#"}
+											%i.icon-cloud.icon-8x.icon-border
+									%h4
+										%a{:href => "#"} Cumque voluptate
+									%p Necessitatibus reprehenderit illum perspiciatis dolor ut delectus pariatur vero illo magni
+							.span3
+								.text-center
+									%figure
+										%a{:href => "#"}
+											%i.icon-bolt.icon-8x.icon-border
+									%h4
+										%a{:href => "#"} Eligendi labore
+									%p Possimus sit quaerat voluptatum sequi nisi eligendi rem nobis ex aut
+							.span3
+								.text-center
+									%figure
+										%a{:href => "#"}
+											%i.icon-dashboard.icon-8x.icon-border
+									%h4
+										%a{:href => "#"} Quia repellat
+									%p Quas tempore tenetur ex id sunt cum beatae nobis nam odio
+
+
+
+
+		/ .................................... $testimonials ....................................
+		%section.section-content.section-testimonials.section-color-white#section-testimonials
+			.container
+				%h2.section-title
+					Testimonials
+					%small Earum debitis illum inventore natus deleniti voluptatum tempore
+				.row
+					.span3
+						%blockquote
+							%p
+								%i.icon-quote-left.icon-4x.pull-left.icon-muted
+								Magnam nisi suscipit tenetur aliquid quas quia blanditiis sapiente qui beatae natus reiciendis quibusdam quisquam esse molestiae doloribus eius repellendus exercitationem magni!
+							%small Name Surname
+					.span3
+						%blockquote
+							%p
+								%i.icon-quote-left.icon-4x.pull-left.icon-muted
+								Ducimus necessitatibus sit dolore inventore dolorem laborum asperiores praesentium harum nam qui aliquam ipsum ab alias. Dignissimos aut tempore in porro voluptatibus.
+							%small Name Surname
+					.span3
+						%blockquote
+							%p
+								%i.icon-quote-left.icon-4x.pull-left.icon-muted
+								Error tenetur maxime molestias aliquam in cupiditate quisquam accusamus sint eaque minima voluptatum nostrum voluptas ratione est sed tempora pariatur explicabo omnis.
+							%small Name Surname
+					.span3
+						%blockquote
+							%p
+								%i.icon-quote-left.icon-4x.pull-left.icon-muted
+								Magnam nisi suscipit tenetur aliquid quas quia blanditiis sapiente qui beatae natus reiciendis quibusdam quisquam esse molestiae doloribus eius repellendus exercitationem magni!
+							%small Name Surname
+
+
+
+
+
+		/ .................................... $news on carousel ....................................
+		%section.section-content.section-news-on-carousel#section-news-on-carousel
+			.container
+				.row
+					.span3
+						%h2.section-title
+							News
+							%small Veritatis necessitatibus cupiditate commodi vitae fugit itaque
+						%p
+							%a.btn.btn-small.btn-primary{:href => "news.html"}
+								%i.icon-search
+								View all
+					.span9
+						.row
+							.carousel.carousel-mini.slide#myCarouselNews{"data-pause" => "true"}
+								.carousel-nav
+									.btn-group
+										%a.btn.btn-link.btn-small{:href => "#myCarouselNews", "data-slide" => "prev"}
+											%i.icon-chevron-left
+										%a.btn.btn-link.btn-small{:href => "#myCarouselNews", "data-slide" => "next"}
+											%i.icon-chevron-right
+
+								.carousel-inner
+									.item.active
+										.span3
+											%figure
+												%a{:href => "news-item.html"}
+													%img{:src => "img/gallery/01rct-s.jpg", :alt => ""}/
+											%h4
+												%a{:href => "news-item.html"} Repellendus quae
+											%p Nemo fugiat doloremque ut commodi ea necessitatibus molestiae ex consequatur laboriosam voluptas quisquam fugit inventore soluta  sunt vero neque officiis.
+											%p
+												%a.btn.btn-small.btn-primary{:href => "news-item.html"}
+													%i.icon-search
+													read more
+										.span3
+											%figure
+												%a{:href => "news-item.html"}
+													%img{:src => "img/gallery/02rct-s.jpg", :alt => ""}/
+											%h4
+												%a{:href => "news-item.html"} Vel quisquam
+											%p Voluptatum illo aspernatur culpa animi quis porro quidem voluptatem alias similique officia dolore autem nesciunt amet laboriosam qui in perferendis voluptate numquam!
+											%p
+												%a.btn.btn-small.btn-primary{:href => "news-item.html"}
+													%i.icon-search
+													read more
+										.span3
+											%figure
+												%a{:href => "news-item.html"}
+													%img{:src => "img/gallery/03rct-s.jpg", :alt => ""}/
+											%h4
+												%a{:href => "news-item.html"} Ipsa exercitationem
+											%p Ipsum magnam eligendi autem vitae vel nesciunt debitis suscipit illum quod eius optio in nam laboriosam quam distinctio ipsa accusamus architecto est.
+											%p
+												%a.btn.btn-small.btn-primary{:href => "news-item.html"}
+													%i.icon-search
+													read more
+									.item
+										.span3
+											%figure
+												%a{:href => "news-item.html"}
+													%img{:src => "img/gallery/04rct-s.jpg", :alt => ""}/
+											%h4
+												%a{:href => "news-item.html"} Nam obcaecati
+											%p Sapiente delectus asperiores mollitia odio laborum fugit ipsam pariatur enim architecto totam eius inventore. Consequatur quasi cum excepturi recusandae  eligendi dicta.
+											%p
+												%a.btn.btn-small.btn-primary{:href => "news-item.html"}
+													%i.icon-search
+													read more
+										.span3
+											%figure
+												%a{:href => "news-item.html"}
+													%img{:src => "img/gallery/05rct-s.jpg", :alt => ""}/
+											%h4
+												%a{:href => "news-item.html"} Quidem ut
+											%p Iste voluptas obcaecati maxime voluptate ut omnis aspernatur nobis quas ex perferendis dolor harum magni officiis natus id veniam recusandae laboriosam sequi.
+											%p
+												%a.btn.btn-small.btn-primary{:href => "news-item.html"}
+													%i.icon-search
+													read more
+										.span3
+											%figure
+												%a{:href => "news-item.html"}
+													%img{:src => "img/gallery/06rct-s.jpg", :alt => ""}/
+											%h4
+												%a{:href => "news-item.html"} In dicta
+											%p Nihil cum eius quis minus dignissimos reiciendis recusandae officiis perferendis nobis debitis facere temporibus magni qui molestiae atque ex rem in labore!
+											%p
+												%a.btn.btn-small.btn-primary{:href => "news-item.html"}
+													%i.icon-search
+													read more
+
+
+
+
+		/ .................................... $footer ....................................
+		%footer.section-color-primarydark
+			.container
+				.row
+					.span3
+						.widget
+							%address
+								%strong Twitter, Inc.
+								%br/
+								795 Folsom Ave, Suite 600
+								%br/
+								San Francisco, CA 94107
+								%br/
+								%abbr{:title => "Phone"} P:
+								%a{:href => "#"} (123) 456-7890
+					.span3
+						.widget
+							%h5 Newsletter
+							%p Vel assumenda excepturi nostrum tenetur alias quibusdam maiores.
+							%form.form-vertical#newsletter-form
+								.control-group
+									%label{:for => "newsletter-email"}
+									%input.span3#newsletter-email{:type => "email", "placeholder" => "email"}/
+									%span.help-inline Insert valid email
+								%button.btn.btn-small{:type => "submit"} Subscribe
+						.widget
+							%h5 Follow us
+							%p.btn-group
+								%a.btn.btn-link{:href => "#"}
+									%i.icon-large.icon-facebook
+								%a.btn.btn-link{:href => "#"}
+									%i.icon-large.icon-twitter
+								%a.btn.btn-link{:href => "#"}
+									%i.icon-large.icon-linkedin
+								%a.btn.btn-link{:href => "#"}
+									%i.icon-large.icon-google-plus
+					.span3
+						.widget
+							%h5 Latest tweets
+							:markdown
+								Dignissimos odit repellendus assumenda vel distinctio.  
+								**1 hour ago**
+							:markdown
+								[@twitter](#) In asperiores beatae atque ex aut ullam omnis laborum eaque dolor sint veritatis illo.  
+								**1 day ago**
+							:markdown
+								Blanditiis laudantium [#aperiam](#) quae enim quisquam [#repellendus](#)  
+								**2 days ago**
+
+					.span3
+						.widget
+							%h5 Contact us
+							%form.form-vertical#contact-form
+								.control-group
+									%label{:for => "contact-name-surname"}
+									%input.span3#contact-name-surname{:type => "text", "placeholder" => "name surname"}/
+									%span.help-inline Insert name and surname
+								.control-group
+									%label{:for => "contact-email"}
+									%input.span3#contact-email{:type => "email", "placeholder" => "email"}/
+									%span.help-inline Insert valid email
+								%label{:for => "contact-message"}
+								%textarea.span3#contact-message{:name => "message", :rows => "5", "placeholder" => "message"}
+								%button.btn.btn-small{:type => "submit"} Send
+
+
+
+
+		/ .................................... $post-footer ....................................
+		.post-footer.section-content.section-content-mini.section-color-graydark
+			.container
+				%p.pull-right
+					Designed by
+					%a{:href => "http://ppparticularity.com"} ppparticularity
+				%p &copy; Simiot 2013 - All rights reserved
+
+
+
+
+
+		/ .................................... $scripts ....................................
+		-# jquery 1.9.1
+		%script{"src" => "js/libs/jquery.min.js"}
+
+		-# jquery ui map
+		%script{"src" => "http://maps.google.com/maps/api/js?sensor=true"}
+		%script{"src" => "js/libs/jquery.ui.map.min.js"}
+
+		-# Bootstrap js
+		%script{"src" => "bootstrap/js/bootstrap.min.js"}
+
+		-# Fancybox | A tool for displaying content in a "lightbox" that floats overtop of web page
+		%script{"src" => "js/libs/jquery.fancybox.min.js"}
+
+		-# Hoverdir | Direction-Aware Hover Effect
+		%script{"src" => "js/libs/jquery.hoverdir.min.js"}
+
+		-# Isotope | An exquisite jQuery plugin for magical layouts
+		%script{"src" => "js/libs/jquery.isotope.min.js"}
+
+		-# Masonry | A dynamic layout plugin for jQuery, the flip-side of CSS floats
+		%script{"src" => "js/libs/jquery.masonry.min.js"}
+
+		-# FitVids | A lightweight, easy-to-use jQuery plugin for fluid width video embeds
+		%script{"src" => "js/libs/jquery.fitvids.min.js"}
+
+		-# FlexSlider | The best responsive slider. Period
+		%script{"src" => "js/libs/jquery.flexslider.min.js"}
+
+		-# Scripts
+		%script{"src" => "js/script.js"}
+

@@ -353,8 +353,18 @@ rotationTransform = CGAffineTransformIdentity;
     if (nil != self.labelText) {
         // Get size of label text
         
-        // CGSize dims = [self.labelText sizeWithFont:self.labelFont];
+//        CGSize dims = [self.labelText sizeWithFont:self.labelFont];
 
+        UILabel *gettingSizeLabel = [[UILabel alloc] init];
+        gettingSizeLabel.font = [UIFont fontWithName:@"ARIAL" size:16];
+        gettingSizeLabel.text = @"text";
+        gettingSizeLabel.numberOfLines = 0;
+        gettingSizeLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        CGSize maximumLabelSize = CGSizeMake(310, 9999);
+        
+        CGSize dims = [gettingSizeLabel sizeThatFits:maximumLabelSize];
+        
+        
         // Compute label dimensions based on font metrics if size is larger than max then clip the label width
         float lHeight = dims.height;
         float lWidth;
@@ -405,8 +415,21 @@ rotationTransform = CGAffineTransformIdentity;
             detailsLabel.text = self.detailsLabelText;
             detailsLabel.numberOfLines = 0;
 
-CGFloat maxHeight = frame.size.height - self.height - 2*margin;
+//            CGFloat maxHeight = frame.size.height - self.height - 2*margin;
+
+            UILabel *gettingSizeLabel = [[UILabel alloc] init];
+            gettingSizeLabel.font = [UIFont fontWithName:@"ARIAL" size:16];
+            gettingSizeLabel.text = @"text";
+            gettingSizeLabel.numberOfLines = 0;
+            gettingSizeLabel.lineBreakMode = NSLineBreakByWordWrapping;
+            CGSize maximumLabelSize = CGSizeMake(310, 9999);
+            
+            CGSize labelSize = [gettingSizeLabel sizeThatFits:maximumLabelSize];
+
+/*
 CGSize labelSize = [detailsLabel.text sizeWithFont:detailsLabel.font constrainedToSize:CGSizeMake(frame.size.width - 4*margin, maxHeight) lineBreakMode:detailsLabel.lineBreakMode];
+*/
+            
             lHeight = labelSize.height;
             lWidth = labelSize.width;
 

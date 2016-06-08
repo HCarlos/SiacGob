@@ -1,0 +1,19 @@
+1.  openssl x509 -inform DER -in AME6907306R300001000000102250058.cer -out certificadoAME6907306R3.pem
+2.  openssl pkcs8 -inform DER -in AME6907306R3ame6907306r3_1011260916sk.key -passin pass:es65xa09 -out llaveAME6907306R3.pem
+3.  openssl pkcs12 -export -out AME6907306R3.pfx -inkey llaveAME6907306R3.pem -in certificadoAME6907306R3.pem -passout pass:es65xa09
+
+
+1.  openssl x509 -inform DER -in AMS700318T9500001000000102255308.cer -out certificadoAMS700318T95.pem
+2.  openssl pkcs8 -inform DER -in AMS700318T95ams700318t95_1011261407s.key -passin pass:as13me73 -out llaveAMS700318T95.pem
+3.  openssl pkcs12 -export -out AMS700318T95.pfx -inkey llaveAMS700318T95.pem -in certificadoAMS700318T95.pem -passout pass:as13me73
+
+
+1.  openssl x509 -inform DER -in AAA010101AAA.cer -out certificadoAAA010101AAA.pem
+2.  openssl pkcs8 -inform DER -in AAA010101AAAsk.key -passin pass:a0123456789 -out llaveAAA010101AAA.pem
+3.  openssl pkcs12 -export -out AAA010101AAA.pfx -inkey llaveAAA010101AAA.pem -in certificadoAAA010101AAA.pem -passout pass:0123456789
+
+
+
+1.  openssl x509 -inform DER -in BMI030416RW300001000000200898207.cer -out certificadoBMI030416RW3.pem
+2.  openssl pkcs8 -inform DER -in BMI030416RW3bmi030416rw3_1204241212s.key -passin pass:BMI030416FACT -out llaveBMI030416RW3.pem
+3.  openssl pkcs12 -export -out BMI030416RW3.pfx -inkey llaveBMI030416RW3.pem -in certificadoBMI030416RW3.pem -passout pass:BMI030416FACT

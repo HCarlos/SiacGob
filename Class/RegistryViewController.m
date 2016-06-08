@@ -59,8 +59,8 @@
 - (IBAction)setRegistry:(id)sender {
     if ([self.S validateEmail:self.txtUsername.text]){
         if ([self.txtUsername.text isEqualToString:self.txtUsername2.text]){
-            int pl1 = [self.txtPassword1.text length];
-            int pl2 = [self.txtPassword2.text length];
+            NSInteger pl1 = [self.txtPassword1.text length];
+            NSInteger pl2 = [self.txtPassword2.text length];
         
             if ([self.txtPassword1.text isEqualToString:self.txtPassword2.text] ){
                 if ((pl1 > 3 && pl1 <= 13) && (pl2 > 3 && pl2 <= 13)){
@@ -139,7 +139,7 @@
     [postDix setObject:[[NSString alloc] initWithFormat: @"%@",lo] forKey:@"longitud"];
     [postDix setObject:[[NSString alloc] initWithFormat: @"%@",x] forKey:@"message"];
    
-    NSURL *url = [NSURL URLWithString:@"http://dc.tabascoweb.com/php/01/setiOSRegistry.php"];
+    NSURL *url = [NSURL URLWithString:@"http://siac.tabascoweb.com/php/01/setiOSRegistry.php"];
     
     NSData *postData = [self generateFormDataFormPostDictionary:postDix];
     
@@ -147,7 +147,7 @@
     // Create the request
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     [request setHTTPMethod:@"POST"];
-    [request setValue:[NSString stringWithFormat:@"%d", postData.length] forHTTPHeaderField:@"Content-Length"];
+    [request setValue:[NSString stringWithFormat:@"%lu", (unsigned long)postData.length] forHTTPHeaderField:@"Content-Length"];
     [request setValue:@"application/x-www-form-urlencoded charset=utf-8" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPBody:postData];
     

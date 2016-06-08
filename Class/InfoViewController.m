@@ -49,6 +49,12 @@
     [self.S.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.tabascoweb.com/images/web/stream.php"]]];
 }
 
+/*
+- (IBAction)openBrowser:(id)sender {
+	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://siac.tabascoweb.com/"]];	
+}
+ */
+
 
 
 @end

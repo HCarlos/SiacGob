@@ -25,7 +25,10 @@
 @property (strong, nonatomic) IBOutlet UIImageView *txtImage;
 @property (strong, nonatomic) IBOutlet UILabel *lblText;
 @property (strong, nonatomic) IBOutlet UITextView *txtDenuncia;
+
 @property (strong, nonatomic) IBOutlet UILabel *lblFecha;
+@property (strong, nonatomic) IBOutlet UILabel *lblMeGusta;
+@property (strong, nonatomic) IBOutlet UILabel *lblDomicilio;
 
 @property (strong,nonatomic) Singleton *S;
 

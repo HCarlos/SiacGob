@@ -39,26 +39,36 @@
     
     [self.ActPlay startAnimating];
     self.lblText.text = self.lblArchivo;
-    
+    /*
     self.txtDenuncia.layer.cornerRadius=8.0f;
     self.txtDenuncia.layer.masksToBounds=YES;
     self.txtDenuncia.backgroundColor=[UIColor lightGrayColor];
     self.txtDenuncia.layer.borderColor=[[UIColor blackColor]CGColor];
     self.txtDenuncia.layer.borderWidth= 1.0f;
-
+	 */
     
 
 }
 
 - (void)didReceiveMemoryWarning
 {
+	NSLog(@"Foto en %s", __func__);
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+	if (self.isViewLoaded && !self.view.window) {
+        self.view = nil;
+    }
 }
 
 -(void)viewDidAppear:(BOOL)animated{
+
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+														 NSUserDomainMask, YES);
+	NSString *documentsDirectory = [paths objectAtIndex:0];
+	NSString* path = [documentsDirectory stringByAppendingPathComponent:
+					  self.ArchivoPlano ];
+	[self.txtImage setImage: [UIImage imageWithContentsOfFile:path]];
     
-    [self.txtImage setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.lblArchivo]]]];
+    //[self.txtImage setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.lblArchivo]]]];
     [self getImageData];
 
 
@@ -80,7 +90,7 @@
     NSLog(@"Archivo Plano: %@",self.ArchivoPlano);
     [postDix setObject:[[NSString alloc] initWithFormat: @"%@",self.ArchivoPlano] forKey:@"imagen"];
     
-    NSURL *url = [NSURL URLWithString:@"http://dc.tabascoweb.com/php/01/getiOSGetDataPhotoUser.php"];
+    NSURL *url = [NSURL URLWithString:@"http://siac.tabascoweb.com/php/01/getiOSGetDataPhotoUser.php"];
     
     NSData *postData = [self generateFormDataFormPostDictionary:postDix];
     NSLog(@"Datos: %@",[[NSString alloc] initWithData:postData encoding:NSStringEncodingConversionExternalRepresentation]);
@@ -88,11 +98,11 @@
     // Create the request
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     [request setHTTPMethod:@"POST"];
-    [request setAllowsCellularAccess:YES];
+    //[request setAllowsCellularAccess:YES];
     
-    [request setCachePolicy:NSURLRequestUseProtocolCachePolicy];
-    [request setTimeoutInterval:1200.0];
-    [request setValue:[NSString stringWithFormat:@"%d", postData.length] forHTTPHeaderField:@"Content-Length"];
+    //[request setCachePolicy:NSURLRequestUseProtocolCachePolicy];
+    //[request setTimeoutInterval:1200.0];
+    [request setValue:[NSString stringWithFormat:@"%lu", (unsigned long)postData.length] forHTTPHeaderField:@"Content-Length"];
     [request setValue:@"application/x-www-form-urlencoded charset=utf-8" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPBody:postData];
     
@@ -132,7 +142,7 @@
     NSMutableDictionary *postDix=[[NSMutableDictionary alloc] init];
     [postDix setObject:[[NSString alloc] initWithFormat: @"%@",self.ArchivoPlano] forKey:@"imagen"];
     
-    NSURL *url = [NSURL URLWithString:@"http://dc.tabascoweb.com/php/01/getiOSDeletePhotoUser.php"];
+    NSURL *url = [NSURL URLWithString:@"http://siac.tabascoweb.com/php/01/getiOSDeletePhotoUser.php"];
     
     NSData *postData = [self generateFormDataFormPostDictionary:postDix];
     NSLog(@"Datos: %@",[[NSString alloc] initWithData:postData encoding:NSStringEncodingConversionExternalRepresentation]);
@@ -144,7 +154,7 @@
     
     [request setCachePolicy:NSURLRequestUseProtocolCachePolicy];
     [request setTimeoutInterval:1200.0];
-    [request setValue:[NSString stringWithFormat:@"%d", postData.length] forHTTPHeaderField:@"Content-Length"];
+    [request setValue:[NSString stringWithFormat:@"%lu", (unsigned long)postData.length] forHTTPHeaderField:@"Content-Length"];
     [request setValue:@"application/x-www-form-urlencoded charset=utf-8" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPBody:postData];
     
@@ -161,16 +171,16 @@
     
 }
 
+
+
 //Recibe de los datos después de guardar...
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
     
     switch (option) {
         case 0:{
-            
-            NSString *str0 = [[NSString alloc] initWithFormat: @"dispatch(%i,%i)",0, 0];
-            [self.S.webView  stringByEvaluatingJavaScriptFromString:str0];
-            
-            [self dismissViewControllerAnimated:YES completion:nil];
+            self.S.IsDelete = YES;
+			[self.navigationController popViewControllerAnimated:YES];
+			
             break;
         }
         case 1:{
@@ -183,11 +193,23 @@
             
             NSString *den = [[jsonArray objectAtIndex:0]objectForKey:@"denuncia"];
             NSString *fec = [[jsonArray objectAtIndex:0]objectForKey:@"creado_el"];
-            [self.txtDenuncia setText:den];
+            NSString *dm  = [[jsonArray objectAtIndex:0]objectForKey:@"domicilio"];
+            NSString *lat  = [[jsonArray objectAtIndex:0]objectForKey:@"latitud"];
+            NSString *lon  = [[jsonArray objectAtIndex:0]objectForKey:@"longitud"];
+            NSString *meg  = [[jsonArray objectAtIndex:0]objectForKey:@"megusta"];
+			
+			
+			NSString *dom = [[NSString alloc] initWithFormat:@"%@ \n (%@, %@)",dm,lat,lon];
+            [self.txtDenuncia setText:[[NSString alloc] initWithFormat:@"'%@'",den]];
+			[self.lblDomicilio setText:dom];
+			[self.lblMeGusta setText:[[NSString alloc] initWithFormat:@"(%@) Me Gusta",meg]];
+			
             [self.lblFecha setText:[[NSString alloc] initWithFormat: @"%@ ",fec]];
+			/*
             self.lblFecha.layer.borderWidth = 1;
             self.lblFecha.layer.borderColor = [[UIColor grayColor] CGColor];
             self.lblFecha.layer.cornerRadius = 3;
+			 */
             [self.ActPlay stopAnimating];
             break;
         }

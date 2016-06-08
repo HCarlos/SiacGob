@@ -1,0 +1,50 @@
+<?php
+class vo_viUsers1{
+	 public $iduserop;
+	 public $idop;
+	 public $iduser;
+	 public $username;
+	 public $password;
+	 public $p1;
+	 public $p2;
+	 public $p3;
+	 public $p4;
+	 public $p5;
+	 public $p6;
+	 public $p7;
+	 public $p8;
+	 public $p9;
+	 public $p10;
+	 public $p11;
+	 public $p12;
+	 public $p13;
+	 public $p14;
+	 public $p15;
+	 public $p16;
+	 public $p17;
+	 public $p18;
+	 public $p19;
+	 public $p20;
+	 public $p21;
+	 public $p22;
+	 public $p23;
+	 public $p24;
+	 public $p25;
+	 public $p26;
+	 public $p27;
+	 public $p28;
+	 public $p29;
+	 public $p30;
+	 public $leyenda;
+	 public $icono;
+	 public $url;
+	 public $idper;
+	 public $nombre_completo;
+	 public $tel;
+	 public $cel;
+	 public $mail;
+	 public $f_alta;
+	 public $sexo;
+	 public $csexo;
+}
+?>

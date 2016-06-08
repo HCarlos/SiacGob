@@ -21,7 +21,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     //[self.Pub setDelegate:self];
-
     
     [self.ActPub startAnimating];
 
@@ -106,9 +105,6 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-
-
-
 - (IBAction)Basura:(id)sender {
     [S setModulo:0];
 }
@@ -139,5 +135,6 @@
     [self.ActPub stopAnimating];
    NSLog(@"finished");
 }
+ 
 
 @end

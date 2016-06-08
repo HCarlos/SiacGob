@@ -19,6 +19,7 @@
     BOOL newMedia;
     BOOL IsImage;
     NSString *FileImg;
+	NSString *paramString;
 }
 
 @end
@@ -41,19 +42,19 @@
 	// Do any additional setup after loading the view.
     [self.PBar setProgress:0.0f];
     [self.PBar setHidden:YES];
+	[self.cmdPost setEnabled:NO];
 
-    // [self setPub:Web0 ];
+	[self GetLocation:self];
 
-    self.manager = [[CLLocationManager alloc] init];
-    manager.distanceFilter = 1;
-    manager.desiredAccuracy = kCLLocationAccuracyBest;
-    manager.delegate = self;
     
-    [manager startUpdatingLocation];
-    
-    
-    self.S  = [Singleton sharedMySingleton];
-    
+    S  = [Singleton sharedMySingleton];
+	
+	self.S.JS = @"";
+	
+	self.S.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
+	//[self.webView setDelegate:self];
+	
+	[self.S.webView loadRequest:[NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://www.tabascoweb.com/images/web/stream.php"]]];
     
     self.txtDenuncia.layer.cornerRadius=8.0f;
     self.txtDenuncia.layer.masksToBounds=YES;
@@ -80,10 +81,83 @@
     
 }
 
+- (IBAction)GetLocation:(id)sender {
+
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    [HUD showUIBlockingIndicatorWithText:@"Get GPS Position"];
+		
+//    NSLog(@"Geolocalization error: 0");
+
+    self.manager = [[CLLocationManager alloc] init];
+    manager.distanceFilter = 1;
+    manager.desiredAccuracy = kCLLocationAccuracyBest;
+    manager.delegate = self;
+
+//    NSLog(@"Geolocalization error: 1");
+
+    [manager startUpdatingLocation];
+    
+//    NSLog(@"Geolocalization error:2");
+    
+//    [self.cmdPost setEnabled:YES];
+//    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+
+}
+-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
+    NSLog(@"Geolocalization error: %@", error.description);
+}
+-(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation{
+	
+	//[self.ActPlay stopAnimating];
+
+    //S = [Singleton sharedMySingleton];
+    
+    S.loSelf = newLocation;
+	
+	S.domicilio = @"";
+	
+	CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+	[geocoder reverseGeocodeLocation:newLocation completionHandler:^(NSArray *placemarks, NSError *error) {
+        NSLog(@"Found placemarks: %@, error: %@", placemarks, error);
+        if (error == nil && [placemarks count] > 0) {
+            CLPlacemark *placemark = [placemarks lastObject];
+			S.domicilio  = [NSString stringWithFormat:@"%@, %@, %@, %@, %@, %@",
+							 placemark.thoroughfare,
+							 placemark.postalCode, placemark.subLocality, placemark.locality,
+							 placemark.administrativeArea,
+							 placemark.country];
+			
+			NSLog(@"%@",S.domicilio);
+			[self.cmdPost setEnabled:YES];
+			[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+			[HUD hideUIBlockingIndicator];
+
+        } else {
+			
+			[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+			[HUD hideUIBlockingIndicator];
+			//[self.cmdPost setEnabled:YES];
+			
+            NSLog(@"%@", error.debugDescription);
+            S.domicilio  = [NSString stringWithFormat:@"%@", error.debugDescription];
+			//[self alertStatus:@"Error" Mensaje:S.domicilio Button1:nil Button2:@"OK"];
+        }
+    } ];
+	
+
+
+	
+
+}
+
+
 - (void)didReceiveMemoryWarning
 {
+	NSLog(@"Pub falla en %s", __func__);
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+	if (self.isViewLoaded && !self.view.window) {
+        self.view = nil;
+    }
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -171,6 +245,7 @@
 
     if (picker.sourceType == UIImagePickerControllerSourceTypePhotoLibrary ) {
         //UIImageWriteToSavedPhotosAlbum(pickedImage, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+		
         Image.image =pickedImage;
     }
 
@@ -203,37 +278,42 @@
 
 #pragma mark Enviar Datos y NSConnection Delegate
 - (IBAction)PostMessage:(id)sender {
-    if ([S.JS isEqualToString:@"finished"]){
+    //if ([S.JS isEqualToString:@"finished"]){
         if ([self validPost]){
             if (Image.image == nil){
-                [self PostMessageWithOutImage];
+                //[self PostMessageWithOutImage];
+				[self alertStatus:@"Error" Mensaje:@"Proporcione una Imagen" Button1:nil Button2:@"OK"];
             }else{
                 [self PostMessageWithImage];
             }
         }
-    }else{
-        [self alertStatus:@"Error" Mensaje:@"No hay conexión a internet." Button1:nil Button2:@"OK"];
-    }
+    //}else{
+    //    [self alertStatus:@"Error" Mensaje:@"No hay conexión a internet." Button1:nil Button2:@"OK"];
+    //}
 }
 
 -(BOOL)validPost{
     BOOL bRet = YES;
     if ([self.txtDenuncia.text isEqualToString:@""]){
-        [self alertStatus:@"Error" Mensaje:@"No hay dato" Button1:nil Button2:@"OK"];
-        bRet = NO;
+		
+        //[self alertStatus:@"Error" Mensaje:@"No hay dato" Button1:nil Button2:@"OK"];
+		[self.txtDenuncia setText:@"Sin comentario"];
+        bRet = YES;
     }
     return bRet;
 }
 
 - (void)PostMessageWithImage {
-
+	
     [self.PBar setProgress:0.0f];
     [self.PBar setHidden:NO];
-
+	
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     [HUD showUIBlockingIndicatorWithText:@"Sending post"];
-    
-    S = [Singleton sharedMySingleton];
+	
+	
+	
+    //S = [Singleton sharedMySingleton];
     NSString *UN     = [S getUser];
     NSString *txtDen = self.txtDenuncia.text;
     NSString *namex  = [S getDeviceData:0];
@@ -242,9 +322,13 @@
     int      mod     = [S Modulo];
     NSString *la     = [[NSString alloc] initWithFormat:@"%f", S.loSelf.coordinate.latitude];
     NSString *lo     = [[NSString alloc] initWithFormat:@"%f", S.loSelf.coordinate.longitude];
+    NSString *domi   = [[NSString alloc] initWithFormat:@"%@", S.domicilio];
     
     //NSString *SH     = [[NSString alloc] initWithFormat:@"%i",(arc4random() % 100000)];
     
+	
+	NSLog(@"Latitud: %@",la);
+	NSLog(@"Longitud: %@",lo);
     
     
     //NSString *fileName_ = [S sha1:SH ];
@@ -252,17 +336,14 @@
     NSString *fileName_ = [S makeUniqueString];
     
     
-    NSData *imageData = UIImageJPEGRepresentation(Image.image,0.2);     //change Image to NSData
+    //NSData *imageData = UIImageJPEGRepresentation(Image.image,0.2);     //change Image to NSData
+	
+    NSData *imageData = UIImageJPEGRepresentation(Image.image, 0.2);     //change Image to NSData
     
     [imageData writeToFile:[[NSString alloc] initWithFormat:@"/private/var/mobile/Media/DCIM/100APPLE/%@",fileName_] atomically:NO];
-    
-    
-    
-    //Img.image = [UIImage imageWithContentsOfFile:path];
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString *filePath2 = [NSString stringWithFormat:@"%@/%@.jpg", documentsDirectory, fileName_];
-    //NSData *imageData = UIImageJPEGRepresentation(imgView.image, 1.0);
     [imageData writeToFile:filePath2 atomically:NO];
     
     
@@ -272,7 +353,7 @@
         
     {
         
-        NSString *urlString = @"http://dc.tabascoweb.com/php/01/setiOSPostDenuncia.php";
+        NSString *urlString = @"http://siac.tabascoweb.com/php/01/setiOSPostDenuncia.php";
         
         NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init] ;
         
@@ -293,9 +374,9 @@
         
         FileImg = [[NSString alloc] initWithFormat:@"%@.jpg",fileName_];
         IsImage = YES;
-
+		
         
-
+		
         
         // Text modulo
         
@@ -303,7 +384,7 @@
         [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"modulo\"\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
         [body appendData:[[NSString stringWithFormat:@"%i",mod] dataUsingEncoding:NSUTF8StringEncoding]];
         [body appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
-    
+		
         // Text username
         
         [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
@@ -351,63 +432,101 @@
         [body appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
         
         
+        // Another domicilio
+        [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"domicilio\"\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[[NSString stringWithString:domi] dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+        
+        
         [body appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
         
         [request setHTTPBody:body];
         
-        NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request
-                                                                      delegate:self];
+        NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
         [connection start];
         
         
-        
+        /*
+		
+		NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+		[NSURLConnection sendAsynchronousRequest:request queue:queue  completionHandler:^(NSURLResponse *response, NSData *data, NSError *error)
+		 {
+			 if ([data length] > 0 && error == nil){
+				 
+				 [queue cancelAllOperations];
+				 [queue setSuspended:YES];
+
+				 
+				 NSError *jsonError;
+				 jsonError = nil;
+				 id jsonObject = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
+				 NSLog(@" jsonObject %@",jsonObject);
+				 
+//				 NSMutableArray *jsonArray;
+//				 jsonArray = (NSMutableArray *)jsonObject;
+				 
+				 if ([jsonObject isKindOfClass:[NSArray class]]) {
+					 NSArray *jsonArray = (NSArray *)jsonObject;
+					 NSString *msg = [[NSString alloc] initWithFormat:@"%@",[[jsonArray objectAtIndex:0]objectForKey:@"msg"]] ;
+					 NSArray *arrExplode = [self.S explodeString:msg WithDelimiter:@"."];
+					 msg = [arrExplode objectAtIndex: 0];
+					 
+					 //NSLog(@" msg %@",msg);
+					 
+					 [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+					 [HUD hideUIBlockingIndicator];
+					 
+					 
+					 int mod = [[arrExplode objectAtIndex: 1] intValue];
+					 int idL = [[arrExplode objectAtIndex: 2] intValue];
+					 NSString *str0 = [[NSString alloc] initWithFormat: @"dispatch(%i,%i)",mod, idL];
+					 paramString = str0;
+					 if ([msg isEqualToString:@"OK"]){
+						 
+						 [self alertStatus:@"Congratulation" Mensaje:@"Publicado!" Button1:nil Button2:@"OK"];
+						 
+						 
+					 }else{
+						 NSString *str1 = [[NSString alloc] initWithFormat: @"Hubo un error, intenta de nuevo. %@",str0];
+						 [self alertStatus:@"Error" Mensaje:str1 Button1:nil Button2:@"OK"];
+					 }
+					 
+				 }	else {
+
+					 [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+					 [HUD hideUIBlockingIndicator];
+					 
+					 //NSDictionary *jsonDictionary = (NSDictionary *)jsonObject;
+					 
+					  NSLog(@" error %@",error);
+					 
+				 }
+				 
+				 
+				 
+				 
+				 
+			 }else if ([data length] == 0 && error == nil){
+				 //[self setDatos:nil];
+				 NSLog(@"vacio");
+			 }else if (error != nil && error.code == NSURLErrorTimedOut){ //used this NSURLErrorTimedOut from foundation error responses
+				 //[self timedOut];
+				 NSLog(@"tiempo terminado");
+			 }else if (error != nil){
+				 // [self downloadError:error];
+				 NSLog(@"errror");
+			 }
+				 
+				 
+		 }];
+		 
+        */
+		
+		
     }
+		
 
-}
-
--(void)PostMessageWithOutImage{
-    
-    [self.PBar setProgress:0.0f];
-    [self.PBar setHidden:NO];
-    
-    //Singleton *S = [Singleton sharedMySingleton];
-    NSString *txtDen = self.txtDenuncia.text;
-    NSString *UN     = [S getUser];
-    NSString *namex  = [S getDeviceData:0];
-    NSString *phone  = [S getDeviceData:1];
-    NSString *iD     = [S getDeviceData:2];
-    int      mod     = [S Modulo];
-    NSString *la     = [[NSString alloc] initWithFormat:@"%f", S.loSelf.coordinate.latitude];
-    NSString *lo     = [[NSString alloc] initWithFormat:@"%f", S.loSelf.coordinate.longitude];
-    
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    [HUD showUIBlockingIndicatorWithText:@"Sending post"];
-    
-    NSMutableDictionary *postDix=[[NSMutableDictionary alloc] init];
-    [postDix setObject:[[NSString alloc] initWithFormat: @"%@",UN] forKey:@"username"];
-    [postDix setObject:[[NSString alloc] initWithFormat: @"%@",txtDen] forKey:@"denuncia"];
-    [postDix setObject:[[NSString alloc] initWithFormat: @"%@",namex] forKey:@"namex"];
-    [postDix setObject:[[NSString alloc] initWithFormat: @"%@",phone] forKey:@"phone"];
-    [postDix setObject:[[NSString alloc] initWithFormat: @"%@",iD] forKey:@"iD"];
-    [postDix setObject:[[NSString alloc] initWithFormat: @"%@",la] forKey:@"la"];
-    [postDix setObject:[[NSString alloc] initWithFormat: @"%@",lo] forKey:@"lo"];
-    [postDix setObject:[[NSString alloc] initWithFormat: @"%i",mod] forKey:@"modulo"];
-    
-    NSURL *url = [NSURL URLWithString:@"http://dc.tabascoweb.com/php/01/setiOSPostDenunciaSinImagen.php"];
-    
-    NSData *postData = [self generateFormDataFormPostDictionary:postDix];
-    
-    
-    // Create the request
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-    [request setHTTPMethod:@"POST"];
-    [request setValue:[NSString stringWithFormat:@"%d", postData.length] forHTTPHeaderField:@"Content-Length"];
-    [request setValue:@"application/x-www-form-urlencoded charset=utf-8" forHTTPHeaderField:@"Content-Type"];
-    [request setHTTPBody:postData];
-    
-    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request
-                                                                  delegate:self];
-    [connection start];
 }
 
 
@@ -421,44 +540,39 @@
 //Recibe de los datos después de guardar...
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
     [receivedData_ appendData:data];
+	
+	
     
     NSError *jsonError = nil;
     id jsonObject = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
-    
-    if ([jsonObject isKindOfClass:[NSArray class]]) {
+
+	NSLog(@"ya regreso");
+    		NSLog(@"%@",jsonObject);
+	
+   if ([jsonObject isKindOfClass:[NSArray class]]) {
         NSArray *jsonArray = (NSArray *)jsonObject;
         NSString *msg = [[NSString alloc] initWithFormat:@"%@",[[jsonArray objectAtIndex:0]objectForKey:@"msg"]] ;
         NSArray *arrExplode = [self.S explodeString:msg WithDelimiter:@"."];
         msg = [arrExplode objectAtIndex: 0];
+		
+		NSLog(@"%@",msg);
+		
+		
+		
         int mod = [[arrExplode objectAtIndex: 1] intValue];
         int idL = [[arrExplode objectAtIndex: 2] intValue];
         NSString *str0 = [[NSString alloc] initWithFormat: @"dispatch(%i,%i)",mod, idL];
+		paramString = str0;
         if ([msg isEqualToString:@"OK"]){
-            [S getUser];
-            //[self alertStatus:@"Congratulation" Mensaje:@"Publicado!" Button1:nil Button2:@"OK"];
-            
-            
-            
-            [self.S.webView  stringByEvaluatingJavaScriptFromString:str0];
-            
-            //SocketIO *socketIO = [[SocketIO alloc] initWithDelegate:self];
-            //[socketIO connectToHost:@"187.157.37.204" onPort:8080 ];
-            
-            //NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-            //[dict setObject:@"Hola Mundo" forKey:@"cliente"];
-            
-            //[socketIO sendEvent:@"on" withData:dict];
-            
-            
-            [self.PBar setHidden:YES];
-
-			//[self dismissViewControllerAnimated:YES completion:nil];
-			[self CloseView:self];
-            
+			
+            [self alertStatus:@"Congratulation" Mensaje:@"Publicado!" Button1:nil Button2:@"OK"];
+			
+         
         }else{
             NSString *str1 = [[NSString alloc] initWithFormat: @"Hubo un error, intenta de nuevo. %@",str0];
             [self alertStatus:@"Error" Mensaje:str1 Button1:nil Button2:@"OK"];
         }
+		 
     }
     else {
         //NSDictionary *jsonDictionary = (NSDictionary *)jsonObject;
@@ -467,6 +581,7 @@
     
     
 }
+
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     
@@ -483,7 +598,7 @@
                      [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]];
     [self alertStatus:@"Error" Mensaje:msg Button1:nil Button2:@"OK"];
 
-    [connection finalize];
+    //[connection finalize];
     
 }
 
@@ -498,27 +613,20 @@
                                           otherButtonTitles:btn2, nil];
     [alert show];
     
+	
 }
 
--(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
-    //Algo
+- (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0 ){
+		[S getUser];
+		
+		[self.S.webView  stringByEvaluatingJavaScriptFromString:paramString];
+		
+	}
+	[alertView dismissWithClickedButtonIndex:0 animated:YES];
+	[self.PBar setHidden:YES];
+	[self CloseView:self];
 }
--(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation{
-    
-    
-    
-    self.S.loSelf = newLocation;
-    
-    MKCoordinateRegion region;
-    
-    region.center.latitude = newLocation.coordinate.latitude;
-    region.center.longitude = newLocation.coordinate.longitude;
-    
-    region.span.latitudeDelta = 0.01;
-    region.span.longitudeDelta = 0.01;
-    
-    
-}
-
 
 @end

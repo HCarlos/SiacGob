@@ -8,17 +8,19 @@
 
 #import "CellFoto.h"
 #import <QuartzCore/QuartzCore.h>
+#import "Singleton.h"
 
 @interface CellFoto (){
     NSMutableData *receivedData;
 	BOOL conn;
+	NSString *photo_;
 }
 
 
 @end
 
 @implementation CellFoto
-@synthesize imageView,lblText,image,ActPlay,ArchivoPlano;
+@synthesize imageView,lblText,ActPlay,ArchivoPlano,pathPhoto2, pathPhoto3;
 
 
 
@@ -28,6 +30,7 @@
     if (self) {
         // Initialization code
         //[self.ActPlay startAnimating];
+
     }
     return self;
 }
@@ -36,66 +39,101 @@
 
 -(void) setPhoto:(NSString *)photo {
 
-	/*
-    NSMutableURLRequest *theRequest=[NSMutableURLRequest requestWithURL:[NSURL URLWithString:photo]
-                                              cachePolicy:NSURLRequestUseProtocolCachePolicy
-                                          timeoutInterval:600.0];
-    
-    NSURLConnection *theConnection=[[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
-    
-    [theConnection start];
-    
-    if (theConnection) {
-        //receivedData=[[NSMutableData data] retain];
-    } else {
-        // inform the user that the download could not be made
-    }
-	 */
-	
+	self.S  = [Singleton sharedMySingleton];
 	conn = false;
 
-	NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:photo]
-												  cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:6000.0];
+	[self.ActPlay setHidden:NO];
+	[self.ActPlay setHidesWhenStopped:YES];
+	[self.ActPlay setClearsContextBeforeDrawing:YES];
+	[self.ActPlay startAnimating];
 	
-	NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
+	UIColor *color = [UIColor colorWithHue:[self.S intInRangeDouble:0.00 andMaximum:1.00]
+								saturation:[self.S intInRangeDouble:0.00 andMaximum:1.00]
+								brightness:[self.S intInRangeDouble:0.00 andMaximum:1.00]
+									 alpha:[self.S intInRangeDouble:0.00 andMaximum:1.00]];
 	
-	if (theConnection)
-	{
-		receivedData = [[NSMutableData data] self];
+	NSArray *arrExplode = [self.S explodeString:photo WithDelimiter:@"."];
+    
+	NSString *path2 = [[NSString alloc] initWithFormat: @"http://siac.tabascoweb.com/upload/%@-mini.%@",[arrExplode objectAtIndex: 0],[arrExplode objectAtIndex: 1]];
+	
+
+	NSString *path3 = [[NSString alloc] initWithFormat: @"%@-mini.%@",[arrExplode objectAtIndex: 0],[arrExplode objectAtIndex: 1]];
+	
+	NSFileManager *fileManager = [NSFileManager defaultManager];
+	NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+	NSString *path = [documentsDirectory stringByAppendingPathComponent:path3];
+
+	self.pathPhoto2 = path2;
+	self.pathPhoto3 = path3;
+
+	
+	if(![fileManager fileExistsAtPath:path]){
+	
+		UIImage* serverImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString: path2]]];
+		self.imageView.image = serverImage;
+		self.imageView.layer.cornerRadius=8.0f;
+		self.imageView.layer.masksToBounds=YES;
+		
+		//self.imageView.backgroundColor=color;
+		[self.imageView setBackgroundColor:color];
+		
+		self.imageView.layer.borderColor=(__bridge CGColorRef)(color);
+		self.imageView.layer.borderWidth= 1.0f;
+
+		NSOperationQueue *queue = [NSOperationQueue new];
+		NSInvocationOperation *operation = [[NSInvocationOperation alloc]
+											initWithTarget:self
+											selector:@selector(getImage)
+											object:nil];
+		[queue addOperation:operation];
+		//[operation finalize];
+		
+		/*
+		NSData *imageData = UIImageJPEGRepresentation(serverImage, 0.2);     //change Image to NSData
+		
+		[imageData writeToFile:[[NSString alloc] initWithFormat:@"/private/var/mobile/Media/DCIM/100APPLE/%@",path3] atomically:NO];
+		NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+		NSString *documentsDirectory = [paths objectAtIndex:0];
+		NSString *filePath2 = [NSString stringWithFormat:@"%@/%@", documentsDirectory, path3];
+		[imageData writeToFile:filePath2 atomically:NO];
+		NSLog(@"Save Image: %@",filePath2);
+		 */
+		
+	}else{
+		/*
+		NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+															 NSUserDomainMask, YES);
+		NSString *documentsDirectory = [paths objectAtIndex:0];
+		NSString* path = [documentsDirectory stringByAppendingPathComponent:
+						  path3 ];
+		UIImage* serverImage = [UIImage imageWithContentsOfFile:path];
+
+		[self.imageView setImage: serverImage];//[UIImage imageWithData:[NSData dataWithData:serverImage]];
+		self.imageView.layer.cornerRadius=8.0f;
+		self.imageView.layer.masksToBounds=YES;
+		self.imageView.backgroundColor=[UIColor lightGrayColor];
+		self.imageView.layer.borderColor=[[UIColor blackColor]CGColor];
+		self.imageView.layer.borderWidth= 1.0f;
+		NSLog(@"Image Load: %@",path);
+		 */
+
 	}
+		 
+	//[self.ActPlay stopAnimating];
     
     
 }
 
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data;
-{
-    // append the new data to the receivedData
-    // receivedData is declared as a method instance elsewhere
-   // [receivedData appendData:data];
-    
-    self.imageView.image = [UIImage imageWithData:[NSData dataWithData:data]];
-    self.imageView.layer.cornerRadius=8.0f;
-    self.imageView.layer.masksToBounds=YES;
-    self.imageView.backgroundColor=[UIColor lightGrayColor];
-    self.imageView.layer.borderColor=[[UIColor blackColor]CGColor];
-    self.imageView.layer.borderWidth= 1.0f;
-
-    
-    [self.ActPlay stopAnimating];
-    
-    
+-(void) getImage{
+	NSData* serverImage = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:self.pathPhoto2]];
+	UIImage* image = [[UIImage alloc] initWithData:serverImage] ;
+	[self performSelectorOnMainThread:@selector(displayImage:) withObject:image waitUntilDone:YES];
 }
 
-- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
-   // [connection finalize];
+-(void)displayImage:(UIImage *)image {
+	[self.imageView setImage:image]; //UIImageView
+	[self.ActPlay stopAnimating];
 }
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection{
-    //[connection finalize];
-}
--(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response{
-    //
-}
-
 
 
 @end
