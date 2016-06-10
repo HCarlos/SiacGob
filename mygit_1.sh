@@ -8,7 +8,7 @@ git checkout master
 
 git status
 
-git add src/
+# git add src/
 git add .
 
 git commit -m "SiacGob Init - 01"

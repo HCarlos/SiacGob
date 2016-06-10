@@ -25,7 +25,7 @@
 @end
 
 @implementation PublicViewController
-@synthesize Image,txtDenuncia,loSelf, S, manager, PBar;
+@synthesize Image,txtDenuncia,loSelf, S, manager, location, PBar;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -44,11 +44,11 @@
     [self.PBar setHidden:YES];
 	[self.cmdPost setEnabled:NO];
 
-	[self GetLocation:self];
+    S  = [Singleton sharedMySingleton];
+    
+	[self GetLocation];
 
     
-    S  = [Singleton sharedMySingleton];
-	
 	self.S.JS = @"";
 	
 	self.S.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
@@ -78,46 +78,63 @@
     [[self txtDenuncia]setInputAccessoryView:toolbar];
     
     
-    
 }
 
-- (IBAction)GetLocation:(id)sender {
+//- (IBAction)GetLocation:(id)sender {
+- (void)GetLocation {
 
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     [HUD showUIBlockingIndicatorWithText:@"Get GPS Position"];
-		
-//    NSLog(@"Geolocalization error: 0");
-
+    
     self.manager = [[CLLocationManager alloc] init];
-    manager.distanceFilter = 1;
-    manager.desiredAccuracy = kCLLocationAccuracyBest;
-    manager.delegate = self;
-
-//    NSLog(@"Geolocalization error: 1");
-
-    [manager startUpdatingLocation];
+    self.manager.delegate = self;
+    self.manager.distanceFilter = kCLDistanceFilterNone;
+    self.manager.desiredAccuracy = kCLLocationAccuracyBest;
     
-//    NSLog(@"Geolocalization error:2");
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8) {
+        [self.manager requestAlwaysAuthorization];
+    }
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9) {
+        self.manager.allowsBackgroundLocationUpdates = YES;
+    }
     
-//    [self.cmdPost setEnabled:YES];
-//    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-
 }
 -(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
     NSLog(@"Geolocalization error: %@", error.description);
 }
--(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation{
-	
-	//[self.ActPlay stopAnimating];
 
-    //S = [Singleton sharedMySingleton];
+-(void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status{
+
+    switch (status) {
+        case kCLAuthorizationStatusNotDetermined: {
+            NSLog(@"User still thinking..");
+        } break;
+        case kCLAuthorizationStatusDenied: {
+            NSLog(@"User hates you");
+        } break;
+        case kCLAuthorizationStatusAuthorizedWhenInUse:
+        case kCLAuthorizationStatusAuthorizedAlways: {
+            [self.manager startUpdatingLocation]; //Will update location immediately
+        } break;
+        default:
+            break;
+    }
     
-    S.loSelf = newLocation;
-	
+}
+
+-(void)locationManager:(CLLocationManager *)manager didFinishDeferredUpdatesWithError:(nullable NSError *)error{
+    NSLog(@"Geolocalization didFinishDeferredUpdatesWithError: %@", error.description);
+}
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(nonnull NSArray<CLLocation *> *)locations{
+ 
+    NSLog(@"Latitud: %f", S.loSelf.coordinate.latitude);
+
+    S.loSelf = [locations objectAtIndex:0];// newLocation;
+    [self.manager stopUpdatingLocation];
 	S.domicilio = @"";
 	
 	CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-	[geocoder reverseGeocodeLocation:newLocation completionHandler:^(NSArray *placemarks, NSError *error) {
+	[geocoder reverseGeocodeLocation:S.loSelf completionHandler:^(NSArray *placemarks, NSError *error) {
         NSLog(@"Found placemarks: %@, error: %@", placemarks, error);
         if (error == nil && [placemarks count] > 0) {
             CLPlacemark *placemark = [placemarks lastObject];
@@ -129,24 +146,16 @@
 			
 			NSLog(@"%@",S.domicilio);
 			[self.cmdPost setEnabled:YES];
-			[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 			[HUD hideUIBlockingIndicator];
 
         } else {
 			
-			[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 			[HUD hideUIBlockingIndicator];
-			//[self.cmdPost setEnabled:YES];
-			
+
             NSLog(@"%@", error.debugDescription);
             S.domicilio  = [NSString stringWithFormat:@"%@", error.debugDescription];
-			//[self alertStatus:@"Error" Mensaje:S.domicilio Button1:nil Button2:@"OK"];
         }
     } ];
-	
-
-
-	
 
 }
 
@@ -162,8 +171,6 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewWillAppear:YES];
-    //NSString *Modulo = [[NSString alloc] initWithFormat:@"%i",[self.S Modulo]];
-    //[self alertStatus:@"Error" Mensaje:Modulo Button1:nil Button2:@"OK"];
     switch ([self.S Modulo]) {
         case 0:
             self.lblTipoDenuncia.text = @"Recolección de Basura:";
@@ -220,6 +227,7 @@
     
     
     [self presentViewController:picker animated:YES completion:nil];
+    
 }
 - (void)library {
     //Inizializzo la classe per la gestione della libreria immagine
@@ -231,7 +239,7 @@
     [picker setDelegate:self];
     
     [self presentViewController:picker animated:YES completion:nil];
-    
+
 }
 
 
@@ -244,19 +252,14 @@
     }
 
     if (picker.sourceType == UIImagePickerControllerSourceTypePhotoLibrary ) {
-        //UIImageWriteToSavedPhotosAlbum(pickedImage, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
-		
         Image.image =pickedImage;
     }
 
-    //[self dismissModalViewControllerAnimated:YES];
     [self dismissViewControllerAnimated:YES completion:nil];
     
     
 }
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
-    //[self dismissModalViewControllerAnimated:YES];
-    //NSLog(@"Hola 1");
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo{
@@ -278,7 +281,6 @@
 
 #pragma mark Enviar Datos y NSConnection Delegate
 - (IBAction)PostMessage:(id)sender {
-    //if ([S.JS isEqualToString:@"finished"]){
         if ([self validPost]){
             if (Image.image == nil){
                 //[self PostMessageWithOutImage];
@@ -287,9 +289,6 @@
                 [self PostMessageWithImage];
             }
         }
-    //}else{
-    //    [self alertStatus:@"Error" Mensaje:@"No hay conexión a internet." Button1:nil Button2:@"OK"];
-    //}
 }
 
 -(BOOL)validPost{
@@ -308,7 +307,7 @@
     [self.PBar setProgress:0.0f];
     [self.PBar setHidden:NO];
 	
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    // [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     [HUD showUIBlockingIndicatorWithText:@"Sending post"];
 	
 	
@@ -586,7 +585,7 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     
     //[self alertStatus:@"Error" Mensaje:@"Hubo un error, intenta de nuevo." Button1:nil Button2:@"OK"];
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    // [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     [HUD hideUIBlockingIndicator];
 }
 

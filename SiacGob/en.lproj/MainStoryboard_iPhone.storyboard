@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="a88-4I-FZq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="a88-4I-FZq">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -195,18 +195,6 @@
                                             <segue destination="Qag-TQ-QvJ" kind="modal" identifier="GotoPost0" modalTransitionStyle="coverVertical" id="33f-fa-Skb"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qzu-jm-eeh">
-                                        <rect key="frame" x="181" y="130" width="120" height="79"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="B" image="trash-button.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="FugaDeAgua:" destination="2" eventType="touchUpInside" id="ROK-t0-z58"/>
-                                            <segue destination="Qag-TQ-QvJ" kind="modal" identifier="GotoPost1" modalTransitionStyle="coverVertical" id="jdj-DH-QVO"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Ne4-0o-9Nl">
                                         <rect key="frame" x="26" y="217" width="120" height="79"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
@@ -244,7 +232,19 @@
                                         </state>
                                         <connections>
                                             <action selector="cmdHundimiento:" destination="2" eventType="touchUpInside" id="Q5Z-0a-3KB"/>
-                                            <segue destination="Qag-TQ-QvJ" kind="modal" id="gkH-dy-QfM"/>
+                                            <segue destination="Qag-TQ-QvJ" kind="modal" identifier="GotoPost4" modalTransitionStyle="coverVertical" id="gkH-dy-QfM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qzu-jm-eeh">
+                                        <rect key="frame" x="181" y="130" width="120" height="79"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="B" image="trash-button.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="FugaDeAgua:" destination="2" eventType="touchUpInside" id="ROK-t0-z58"/>
+                                            <segue destination="Qag-TQ-QvJ" kind="modal" identifier="GotoPost1" modalTransitionStyle="coverVertical" id="jdj-DH-QVO"/>
                                         </connections>
                                     </button>
                                 </subviews>

@@ -41,7 +41,7 @@
 	NSLog(@"TabBar falla en %s", __func__);
     [super didReceiveMemoryWarning];
 	if (self.isViewLoaded && !self.view.window) {
-        //self.view = nil;
+        self.view = nil;
     }
 }
 

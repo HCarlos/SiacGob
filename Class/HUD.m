@@ -112,7 +112,7 @@ static UIView* lastViewWithHUD = nil;
 if (str!=nil) {
         hud.labelText = str;
     } else {
-        hud.labelText = @"Loading...";
+        hud.labelText = @"Cargando...";
     }
     
     return hud;
@@ -122,7 +122,7 @@ if (str!=nil) {
 {
     MBProgressHUD* hud = [self showUIBlockingIndicatorWithText:str];
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-    hud.customView = [[UIView alloc] initWithFrame:CGRectMake(0,0,37,37)];
+    hud.customView = [[UIView alloc] initWithFrame:CGRectMake(0,0,237,237)];
     hud.mode = MBProgressHUDModeDeterminate;
     [hud hide:YES afterDelay:seconds];
     return hud;

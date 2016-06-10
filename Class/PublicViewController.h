@@ -25,6 +25,8 @@
 @property (strong, nonatomic) IBOutlet UIProgressView *PBar;
 
 @property (strong, nonatomic) CLLocationManager * manager;
+@property (strong, nonatomic) CLLocation * location;
+
 @property (nonatomic, copy) Singleton * loSelf;
 @property (strong,nonatomic) Singleton *S;
 
@@ -35,5 +37,7 @@
 - (IBAction)library:(id)sender;
 //- (IBAction)PostMessage:(id)sender;
 - (IBAction)PostMessage:(id)sender;
+
+- (void)GetLocation;
 
 @end

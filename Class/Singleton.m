@@ -57,14 +57,14 @@ static Singleton* _sharedMySingleton = nil;
 	self = [super init];
 	if (self != nil) {
 		
-		/*
+		
         self.JS = @"";
         
          self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
         //[self.webView setDelegate:self];
         
         [self.webView loadRequest:[NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://www.tabascoweb.com/images/web/stream.php"]]];
-         */
+         
 	}
 	
 	return self;
