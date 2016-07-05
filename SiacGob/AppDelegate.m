@@ -10,17 +10,64 @@
 #import "FotoDenunciasMasterViewController.h"
 #import "Singleton.h"
 
+@interface AppDelegate ()
+
+@end
+
 @implementation AppDelegate
+@synthesize S;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	// Let the device know we want to receive push notifications
 
     [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
 	
-    // Nos registramos para recibir las notificaciones Push de los tipos especificados
-    /*
-    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
-	*/
+    if (launchOptions != nil)
+    {
+        NSDictionary* dictionary = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+        if (dictionary != nil)
+        {
+            NSLog(@"Launched from push notification: %@", dictionary);
+            
+            [self clearNotifications];
+        }
+    }else{
+        
+        self.S  = [Singleton sharedMySingleton];
+        [self.S setPlist];
+        
+        
+        UIDevice *myDevice=[UIDevice currentDevice];
+        NSString *UUID = [[myDevice identifierForVendor] UUIDString];
+        
+        self.S.uniqueIdentifier = UUID;
+        self.S.typeDevice = @"1";
+        // NSLog(@"UUID: %@",UUID);
+        
+        myDevice = nil;
+        UUID = nil;
+        
+        if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+#ifdef __IPHONE_8_0
+            UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeAlert
+                                                                                                 | UIUserNotificationTypeBadge
+                                                                                                 | UIUserNotificationTypeSound) categories:nil];
+            [application registerUserNotificationSettings:settings];
+#endif
+            
+        } else {
+            
+            /*
+             
+             UIRemoteNotificationType myTypes = UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound;
+             [application registerForRemoteNotificationTypes:myTypes];
+             
+             */
+            
+        }
+        
+    }
+    
     
 	self.S  = [Singleton sharedMySingleton];
 	self.S.limFrom = 0;
@@ -28,6 +75,67 @@
 	
     return YES;
 }
+
+#ifdef __IPHONE_8_0
+- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
+{
+    //register to receive notifications
+    [application registerForRemoteNotifications];
+}
+
+- (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(void(^)())completionHandler
+{
+    //handle the actions
+    if ([identifier isEqualToString:@"declineAction"]){
+    }
+    else if ([identifier isEqualToString:@"answerAction"]){
+    }
+}
+#endif
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToke{
+    self.S.tokenUser = [[NSString alloc] initWithFormat:@"%@",deviceToke] ;
+    
+    NSString *new = [self.S.tokenUser stringByReplacingOccurrencesOfString: @" " withString:@""];
+    new = [new stringByReplacingOccurrencesOfString: @"<" withString:@""];
+    new = [new stringByReplacingOccurrencesOfString: @">" withString:@""];
+    self.S.tokenUser = new;
+    
+}
+
+-(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
+    
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
+{
+    NSLog(@"Remote Notification Recieved...");
+    UILocalNotification *notification = [[UILocalNotification alloc] init];
+    //notification.alertBody =  @"Looks like i got a notification - fetch thingy";
+    [application presentLocalNotificationNow:notification];
+    completionHandler(UIBackgroundFetchResultNewData);
+    /*
+     UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Título"
+     message:@"Esto es una prueba"
+     delegate:self
+     cancelButtonTitle:@"Aceptar"
+     otherButtonTitles:@"Botón 1", @"Botón 2", nil];
+     [alertView show];
+     */
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    
+    NSLog(@"Contenido del JSON: %@", userInfo);
+    UILocalNotification *notification = [[UILocalNotification alloc] init];
+    notification.alertBody =  @"Looks like i got a notification - fetch thingy";
+    [application presentLocalNotificationNow:notification];
+    //completionHandler(UIBackgroundFetchResultNewData);
+    
+    
+}
+
 /*
 - (void)loadImage { NSData* imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:@"imageurl.jpg"]]; UIImage* image = [[[UIImage alloc] initWithData:imageData] autorelease]; [imageData release]; [self performSelectorOnMainThread:@selector(displayImage:) withObject:image waitUntilDone:NO]; }
 - (void)displayImage:(UIImage *)image { [imageView setImage:image]; //UIImageView }
@@ -60,79 +168,15 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
-{
-    
-    /*
-    
-    NSLog(@"Remote Notification Recieved...");
-    UILocalNotification *notification = [[UILocalNotification alloc] init];
-    //notification.alertBody =  @"Looks like i got a notification - fetch thingy";
-    [application presentLocalNotificationNow:notification];
-    completionHandler(UIBackgroundFetchResultNewData);
-    */
-    
-    
-    
-	/*
-	UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Título"
-													   message:@"Esto es una prueba"
-													  delegate:self
-											 cancelButtonTitle:@"Aceptar"
-											 otherButtonTitles:@"Botón 1", @"Botón 2", nil];
-	[alertView show];
-	*/
-}
-
-
-
-- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
-{
-    // NSLog(@"Mi device token es %@", deviceToken);
-    // NSLog(@"Remote Notification Recieved");
-    
-    
-    /*
-    
-	self.S.tokenUser = [[NSString alloc] initWithFormat:@"%@",deviceToken] ;
-	
-	NSString *new = [self.S.tokenUser stringByReplacingOccurrencesOfString: @" " withString:@""];
-	new = [new stringByReplacingOccurrencesOfString: @"<" withString:@""];
-	new = [new stringByReplacingOccurrencesOfString: @">" withString:@""];
-	self.S.tokenUser = new;
-     
-     */
-     
-    //NSLog(@"Mi device token es %@", self.S.tokenUser );
-	
-}
-
-// Lo podemos comprobar en el simulador ya que en este no podemos probar las notificaciones Push
-- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
-{
-    //NSLog(@"Error al obtener el token. Error: %@", error);
-}
-
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
-{
-	/*
-     
-    NSLog(@"Contenido del JSON: %@", userInfo);
-    UILocalNotification *notification = [[UILocalNotification alloc] init];
-    notification.alertBody =  @"Looks like i got a notification - fetch thingy";
-    [application presentLocalNotificationNow:notification];
-    //completionHandler(UIBackgroundFetchResultNewData);
-     */
-	 
-	
-}
-
-
 -(void)willAppearIn:(UIWindow *)navigationController
 {
     //[self addCenterButtonWithImage:[UIImage imageNamed:@"cameraTabBarItem.png"] highlightImage:nil];
 	//[self addCenterButtonWithImage:[UIImage imageNamed:@"camera_button_take.png"] highlightImage:nil];
+}
+
+- (void) clearNotifications {
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
 }
 
 

@@ -69,8 +69,9 @@
 @property(nonatomic,readonly,retain) NSString    *systemName;        // e.g. @"iPhone OS"
 @property(nonatomic,readonly,retain) NSString    *systemVersion;     // e.g. @"2.0"
 @property(nonatomic,readonly) UIDeviceOrientation orientation;       // return current device orientation
-@property(nonatomic,readonly,retain) NSString    *uniqueIdentifier;  // a string unique to each device based on various 
-@property(nonatomic, readonly, retain) NSUUID *identifierForVendor;
+@property(nonatomic,retain) NSString    *typeDevice;  // a string unique to each device based on various
+@property(nonatomic,retain) NSString    *uniqueIdentifier;  // a string unique to each device based on various
+@property(nonatomic,retain) NSUUID *identifierForVendor;
 @property(nonatomic,retain) NSString *domicilio;            // domicilio
 @property(nonatomic,retain) NSString *tokenUser;              // e.g. "My iPhone"
 
