@@ -64,8 +64,10 @@
 	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
 														 NSUserDomainMask, YES);
 	NSString *documentsDirectory = [paths objectAtIndex:0];
-	NSString* path = [documentsDirectory stringByAppendingPathComponent:
-					  self.ArchivoPlano ];
+	NSString* path = [documentsDirectory stringByAppendingPathComponent:self.ArchivoPlano ];
+    
+    NSLog(@"PATH: %@",path);
+    
 	[self.txtImage setImage: [UIImage imageWithContentsOfFile:path]];
     
     //[self.txtImage setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.lblArchivo]]]];
@@ -75,7 +77,10 @@
 }
 
 - (IBAction)DeleteItem:(id)sender {
-    [self deleteData];
+    // [self deleteData];
+
+    [self alertStatus:@"Atención" Mensaje:@"Desea eliminar esta imagen de tu dispositivo?" Button1:@"No" Button2:@"Si"];
+    
 }
 
 -(void)getImageData{
@@ -93,7 +98,7 @@
     NSURL *url = [NSURL URLWithString:@"http://siac.tabascoweb.com/php/01/getiOSGetDataPhotoUser.php"];
     
     NSData *postData = [self generateFormDataFormPostDictionary:postDix];
-    NSLog(@"Datos: %@",[[NSString alloc] initWithData:postData encoding:NSStringEncodingConversionExternalRepresentation]);
+    // NSLog(@"Datos: %@",[[NSString alloc] initWithData:postData encoding:NSStringEncodingConversionExternalRepresentation]);
     
     // Create the request
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
@@ -145,7 +150,7 @@
     NSURL *url = [NSURL URLWithString:@"http://siac.tabascoweb.com/php/01/getiOSDeletePhotoUser.php"];
     
     NSData *postData = [self generateFormDataFormPostDictionary:postDix];
-    NSLog(@"Datos: %@",[[NSString alloc] initWithData:postData encoding:NSStringEncodingConversionExternalRepresentation]);
+    // NSLog(@"Datos: %@",[[NSString alloc] initWithData:postData encoding:NSStringEncodingConversionExternalRepresentation]);
     
     // Create the request
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
@@ -243,6 +248,15 @@
     [alert show];
     
 }
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if ( buttonIndex == 1 ){
+        [self deleteData];
+        
+    }
+}
+
+
 
 
 @end

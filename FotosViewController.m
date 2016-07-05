@@ -349,7 +349,6 @@
 		[self getData];
 		self.S.IsDelete = NO;
 	}
-	
 }
 
 

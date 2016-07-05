@@ -86,6 +86,7 @@
 											selector:@selector(getImage)
 											object:nil];
 		[queue addOperation:operation];
+        
 		//[operation finalize];
 		
 		/*

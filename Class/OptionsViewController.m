@@ -101,8 +101,9 @@
 //    NSLog(@"Desapareció");
 }
 - (IBAction)CloseSession:(id)sender {
-    [S deleteUser];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    [self alertStatus:@"Atención" Mensaje:@"Desea cerrar su sesión?" Button1:@"Si" Button2:@"No"];
+    
 }
 
 - (IBAction)Basura:(id)sender {
@@ -125,7 +126,6 @@
     [S setModulo:4];
 }
 
-
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
     [self.ActPub stopAnimating];
     NSLog(@"ERROR LOADING WEBPAGE: %@", error);
@@ -135,6 +135,22 @@
     [self.ActPub stopAnimating];
    NSLog(@"finished");
 }
- 
+
+-(void)alertStatus:(NSString *)titulo Mensaje:(NSString *)mensaje Button1:(NSString *)btn1 Button2:(NSString *)btn2{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:titulo
+                                                    message:mensaje delegate:self cancelButtonTitle:btn1
+                                          otherButtonTitles:btn2, nil];
+    [alert show];
+    
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if ( buttonIndex == 0 ){
+        [S deleteUser];
+        [self dismissViewControllerAnimated:YES completion:nil];
+
+    }
+}
+
 
 @end

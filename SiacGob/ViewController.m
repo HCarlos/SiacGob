@@ -67,7 +67,7 @@
 
         [self performSegueWithIdentifier: @"Tab" sender: self];
         
-        NSLog(@"Logeado");
+        //NSLog(@"Logeado");
         
         
     }

@@ -90,6 +90,27 @@
 		14D25711187D89D500F2FAC9 /* siacgob-logo-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 14D2570F187D89D500F2FAC9 /* siacgob-logo-76.png */; };
 		A61C09E81A185BBA002C9D4A /* HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = A61C09E51A185BBA002C9D4A /* HUD.m */; };
 		A61C09E91A185BBA002C9D4A /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = A61C09E71A185BBA002C9D4A /* MBProgressHUD.m */; };
+		A645FA811D2AB05E0078E26E /* baches-repair.png in Resources */ = {isa = PBXBuildFile; fileRef = A645FA7D1D2AB05E0078E26E /* baches-repair.png */; };
+		A645FA821D2AB05E0078E26E /* luminarias.png in Resources */ = {isa = PBXBuildFile; fileRef = A645FA7E1D2AB05E0078E26E /* luminarias.png */; };
+		A645FA831D2AB05E0078E26E /* fuga-agua.png in Resources */ = {isa = PBXBuildFile; fileRef = A645FA7F1D2AB05E0078E26E /* fuga-agua.png */; };
+		A645FA841D2AB05E0078E26E /* recoleccion_basura.png in Resources */ = {isa = PBXBuildFile; fileRef = A645FA801D2AB05E0078E26E /* recoleccion_basura.png */; };
+		A645FA861D2ACB560078E26E /* Logout.png in Resources */ = {isa = PBXBuildFile; fileRef = A645FA851D2ACB560078E26E /* Logout.png */; };
+		A645FA881D2ADDFE0078E26E /* banner_logo_top.png in Resources */ = {isa = PBXBuildFile; fileRef = A645FA871D2ADDFE0078E26E /* banner_logo_top.png */; };
+		A645FA8A1D2AED340078E26E /* banner_logo_top_2.png in Resources */ = {isa = PBXBuildFile; fileRef = A645FA891D2AED340078E26E /* banner_logo_top_2.png */; };
+		A645FA8C1D2AEF710078E26E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A645FA8B1D2AEF710078E26E /* Images.xcassets */; };
+		A645FA8E1D2AEFBB0078E26E /* Logo_1024_1024.png in Resources */ = {isa = PBXBuildFile; fileRef = A645FA8D1D2AEFBB0078E26E /* Logo_1024_1024.png */; };
+		A645FA901D2AF0D20078E26E /* Logo_120_120.png in Resources */ = {isa = PBXBuildFile; fileRef = A645FA8F1D2AF0D20078E26E /* Logo_120_120.png */; };
+		A645FA971D2AF49E0078E26E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A645FA951D2AF49E0078E26E /* Default-568h@2x.png */; };
+		A645FA981D2AF49E0078E26E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A645FA961D2AF49E0078E26E /* Default@2x.png */; };
+		A645FA9D1D2AF7690078E26E /* Logo_320_480.png in Resources */ = {isa = PBXBuildFile; fileRef = A645FA991D2AF7690078E26E /* Logo_320_480.png */; };
+		A645FA9E1D2AF7690078E26E /* Logo_768_1024.png in Resources */ = {isa = PBXBuildFile; fileRef = A645FA9A1D2AF7690078E26E /* Logo_768_1024.png */; };
+		A645FA9F1D2AF7690078E26E /* Logo_750_1334.png in Resources */ = {isa = PBXBuildFile; fileRef = A645FA9B1D2AF7690078E26E /* Logo_750_1334.png */; };
+		A645FAA01D2AF7690078E26E /* Logo_1242_2208.png in Resources */ = {isa = PBXBuildFile; fileRef = A645FA9C1D2AF7690078E26E /* Logo_1242_2208.png */; };
+		A645FAA21D2AFDBF0078E26E /* reporta_tu_servicio_320x40.png in Resources */ = {isa = PBXBuildFile; fileRef = A645FAA11D2AFDBF0078E26E /* reporta_tu_servicio_320x40.png */; };
+		A6AA3E8C1D2964420022F36C /* Compact Camera Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = A6AA3E8B1D2964420022F36C /* Compact Camera Filled-50.png */; };
+		A6AA3E941D2967230022F36C /* SLR Back Side Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = A6AA3E931D2967230022F36C /* SLR Back Side Filled-50.png */; };
+		A6AA3E961D2968620022F36C /* Mobile Home Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = A6AA3E951D2968620022F36C /* Mobile Home Filled-50.png */; };
+		A6AA3E981D2968EB0022F36C /* Open Folder Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = A6AA3E971D2968EB0022F36C /* Open Folder Filled-50.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -198,6 +219,27 @@
 		A61C09E51A185BBA002C9D4A /* HUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HUD.m; path = Class/HUD.m; sourceTree = "<group>"; };
 		A61C09E61A185BBA002C9D4A /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = Class/MBProgressHUD.h; sourceTree = "<group>"; };
 		A61C09E71A185BBA002C9D4A /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = Class/MBProgressHUD.m; sourceTree = "<group>"; };
+		A645FA7D1D2AB05E0078E26E /* baches-repair.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "baches-repair.png"; path = "img/baches-repair.png"; sourceTree = "<group>"; };
+		A645FA7E1D2AB05E0078E26E /* luminarias.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = luminarias.png; path = img/luminarias.png; sourceTree = "<group>"; };
+		A645FA7F1D2AB05E0078E26E /* fuga-agua.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fuga-agua.png"; path = "img/fuga-agua.png"; sourceTree = "<group>"; };
+		A645FA801D2AB05E0078E26E /* recoleccion_basura.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = recoleccion_basura.png; path = img/recoleccion_basura.png; sourceTree = "<group>"; };
+		A645FA851D2ACB560078E26E /* Logout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Logout.png; path = img/Logout.png; sourceTree = "<group>"; };
+		A645FA871D2ADDFE0078E26E /* banner_logo_top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = banner_logo_top.png; path = img/banner_logo_top.png; sourceTree = "<group>"; };
+		A645FA891D2AED340078E26E /* banner_logo_top_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = banner_logo_top_2.png; path = img/banner_logo_top_2.png; sourceTree = "<group>"; };
+		A645FA8B1D2AEF710078E26E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A645FA8D1D2AEFBB0078E26E /* Logo_1024_1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Logo_1024_1024.png; path = Images/Logo_1024_1024.png; sourceTree = "<group>"; };
+		A645FA8F1D2AF0D20078E26E /* Logo_120_120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Logo_120_120.png; path = Images/Logo_120_120.png; sourceTree = "<group>"; };
+		A645FA951D2AF49E0078E26E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Images/Default-568h@2x.png"; sourceTree = "<group>"; };
+		A645FA961D2AF49E0078E26E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Images/Default@2x.png"; sourceTree = "<group>"; };
+		A645FA991D2AF7690078E26E /* Logo_320_480.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Logo_320_480.png; path = Images/Logo_320_480.png; sourceTree = "<group>"; };
+		A645FA9A1D2AF7690078E26E /* Logo_768_1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Logo_768_1024.png; path = Images/Logo_768_1024.png; sourceTree = "<group>"; };
+		A645FA9B1D2AF7690078E26E /* Logo_750_1334.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Logo_750_1334.png; path = Images/Logo_750_1334.png; sourceTree = "<group>"; };
+		A645FA9C1D2AF7690078E26E /* Logo_1242_2208.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Logo_1242_2208.png; path = Images/Logo_1242_2208.png; sourceTree = "<group>"; };
+		A645FAA11D2AFDBF0078E26E /* reporta_tu_servicio_320x40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = reporta_tu_servicio_320x40.png; path = img/reporta_tu_servicio_320x40.png; sourceTree = "<group>"; };
+		A6AA3E8B1D2964420022F36C /* Compact Camera Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Compact Camera Filled-50.png"; sourceTree = "<group>"; };
+		A6AA3E931D2967230022F36C /* SLR Back Side Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SLR Back Side Filled-50.png"; sourceTree = "<group>"; };
+		A6AA3E951D2968620022F36C /* Mobile Home Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Mobile Home Filled-50.png"; path = "img/Mobile Home Filled-50.png"; sourceTree = "<group>"; };
+		A6AA3E971D2968EB0022F36C /* Open Folder Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Open Folder Filled-50.png"; path = "img/Open Folder Filled-50.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,6 +311,7 @@
 				1490B34B17ADC3B1003F4EE3 /* MainStoryboard_iPad.storyboard */,
 				1490B34E17ADC3B1003F4EE3 /* ViewController.h */,
 				1490B34F17ADC3B1003F4EE3 /* ViewController.m */,
+				A645FA8B1D2AEF710078E26E /* Images.xcassets */,
 				1490B33717ADC3B0003F4EE3 /* Supporting Files */,
 			);
 			path = SiacGob;
@@ -291,6 +334,26 @@
 		1490B36417ADC534003F4EE3 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A645FAA11D2AFDBF0078E26E /* reporta_tu_servicio_320x40.png */,
+				A645FA991D2AF7690078E26E /* Logo_320_480.png */,
+				A645FA9A1D2AF7690078E26E /* Logo_768_1024.png */,
+				A645FA9B1D2AF7690078E26E /* Logo_750_1334.png */,
+				A645FA9C1D2AF7690078E26E /* Logo_1242_2208.png */,
+				A645FA951D2AF49E0078E26E /* Default-568h@2x.png */,
+				A645FA961D2AF49E0078E26E /* Default@2x.png */,
+				A645FA8F1D2AF0D20078E26E /* Logo_120_120.png */,
+				A645FA8D1D2AEFBB0078E26E /* Logo_1024_1024.png */,
+				A645FA891D2AED340078E26E /* banner_logo_top_2.png */,
+				A645FA871D2ADDFE0078E26E /* banner_logo_top.png */,
+				A645FA851D2ACB560078E26E /* Logout.png */,
+				A645FA7D1D2AB05E0078E26E /* baches-repair.png */,
+				A645FA7E1D2AB05E0078E26E /* luminarias.png */,
+				A645FA7F1D2AB05E0078E26E /* fuga-agua.png */,
+				A645FA801D2AB05E0078E26E /* recoleccion_basura.png */,
+				A6AA3E971D2968EB0022F36C /* Open Folder Filled-50.png */,
+				A6AA3E951D2968620022F36C /* Mobile Home Filled-50.png */,
+				A6AA3E931D2967230022F36C /* SLR Back Side Filled-50.png */,
+				A6AA3E8B1D2964420022F36C /* Compact Camera Filled-50.png */,
 				1462C70E18D214DF00C35D1E /* calendar-icon-16@2x.png */,
 				1462C70C18D213A700C35D1E /* user-icon-16@2x.png */,
 				1459BDC618D10027004F5202 /* comment-58@2x.png */,
@@ -447,22 +510,33 @@
 			files = (
 				1490B33B17ADC3B0003F4EE3 /* InfoPlist.strings in Resources */,
 				1490B34317ADC3B0003F4EE3 /* Default.png in Resources */,
+				A645FA831D2AB05E0078E26E /* fuga-agua.png in Resources */,
 				1490B34517ADC3B0003F4EE3 /* Default@2x.png in Resources */,
 				1490B34717ADC3B0003F4EE3 /* Default-568h@2x.png in Resources */,
 				1490B34A17ADC3B0003F4EE3 /* MainStoryboard_iPhone.storyboard in Resources */,
+				A645FA981D2AF49E0078E26E /* Default@2x.png in Resources */,
 				1490B34D17ADC3B1003F4EE3 /* MainStoryboard_iPad.storyboard in Resources */,
 				1490B36F17ADC5CE003F4EE3 /* pub@2x.gif in Resources */,
 				1490B37417ADC5CE003F4EE3 /* pub.gif in Resources */,
 				1401FF1518CFF0D60004F860 /* home-66@2x.png in Resources */,
+				A645FA841D2AB05E0078E26E /* recoleccion_basura.png in Resources */,
 				14B505CA17B17B2D000ED635 /* Status-dialog-error-icon.png in Resources */,
 				147D348417B19E93006BC225 /* fondoDen.gif in Resources */,
 				1468AF5618CC1E100086F09A /* UIBarButtonHome_2x.png in Resources */,
+				A645FA8E1D2AEFBB0078E26E /* Logo_1024_1024.png in Resources */,
 				14D25710187D89D500F2FAC9 /* siacgob-logo-152.png in Resources */,
+				A645FA821D2AB05E0078E26E /* luminarias.png in Resources */,
+				A645FA8C1D2AEF710078E26E /* Images.xcassets in Resources */,
+				A645FA901D2AF0D20078E26E /* Logo_120_120.png in Resources */,
 				143ABE1D17B29EA500FA1083 /* delete-icon-64-64.png in Resources */,
+				A645FA8A1D2AED340078E26E /* banner_logo_top_2.png in Resources */,
 				143ABE1F17B2A18600FA1083 /* login.png in Resources */,
+				A645FA9D1D2AF7690078E26E /* Logo_320_480.png in Resources */,
 				14D25711187D89D500F2FAC9 /* siacgob-logo-76.png in Resources */,
 				143ABE2117B2AEA800FA1083 /* registry-200-64.png in Resources */,
 				1462C70F18D214DF00C35D1E /* calendar-icon-16@2x.png in Resources */,
+				A645FAA21D2AFDBF0078E26E /* reporta_tu_servicio_320x40.png in Resources */,
+				A645FA971D2AF49E0078E26E /* Default-568h@2x.png in Resources */,
 				143ABE2617B2E22B00FA1083 /* close-200-64.png in Resources */,
 				143ABE2717B2E22B00FA1083 /* public-200-64.png in Resources */,
 				1468AF5418CBF6710086F09A /* UIBarButtonTimeline_2x.png in Resources */,
@@ -471,17 +545,25 @@
 				143ABE2917B2E22B00FA1083 /* camara-200-64.jpg in Resources */,
 				143ABE2B17B309E500FA1083 /* banner-title-app.jpg in Resources */,
 				1409734317B3107A002010B7 /* delete-button.png in Resources */,
+				A645FA9E1D2AF7690078E26E /* Logo_768_1024.png in Resources */,
 				141A20C017B336CB0032A151 /* ingresar.png in Resources */,
+				A6AA3E941D2967230022F36C /* SLR Back Side Filled-50.png in Resources */,
 				141A20C217B339CC0032A151 /* registrar.png in Resources */,
 				14B2B3E318CFBCD000E22E23 /* Heart-icon_2x.png in Resources */,
 				14781E1617B3F01B000FE8E2 /* siac-logo.png in Resources */,
+				A6AA3E961D2968620022F36C /* Mobile Home Filled-50.png in Resources */,
+				A6AA3E981D2968EB0022F36C /* Open Folder Filled-50.png in Resources */,
 				14781E1B17B3FC8C000FE8E2 /* alumbrado-button.gif in Resources */,
 				14B2B3E518CFBEDE00E22E23 /* photos-icon_2x.png in Resources */,
 				14781E1C17B3FC8C000FE8E2 /* baches-button.png in Resources */,
 				1401FF1718CFF2800004F860 /* pictures-66@2x.png in Resources */,
 				1459BDC718D10027004F5202 /* comment-58@2x.png in Resources */,
+				A645FAA01D2AF7690078E26E /* Logo_1242_2208.png in Resources */,
+				A645FA861D2ACB560078E26E /* Logout.png in Resources */,
+				A645FA811D2AB05E0078E26E /* baches-repair.png in Resources */,
 				14B2B3E118CFBC5C00E22E23 /* Heart-icon.png in Resources */,
 				1401FF1318CFF00A0004F860 /* camera-66@2x.png in Resources */,
+				A6AA3E8C1D2964420022F36C /* Compact Camera Filled-50.png in Resources */,
 				14781E1D17B3FC8C000FE8E2 /* basura-button.png in Resources */,
 				1401FF0D18CFE65A0004F860 /* Heart-icon@2x.png in Resources */,
 				14781E1E17B3FC8C000FE8E2 /* trash-button.png in Resources */,
@@ -494,8 +576,10 @@
 				1468AF5218CBF1D60086F09A /* UIBarButtonCamera_2x.png in Resources */,
 				143F304A17B4558A0055B685 /* siacgob-logo-144.png in Resources */,
 				1498FE6317B6F71200F94480 /* camera-item.png in Resources */,
+				A645FA9F1D2AF7690078E26E /* Logo_750_1334.png in Resources */,
 				1401FF1118CFEB350004F860 /* Heart-icon-off@2x.png in Resources */,
 				147B53DF17B94AD200EC8E5F /* left-arrow.png in Resources */,
+				A645FA881D2ADDFE0078E26E /* banner_logo_top.png in Resources */,
 				142D36C417BA0753002610AB /* mis-fotos-icon.png in Resources */,
 				142DEFDE17BBEAEC0047D283 /* hundimiento-button.png in Resources */,
 			);
@@ -624,9 +708,11 @@
 		1490B35417ADC3B1003F4EE3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_ENTITLEMENTS = SiacGob/SiacGob.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SiacGob/SiacGob-Prefix.pch";
 				INFOPLIST_FILE = "SiacGob/SiacGob-Info.plist";
@@ -634,7 +720,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "Logydes.com.mx.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "47e4f487-3612-4b58-8a3f-960b7bfbe15b";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
@@ -644,9 +730,11 @@
 		1490B35517ADC3B1003F4EE3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_ENTITLEMENTS = SiacGob/SiacGob.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SiacGob/SiacGob-Prefix.pch";
 				INFOPLIST_FILE = "SiacGob/SiacGob-Info.plist";
@@ -654,7 +742,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "Logydes.com.mx.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "47e4f487-3612-4b58-8a3f-960b7bfbe15b";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "armv7 armv7s arm64";

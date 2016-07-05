@@ -15,6 +15,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	// Let the device know we want to receive push notifications
 
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
 	
     // Nos registramos para recibir las notificaciones Push de los tipos especificados
     /*
@@ -62,11 +63,18 @@
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 {
+    
+    /*
+    
     NSLog(@"Remote Notification Recieved...");
     UILocalNotification *notification = [[UILocalNotification alloc] init];
     //notification.alertBody =  @"Looks like i got a notification - fetch thingy";
     [application presentLocalNotificationNow:notification];
     completionHandler(UIBackgroundFetchResultNewData);
+    */
+    
+    
+    
 	/*
 	UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Título"
 													   message:@"Esto es una prueba"
@@ -83,12 +91,19 @@
 {
     // NSLog(@"Mi device token es %@", deviceToken);
     // NSLog(@"Remote Notification Recieved");
+    
+    
+    /*
+    
 	self.S.tokenUser = [[NSString alloc] initWithFormat:@"%@",deviceToken] ;
 	
 	NSString *new = [self.S.tokenUser stringByReplacingOccurrencesOfString: @" " withString:@""];
 	new = [new stringByReplacingOccurrencesOfString: @"<" withString:@""];
 	new = [new stringByReplacingOccurrencesOfString: @">" withString:@""];
 	self.S.tokenUser = new;
+     
+     */
+     
     //NSLog(@"Mi device token es %@", self.S.tokenUser );
 	
 }
@@ -101,12 +116,14 @@
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
-	
+	/*
+     
     NSLog(@"Contenido del JSON: %@", userInfo);
     UILocalNotification *notification = [[UILocalNotification alloc] init];
     notification.alertBody =  @"Looks like i got a notification - fetch thingy";
     [application presentLocalNotificationNow:notification];
     //completionHandler(UIBackgroundFetchResultNewData);
+     */
 	 
 	
 }
