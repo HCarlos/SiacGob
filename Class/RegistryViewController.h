@@ -29,6 +29,6 @@
 @property (strong,nonatomic) Singleton *S;
 - (IBAction)setRegistry:(id)sender;
 - (IBAction)CloseView:(id)sender;
-- (IBAction)HideKeyBoard:(id)sender;
+- (void)HideKeyBoard;
 
 @end

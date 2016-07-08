@@ -102,11 +102,7 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)HideKeyBoard{
-    [self.view endEditing:YES];
-}
-
--(void)hideKeyBoard{
+-(void)HideKeyBoard{
     if ([self.view endEditing:NO]) {
         [self.view endEditing:YES ];
     } else {

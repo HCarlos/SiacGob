@@ -14,7 +14,6 @@
 
 @interface LoginViewController (){
     NSMutableData *receivedData_;
-    
 }
 
 @end
@@ -69,6 +68,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)HideKeyBoard{
+    if ([self.view endEditing:NO]) {
+        [self.view endEditing:YES ];
+    } else {
+        [self.view endEditing:NO];
+    }
+    
+}
+
 - (IBAction)setLogin:(id)sender {
     if ([self.S validateEmail:self.txtUsername.text]){
             NSInteger pl1 = [self.txtPassword.text length];
@@ -87,10 +95,6 @@
 
 - (IBAction)CloseView:(id)sender {
     [self dismissViewControllerAnimated:YES completion:Nil];
-}
-
-- (void)HideKeyBoard{
-    [self.view endEditing:YES];
 }
 
 -(NSData*)generateFormDataFormPostDictionary:(NSDictionary*)dictionary{
