@@ -70,7 +70,7 @@
     
     UIBarButtonItem *space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
     
-    UIBarButtonItem *closebuttom = [[UIBarButtonItem alloc] initWithTitle:@"OK" style:UIBarButtonItemStyleDone target:self action:@selector(HideKeyBoard)];
+    UIBarButtonItem *closebuttom = [[UIBarButtonItem alloc] initWithTitle:@"Ocultar" style:UIBarButtonItemStyleDone target:self action:@selector(HideKeyBoard)];
     
     
     [toolbar setItems:[NSArray arrayWithObjects:space,closebuttom, nil]];
@@ -564,7 +564,7 @@
 		paramString = str0;
         if ([msg isEqualToString:@"OK"]){
 			
-            [self alertStatus:@"Congratulation" Mensaje:@"Publicado!" Button1:nil Button2:@"OK"];
+            [self alertStatus:@"Gracias por tu reporte" Mensaje:@"En breve nos comunicaremos vía correo electrónico." Button1:nil Button2:@"OK"];
 			
          
         }else{

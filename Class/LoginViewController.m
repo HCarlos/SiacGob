@@ -44,8 +44,22 @@
     
     [manager startUpdatingLocation];
     
-    
     self.S  = [Singleton sharedMySingleton];
+
+    UIToolbar *toolbar = [[UIToolbar alloc] init];
+    [toolbar setBarStyle:UIBarStyleBlack];
+    [toolbar sizeToFit];
+    
+    
+    UIBarButtonItem *space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    
+    UIBarButtonItem *closebuttom = [[UIBarButtonItem alloc] initWithTitle:@"Ocultar" style:UIBarButtonItemStyleDone target:self action:@selector(HideKeyBoard)];
+    
+    
+    [toolbar setItems:[NSArray arrayWithObjects:space,closebuttom, nil]];
+    
+    [[self txtUsername]setInputAccessoryView:toolbar];
+    [[self txtPassword]setInputAccessoryView:toolbar];
     
 }
 
@@ -75,10 +89,9 @@
     [self dismissViewControllerAnimated:YES completion:Nil];
 }
 
-- (IBAction)HideKeyBoard:(id)sender {
+- (void)HideKeyBoard{
     [self.view endEditing:YES];
 }
-
 
 -(NSData*)generateFormDataFormPostDictionary:(NSDictionary*)dictionary{
     NSMutableArray *parts = [[NSMutableArray alloc] init];

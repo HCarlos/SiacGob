@@ -436,7 +436,7 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="cmn-sx-58x"/>
-                                    <barButtonItem title="Regresar" style="done" id="dAT-nS-hac">
+                                    <barButtonItem image="Back-Filled-40.png" id="dAT-nS-hac">
                                         <connections>
                                             <action selector="CloseWindow:" destination="Pnz-FI-H2Z" id="yWh-A4-Ufv"/>
                                         </connections>
@@ -467,22 +467,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="xg4-56-g9L">
-                                        <rect key="frame" x="17" y="187" width="120" height="32"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="14P-FK-PSe">
+                                        <rect key="frame" x="176" y="183" width="126" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                        <state key="normal" title="  Cámara" backgroundImage="camara-200-64.jpg">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="camera:" destination="Qag-TQ-QvJ" eventType="touchUpInside" id="mB3-2U-dWk"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="14P-FK-PSe">
-                                        <rect key="frame" x="178" y="187" width="120" height="32"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                        <state key="normal" title="  Librería" backgroundImage="library-200-64.png">
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Mis Fotos" image="Picture-40.png">
+                                            <color key="titleColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -500,7 +491,7 @@
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Agregar tu imagen desde:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dIX-CO-1nZ">
                                         <rect key="frame" x="17" y="164" width="283" height="21"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -522,18 +513,32 @@
                                             <outlet property="delegate" destination="4D0-Sd-H8o" id="X4r-PH-icf"/>
                                         </connections>
                                     </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="xg4-56-g9L">
+                                        <rect key="frame" x="17" y="178" width="113" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <inset key="contentEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Cámara" image="Compact Camera-40.png">
+                                            <color key="titleColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="camera:" destination="Qag-TQ-QvJ" eventType="touchUpInside" id="mB3-2U-dWk"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </scrollView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="bJn-ph-7zF">
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <barButtonItem style="plain" id="6z7-mF-kmk">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1Gs-ge-ULN">
-                                            <rect key="frame" x="16" y="0.0" width="140" height="44"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                            <state key="normal" title="      Publicar" backgroundImage="public-200-64.png">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <barButtonItem style="done" id="6z7-mF-kmk">
+                                        <button key="customView" opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1Gs-ge-ULN">
+                                            <rect key="frame" x="16" y="-8" width="117" height="60"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                            <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            <state key="normal" title="Reportar" image="Ok Filled-40.png">
+                                                <color key="titleColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
                                             <connections>
                                                 <action selector="PostMessage:" destination="Qag-TQ-QvJ" eventType="touchUpInside" id="VAv-E0-x2N"/>
@@ -541,12 +546,13 @@
                                         </button>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="hGZ-sA-EMG"/>
-                                    <barButtonItem style="plain" id="5iA-DA-ksw">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Eez-Ol-azH">
-                                            <rect key="frame" x="184" y="6" width="120" height="32"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                            <state key="normal" title="      Regresar" backgroundImage="close-200-64.png">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <barButtonItem style="done" id="5iA-DA-ksw">
+                                        <button key="customView" opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="clip" id="Eez-Ol-azH">
+                                            <rect key="frame" x="181" y="2" width="123" height="40"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                            <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            <state key="normal" title="Regresar" image="Back-Filled-40.png">
+                                                <color key="titleColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
                                             <connections>
                                                 <action selector="CloseView:" destination="Qag-TQ-QvJ" eventType="touchUpInside" id="s65-xE-A8N"/>
@@ -822,11 +828,13 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <barButtonItem style="plain" id="uZK-bc-Wvj">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Zy5-lX-h0k">
-                                            <rect key="frame" x="16" y="6" width="110" height="32"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                            <state key="normal" title="       Ingresar" backgroundImage="ingresar.png">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Zy5-lX-h0k">
+                                            <rect key="frame" x="16" y="2" width="106" height="40"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            <state key="normal" title="Ingresar" image="Ok Filled-40.png">
+                                                <color key="titleColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="titleShadowColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
                                             <connections>
                                                 <action selector="setLogin:" destination="qxr-Go-0bW" eventType="touchUpInside" id="be1-Rv-204"/>
@@ -835,10 +843,12 @@
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="srQ-ew-y1O"/>
                                     <barButtonItem style="plain" id="5ws-yD-eSS">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="GpL-q6-MUJ">
-                                            <rect key="frame" x="184" y="6" width="120" height="32"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                            <state key="normal" title="      Regresar" backgroundImage="close-200-64.png">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="GpL-q6-MUJ">
+                                            <rect key="frame" x="191" y="2" width="113" height="40"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            <state key="normal" title="Regresar" image="Back-Filled-40.png">
+                                                <color key="titleColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
@@ -879,13 +889,6 @@
                                         <color key="textColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <color key="shadowColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Proporcione un correo electrónico correcto para validar su cuenta" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LPS-4Y-h1F">
-                                        <rect key="frame" x="20" y="291" width="280" height="64"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" minimumFontSize="17" clearButtonMode="whileEditing" id="Zex-P6-MLN">
                                         <rect key="frame" x="20" y="139" width="280" height="30"/>
@@ -929,6 +932,21 @@
                                         <rect key="frame" x="0.0" y="39" width="320" height="50"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LPS-4Y-h1F">
+                                        <rect key="frame" x="20" y="283" width="280" height="109"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <attributedString key="attributedText">
+                                            <fragment>
+                                                <string key="content">Proporcione un correo electrónico correcto para validar su cuenta y posteriormente vaya a su cuenta de correos y valide el correo que le fue enviado.</string>
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="14" name="HelveticaNeue-Italic"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                             </scrollView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="RuK-Hm-GTO">
@@ -936,10 +954,12 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <barButtonItem style="plain" id="2eS-4f-0Pt">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="GG0-an-xWw">
-                                            <rect key="frame" x="16" y="6" width="120" height="32"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                            <state key="normal" title="        Registrar" backgroundImage="registrar.png">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="GG0-an-xWw">
+                                            <rect key="frame" x="16" y="2" width="113" height="40"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            <state key="normal" title="Registrar" image="Ok Filled-40.png">
+                                                <color key="titleColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
@@ -949,11 +969,13 @@
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="uyt-4q-0v5"/>
                                     <barButtonItem style="plain" id="VKd-P6-k5F">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="FR5-vT-mWP">
-                                            <rect key="frame" x="184" y="6" width="120" height="32"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                            <state key="normal" title="       Regresar" backgroundImage="close-200-64.png">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="FR5-vT-mWP">
+                                            <rect key="frame" x="191" y="2" width="113" height="40"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            <state key="normal" title="Regresar" image="Back-Filled-40.png">
+                                                <color key="titleColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="titleShadowColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
                                             <connections>
                                                 <action selector="CloseView:" destination="ZrR-Hi-cWT" eventType="touchUpInside" id="eY2-3a-7Yo"/>
@@ -999,27 +1021,25 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Back-Filled-40.png" width="40" height="40"/>
         <image name="Compact Camera Filled-50.png" width="50" height="50"/>
+        <image name="Compact Camera-40.png" width="40" height="40"/>
         <image name="Heart-icon-off.png" width="29" height="29"/>
         <image name="Logout.png" width="25" height="25"/>
         <image name="Mobile Home Filled-50.png" width="50" height="50"/>
+        <image name="Ok Filled-40.png" width="40" height="40"/>
         <image name="Open Folder Filled-50.png" width="40" height="40"/>
+        <image name="Picture-40.png" width="40" height="40"/>
         <image name="baches-repair.png" width="50" height="50"/>
         <image name="banner_logo_top.png" width="300" height="100"/>
         <image name="banner_logo_top_2.png" width="640" height="120"/>
         <image name="calendar-icon-16.png" width="16" height="16"/>
-        <image name="camara-200-64.jpg" width="240" height="64"/>
-        <image name="close-200-64.png" width="200" height="64"/>
         <image name="comment-58.png" width="29" height="29"/>
         <image name="fuga-agua.png" width="50" height="50"/>
-        <image name="ingresar.png" width="200" height="64"/>
-        <image name="library-200-64.png" width="240" height="64"/>
         <image name="login.png" width="440" height="112"/>
         <image name="luminarias.png" width="50" height="50"/>
         <image name="map-marker-icon.png" width="29" height="29"/>
-        <image name="public-200-64.png" width="280" height="88"/>
         <image name="recoleccion_basura.png" width="50" height="50"/>
-        <image name="registrar.png" width="200" height="64"/>
         <image name="registry-200-64.png" width="360" height="96"/>
         <image name="reporta_tu_servicio_320x40.png" width="321" height="41"/>
         <image name="user-icon-16.png" width="16" height="16"/>

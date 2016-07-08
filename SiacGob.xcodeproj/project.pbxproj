@@ -110,6 +110,10 @@
 		A6AA3E941D2967230022F36C /* SLR Back Side Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = A6AA3E931D2967230022F36C /* SLR Back Side Filled-50.png */; };
 		A6AA3E961D2968620022F36C /* Mobile Home Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = A6AA3E951D2968620022F36C /* Mobile Home Filled-50.png */; };
 		A6AA3E981D2968EB0022F36C /* Open Folder Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = A6AA3E971D2968EB0022F36C /* Open Folder Filled-50.png */; };
+		A6AF8E2D1D2FFAF000074880 /* Ok Filled-40.png in Resources */ = {isa = PBXBuildFile; fileRef = A6AF8E2C1D2FFAF000074880 /* Ok Filled-40.png */; };
+		A6AF8E2F1D2FFD5B00074880 /* Back-Filled-40.png in Resources */ = {isa = PBXBuildFile; fileRef = A6AF8E2E1D2FFD5B00074880 /* Back-Filled-40.png */; };
+		A6AF8E311D30454000074880 /* Compact Camera-40.png in Resources */ = {isa = PBXBuildFile; fileRef = A6AF8E301D30454000074880 /* Compact Camera-40.png */; };
+		A6AF8E331D3045EF00074880 /* Picture-40.png in Resources */ = {isa = PBXBuildFile; fileRef = A6AF8E321D3045EF00074880 /* Picture-40.png */; };
 		A6F0A9E11D2C83D80098761A /* Logo_60_60.png in Resources */ = {isa = PBXBuildFile; fileRef = A6F0A9DE1D2C83D80098761A /* Logo_60_60.png */; };
 		A6F0A9E21D2C83D80098761A /* Logo_40_40.png in Resources */ = {isa = PBXBuildFile; fileRef = A6F0A9DF1D2C83D80098761A /* Logo_40_40.png */; };
 		A6F0A9E31D2C83D80098761A /* Logo_29_29.png in Resources */ = {isa = PBXBuildFile; fileRef = A6F0A9E01D2C83D80098761A /* Logo_29_29.png */; };
@@ -245,6 +249,10 @@
 		A6AA3E931D2967230022F36C /* SLR Back Side Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SLR Back Side Filled-50.png"; sourceTree = "<group>"; };
 		A6AA3E951D2968620022F36C /* Mobile Home Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Mobile Home Filled-50.png"; path = "img/Mobile Home Filled-50.png"; sourceTree = "<group>"; };
 		A6AA3E971D2968EB0022F36C /* Open Folder Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Open Folder Filled-50.png"; path = "img/Open Folder Filled-50.png"; sourceTree = "<group>"; };
+		A6AF8E2C1D2FFAF000074880 /* Ok Filled-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Ok Filled-40.png"; path = "Images/Ok Filled-40.png"; sourceTree = "<group>"; };
+		A6AF8E2E1D2FFD5B00074880 /* Back-Filled-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Back-Filled-40.png"; path = "Images/Back-Filled-40.png"; sourceTree = "<group>"; };
+		A6AF8E301D30454000074880 /* Compact Camera-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Compact Camera-40.png"; path = "Images/Compact Camera-40.png"; sourceTree = "<group>"; };
+		A6AF8E321D3045EF00074880 /* Picture-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Picture-40.png"; path = "Images/Picture-40.png"; sourceTree = "<group>"; };
 		A6F0A9DE1D2C83D80098761A /* Logo_60_60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Logo_60_60.png; path = Images/Logo_60_60.png; sourceTree = "<group>"; };
 		A6F0A9DF1D2C83D80098761A /* Logo_40_40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Logo_40_40.png; path = Images/Logo_40_40.png; sourceTree = "<group>"; };
 		A6F0A9E01D2C83D80098761A /* Logo_29_29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Logo_29_29.png; path = Images/Logo_29_29.png; sourceTree = "<group>"; };
@@ -346,6 +354,10 @@
 		1490B36417ADC534003F4EE3 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A6AF8E321D3045EF00074880 /* Picture-40.png */,
+				A6AF8E301D30454000074880 /* Compact Camera-40.png */,
+				A6AF8E2E1D2FFD5B00074880 /* Back-Filled-40.png */,
+				A6AF8E2C1D2FFAF000074880 /* Ok Filled-40.png */,
 				A61F2B4C1D2C8E6D005B343C /* Logo_120_120.png */,
 				A61F2B4A1D2C8D53005B343C /* Logo_120_120-1.png */,
 				A6F0A9E41D2C85F10098761A /* Logo_180_180.png */,
@@ -531,6 +543,7 @@
 			files = (
 				1490B33B17ADC3B0003F4EE3 /* InfoPlist.strings in Resources */,
 				1490B34317ADC3B0003F4EE3 /* Default.png in Resources */,
+				A6AF8E331D3045EF00074880 /* Picture-40.png in Resources */,
 				A645FA831D2AB05E0078E26E /* fuga-agua.png in Resources */,
 				1490B34517ADC3B0003F4EE3 /* Default@2x.png in Resources */,
 				A6F0A9E11D2C83D80098761A /* Logo_60_60.png in Resources */,
@@ -574,6 +587,7 @@
 				A645FA9E1D2AF7690078E26E /* Logo_768_1024.png in Resources */,
 				141A20C017B336CB0032A151 /* ingresar.png in Resources */,
 				A6AA3E941D2967230022F36C /* SLR Back Side Filled-50.png in Resources */,
+				A6AF8E311D30454000074880 /* Compact Camera-40.png in Resources */,
 				141A20C217B339CC0032A151 /* registrar.png in Resources */,
 				14B2B3E318CFBCD000E22E23 /* Heart-icon_2x.png in Resources */,
 				14781E1617B3F01B000FE8E2 /* siac-logo.png in Resources */,
@@ -593,6 +607,7 @@
 				14781E1D17B3FC8C000FE8E2 /* basura-button.png in Resources */,
 				1401FF0D18CFE65A0004F860 /* Heart-icon@2x.png in Resources */,
 				14781E1E17B3FC8C000FE8E2 /* trash-button.png in Resources */,
+				A6AF8E2F1D2FFD5B00074880 /* Back-Filled-40.png in Resources */,
 				143F304417B454660055B685 /* siacgob-logo-57.png in Resources */,
 				14D2570D187D895C00F2FAC9 /* siacgob-logo-120.png in Resources */,
 				143F304617B4546F0055B685 /* siacgob-logo-114.png in Resources */,
@@ -607,6 +622,7 @@
 				1401FF1118CFEB350004F860 /* Heart-icon-off@2x.png in Resources */,
 				147B53DF17B94AD200EC8E5F /* left-arrow.png in Resources */,
 				A645FA881D2ADDFE0078E26E /* banner_logo_top.png in Resources */,
+				A6AF8E2D1D2FFAF000074880 /* Ok Filled-40.png in Resources */,
 				142D36C417BA0753002610AB /* mis-fotos-icon.png in Resources */,
 				142DEFDE17BBEAEC0047D283 /* hundimiento-button.png in Resources */,
 			);
