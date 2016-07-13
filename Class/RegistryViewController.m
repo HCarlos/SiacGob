@@ -155,7 +155,6 @@
     
     NSData *postData = [self generateFormDataFormPostDictionary:postDix];
     
-    
     // Create the request
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     [request setHTTPMethod:@"POST"];
@@ -170,7 +169,6 @@
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
     [receivedData_ setLength:0];
-    
 }
 
 //Recibe de los datos después de guardar...
@@ -189,7 +187,7 @@
             //[self alertStatus:@"Congratulation" Mensaje:@"Registry correct..." Button1:nil Button2:@"OK"];
             [self dismissViewControllerAnimated:YES completion:nil];
         }else{
-            [self alertStatus:@"Error" Mensaje:@"Hubo un error, intenta de nuevo." Button1:nil Button2:@"OK"];
+            [self alertStatus:@"Error" Mensaje:msg Button1:nil Button2:@"OK"];
         }
     }
     else {

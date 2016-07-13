@@ -106,6 +106,8 @@
 		A645FA9F1D2AF7690078E26E /* Logo_750_1334.png in Resources */ = {isa = PBXBuildFile; fileRef = A645FA9B1D2AF7690078E26E /* Logo_750_1334.png */; };
 		A645FAA01D2AF7690078E26E /* Logo_1242_2208.png in Resources */ = {isa = PBXBuildFile; fileRef = A645FA9C1D2AF7690078E26E /* Logo_1242_2208.png */; };
 		A645FAA21D2AFDBF0078E26E /* reporta_tu_servicio_320x40.png in Resources */ = {isa = PBXBuildFile; fileRef = A645FAA11D2AFDBF0078E26E /* reporta_tu_servicio_320x40.png */; };
+		A65914371D36802100A407D5 /* Sign Up-40.png in Resources */ = {isa = PBXBuildFile; fileRef = A65914351D36802100A407D5 /* Sign Up-40.png */; };
+		A65914381D36802100A407D5 /* Key-40.png in Resources */ = {isa = PBXBuildFile; fileRef = A65914361D36802100A407D5 /* Key-40.png */; };
 		A6AA3E8C1D2964420022F36C /* Compact Camera Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = A6AA3E8B1D2964420022F36C /* Compact Camera Filled-50.png */; };
 		A6AA3E941D2967230022F36C /* SLR Back Side Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = A6AA3E931D2967230022F36C /* SLR Back Side Filled-50.png */; };
 		A6AA3E961D2968620022F36C /* Mobile Home Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = A6AA3E951D2968620022F36C /* Mobile Home Filled-50.png */; };
@@ -245,6 +247,8 @@
 		A645FA9B1D2AF7690078E26E /* Logo_750_1334.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Logo_750_1334.png; path = Images/Logo_750_1334.png; sourceTree = "<group>"; };
 		A645FA9C1D2AF7690078E26E /* Logo_1242_2208.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Logo_1242_2208.png; path = Images/Logo_1242_2208.png; sourceTree = "<group>"; };
 		A645FAA11D2AFDBF0078E26E /* reporta_tu_servicio_320x40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = reporta_tu_servicio_320x40.png; path = img/reporta_tu_servicio_320x40.png; sourceTree = "<group>"; };
+		A65914351D36802100A407D5 /* Sign Up-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Sign Up-40.png"; path = "Images/Sign Up-40.png"; sourceTree = "<group>"; };
+		A65914361D36802100A407D5 /* Key-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Key-40.png"; path = "Images/Key-40.png"; sourceTree = "<group>"; };
 		A6AA3E8B1D2964420022F36C /* Compact Camera Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Compact Camera Filled-50.png"; sourceTree = "<group>"; };
 		A6AA3E931D2967230022F36C /* SLR Back Side Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SLR Back Side Filled-50.png"; sourceTree = "<group>"; };
 		A6AA3E951D2968620022F36C /* Mobile Home Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Mobile Home Filled-50.png"; path = "img/Mobile Home Filled-50.png"; sourceTree = "<group>"; };
@@ -354,6 +358,8 @@
 		1490B36417ADC534003F4EE3 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A65914351D36802100A407D5 /* Sign Up-40.png */,
+				A65914361D36802100A407D5 /* Key-40.png */,
 				A6AF8E321D3045EF00074880 /* Picture-40.png */,
 				A6AF8E301D30454000074880 /* Compact Camera-40.png */,
 				A6AF8E2E1D2FFD5B00074880 /* Back-Filled-40.png */,
@@ -604,11 +610,13 @@
 				14B2B3E118CFBC5C00E22E23 /* Heart-icon.png in Resources */,
 				1401FF1318CFF00A0004F860 /* camera-66@2x.png in Resources */,
 				A6AA3E8C1D2964420022F36C /* Compact Camera Filled-50.png in Resources */,
+				A65914371D36802100A407D5 /* Sign Up-40.png in Resources */,
 				14781E1D17B3FC8C000FE8E2 /* basura-button.png in Resources */,
 				1401FF0D18CFE65A0004F860 /* Heart-icon@2x.png in Resources */,
 				14781E1E17B3FC8C000FE8E2 /* trash-button.png in Resources */,
 				A6AF8E2F1D2FFD5B00074880 /* Back-Filled-40.png in Resources */,
 				143F304417B454660055B685 /* siacgob-logo-57.png in Resources */,
+				A65914381D36802100A407D5 /* Key-40.png in Resources */,
 				14D2570D187D895C00F2FAC9 /* siacgob-logo-120.png in Resources */,
 				143F304617B4546F0055B685 /* siacgob-logo-114.png in Resources */,
 				143F304817B455830055B685 /* siacgob-logo-72.png in Resources */,
@@ -754,8 +762,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_ENTITLEMENTS = SiacGob/SiacGob.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SiacGob/SiacGob-Prefix.pch";
 				INFOPLIST_FILE = "SiacGob/SiacGob-Info.plist";
@@ -763,7 +771,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "Logydes.com.mx.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "47e4f487-3612-4b58-8a3f-960b7bfbe15b";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
@@ -776,8 +784,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_ENTITLEMENTS = SiacGob/SiacGob.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SiacGob/SiacGob-Prefix.pch";
 				INFOPLIST_FILE = "SiacGob/SiacGob-Info.plist";
@@ -785,7 +793,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "Logydes.com.mx.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "47e4f487-3612-4b58-8a3f-960b7bfbe15b";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "armv7 armv7s arm64";
