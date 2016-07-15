@@ -168,7 +168,7 @@
 
             [self dismissViewControllerAnimated:YES completion:nil];
         }else{
-            [self alertStatus:@"Error" Mensaje:@"Hubo un error, intenta de nuevo." Button1:nil Button2:@"OK"];
+            [self alertStatus:@"Error" Mensaje:msg Button1:nil Button2:@"OK"];
         }
     }
     else {
