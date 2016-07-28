@@ -91,7 +91,7 @@
     self.manager.desiredAccuracy = kCLLocationAccuracyBest;
     
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8) {
-        [self.manager requestAlwaysAuthorization];
+        [self.manager requestWhenInUseAuthorization];
     }
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9) {
         self.manager.allowsBackgroundLocationUpdates = YES;
