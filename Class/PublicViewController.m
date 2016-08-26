@@ -83,7 +83,7 @@
 //- (IBAction)GetLocation:(id)sender {
 - (void)GetLocation {
 
-    [HUD showUIBlockingIndicatorWithText:@"Get GPS Position"];
+    // [HUD showUIBlockingIndicatorWithText:@"Get GPS Position"];
     
     self.manager = [[CLLocationManager alloc] init];
     self.manager.delegate = self;
@@ -146,11 +146,11 @@
 			
 			NSLog(@"%@",S.domicilio);
 			[self.cmdPost setEnabled:YES];
-			[HUD hideUIBlockingIndicator];
+			// [HUD hideUIBlockingIndicator];
 
         } else {
 			
-			[HUD hideUIBlockingIndicator];
+			// [HUD hideUIBlockingIndicator];
 
             NSLog(@"%@", error.debugDescription);
             S.domicilio  = [NSString stringWithFormat:@"%@", error.debugDescription];
@@ -307,8 +307,9 @@
     [self.PBar setProgress:0.0f];
     [self.PBar setHidden:NO];
 	
-    // [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    [HUD showUIBlockingIndicatorWithText:@"Sending post"];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    
+    // [HUD showUIBlockingIndicatorWithText:@"Sending post"];
 	
 	
 	
@@ -445,84 +446,6 @@
         NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
         [connection start];
         
-        
-        /*
-		
-		NSOperationQueue *queue = [[NSOperationQueue alloc] init];
-		[NSURLConnection sendAsynchronousRequest:request queue:queue  completionHandler:^(NSURLResponse *response, NSData *data, NSError *error)
-		 {
-			 if ([data length] > 0 && error == nil){
-				 
-				 [queue cancelAllOperations];
-				 [queue setSuspended:YES];
-
-				 
-				 NSError *jsonError;
-				 jsonError = nil;
-				 id jsonObject = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
-				 NSLog(@" jsonObject %@",jsonObject);
-				 
-//				 NSMutableArray *jsonArray;
-//				 jsonArray = (NSMutableArray *)jsonObject;
-				 
-				 if ([jsonObject isKindOfClass:[NSArray class]]) {
-					 NSArray *jsonArray = (NSArray *)jsonObject;
-					 NSString *msg = [[NSString alloc] initWithFormat:@"%@",[[jsonArray objectAtIndex:0]objectForKey:@"msg"]] ;
-					 NSArray *arrExplode = [self.S explodeString:msg WithDelimiter:@"."];
-					 msg = [arrExplode objectAtIndex: 0];
-					 
-					 //NSLog(@" msg %@",msg);
-					 
-					 [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-					 [HUD hideUIBlockingIndicator];
-					 
-					 
-					 int mod = [[arrExplode objectAtIndex: 1] intValue];
-					 int idL = [[arrExplode objectAtIndex: 2] intValue];
-					 NSString *str0 = [[NSString alloc] initWithFormat: @"dispatch(%i,%i)",mod, idL];
-					 paramString = str0;
-					 if ([msg isEqualToString:@"OK"]){
-						 
-						 [self alertStatus:@"Congratulation" Mensaje:@"Publicado!" Button1:nil Button2:@"OK"];
-						 
-						 
-					 }else{
-						 NSString *str1 = [[NSString alloc] initWithFormat: @"Hubo un error, intenta de nuevo. %@",str0];
-						 [self alertStatus:@"Error" Mensaje:str1 Button1:nil Button2:@"OK"];
-					 }
-					 
-				 }	else {
-
-					 [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-					 [HUD hideUIBlockingIndicator];
-					 
-					 //NSDictionary *jsonDictionary = (NSDictionary *)jsonObject;
-					 
-					  NSLog(@" error %@",error);
-					 
-				 }
-				 
-				 
-				 
-				 
-				 
-			 }else if ([data length] == 0 && error == nil){
-				 //[self setDatos:nil];
-				 NSLog(@"vacio");
-			 }else if (error != nil && error.code == NSURLErrorTimedOut){ //used this NSURLErrorTimedOut from foundation error responses
-				 //[self timedOut];
-				 NSLog(@"tiempo terminado");
-			 }else if (error != nil){
-				 // [self downloadError:error];
-				 NSLog(@"errror");
-			 }
-				 
-				 
-		 }];
-		 
-        */
-		
-		
     }
 		
 
@@ -585,8 +508,9 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     
     //[self alertStatus:@"Error" Mensaje:@"Hubo un error, intenta de nuevo." Button1:nil Button2:@"OK"];
-    // [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-    [HUD hideUIBlockingIndicator];
+    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    // [HUD hideUIBlockingIndicator];
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{

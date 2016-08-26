@@ -21,7 +21,7 @@
                                         <rect key="frame" x="104" y="173" width="113" height="40"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                        <state key="normal" title="Ingresar" image="Key-40.png">
+                                        <state key="normal" title="Ingresar" image="Login80.png">
                                             <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -51,7 +51,7 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <inset key="titleEdgeInsets" minX="2" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Regístrate" image="Sign Up-40.png">
+                                        <state key="normal" title="Regístrate" image="Registrar80.png">
                                             <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -97,6 +97,7 @@
                     <connections>
                         <segue destination="2" kind="relationship" relationship="viewControllers" id="utX-gY-LLV"/>
                         <segue destination="dVw-c4-Z6S" kind="relationship" relationship="viewControllers" id="vIz-hv-kHC"/>
+                        <segue destination="Pif-IX-Ibd" kind="relationship" relationship="viewControllers" id="n0u-S8-iSV"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r31-uP-BuB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -189,7 +190,7 @@
                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                         <inset key="contentEdgeInsets" minX="10" minY="2" maxX="0.0" maxY="2"/>
-                                        <state key="normal" title="Reparación de Baches" image="baches-repair.png">
+                                        <state key="normal" title="Reparación de Baches" image="Repair80.png">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -204,7 +205,7 @@
                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                         <inset key="contentEdgeInsets" minX="10" minY="4" maxX="0.0" maxY="4"/>
-                                        <state key="normal" title="Fugas de Agua" image="fuga-agua.png">
+                                        <state key="normal" title="Fugas de Agua" image="Water80.png">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -213,28 +214,13 @@
                                             <segue destination="Qag-TQ-QvJ" kind="modal" identifier="GotoPost1" modalTransitionStyle="coverVertical" id="jdj-DH-QVO"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pko-ee-wDw">
-                                        <rect key="frame" x="8" y="236" width="304" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                        <inset key="contentEdgeInsets" minX="10" minY="2" maxX="0.0" maxY="2"/>
-                                        <state key="normal" title="Luminarias" image="luminarias.png">
-                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="Alumbrado:" destination="2" eventType="touchUpInside" id="zdp-oW-4Qc"/>
-                                            <segue destination="Qag-TQ-QvJ" kind="modal" identifier="GotoPost3" modalTransitionStyle="coverVertical" id="dfi-58-3ua"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="dUH-2j-NcI">
                                         <rect key="frame" x="8" y="62" width="304" height="50"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                         <inset key="contentEdgeInsets" minX="10" minY="2" maxX="0.0" maxY="2"/>
-                                        <state key="normal" title="Recolección de Basura" image="recoleccion_basura.png">
+                                        <state key="normal" title="Recolección de Basura" image="RecoleccionBasura80.png">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -247,6 +233,21 @@
                                         <rect key="frame" x="0.0" y="8" width="320" height="40"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pko-ee-wDw">
+                                        <rect key="frame" x="8" y="236" width="304" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                        <inset key="contentEdgeInsets" minX="10" minY="2" maxX="0.0" maxY="2"/>
+                                        <state key="normal" title="Luminarias" image="Lamp80.png">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="Alumbrado:" destination="2" eventType="touchUpInside" id="zdp-oW-4Qc"/>
+                                            <segue destination="Qag-TQ-QvJ" kind="modal" identifier="GotoPost3" modalTransitionStyle="coverVertical" id="dfi-58-3ua"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.97299522161483765" green="0.93423014879226685" blue="0.83232200145721436" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </scrollView>
@@ -263,7 +264,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <inset key="imageEdgeInsets" minX="-5" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Cerrar Sesión" image="Logout.png">
+                                <state key="normal" title="Cerrar Sesión" image="CloseWindow72.png">
                                     <color key="titleColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -274,7 +275,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.97299522161483765" green="0.93423014879226685" blue="0.83232200145721436" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="Compact Camera Filled-50.png" id="yko-cX-ZKS"/>
+                    <tabBarItem key="tabBarItem" title="Tomar Foto" image="Camera72.png" selectedImage="Camera72.png" id="yko-cX-ZKS"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Centro en Línea" id="cfd-Jf-YuY"/>
                     <connections>
@@ -328,6 +329,15 @@
                                                 <color key="highlightedColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" editable="NO" id="HLd-QQ-L2M">
+                                                <rect key="frame" x="5" y="320" width="310" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="" lineBreakMode="wordWrap" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cON-eZ-Y3C">
                                                 <rect key="frame" x="5" y="369" width="310" height="59"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -338,20 +348,19 @@
                                                 <color key="highlightedColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" editable="NO" id="HLd-QQ-L2M">
-                                                <rect key="frame" x="5" y="320" width="310" height="50"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
                                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" animating="YES" style="whiteLarge" id="JX0-2K-qkf">
                                                 <rect key="frame" x="142" y="123" width="37" height="37"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                                 <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             </activityIndicatorView>
+                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="Xia-cx-kuy">
+                                                <rect key="frame" x="0.0" y="440" width="320" height="200"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <gestureRecognizers/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="AkK-FR-39M" appends="YES" id="xMj-DR-Y3j"/>
+                                                </connections>
+                                            </mapView>
                                         </subviews>
                                     </scrollView>
                                 </subviews>
@@ -372,11 +381,13 @@
                         <outlet property="lblDomicilio" destination="cON-eZ-Y3C" id="z0L-co-HCb"/>
                         <outlet property="lblFecha" destination="6Dt-Mq-Iot" id="4Ip-n4-zXu"/>
                         <outlet property="lblMeGusta" destination="Z98-h4-AbD" id="Rcb-0s-xfx"/>
+                        <outlet property="mapView" destination="Xia-cx-kuy" id="Jiz-YY-YSr"/>
                         <outlet property="txtDenuncia" destination="HLd-QQ-L2M" id="V90-P9-ngr"/>
                         <outlet property="txtImage" destination="cQj-xh-meU" id="8Wp-0F-pJN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qLp-XP-mTd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="AkK-FR-39M"/>
             </objects>
             <point key="canvasLocation" x="1888" y="223"/>
         </scene>
@@ -443,7 +454,7 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="cmn-sx-58x"/>
-                                    <barButtonItem image="Back-Filled-40.png" id="dAT-nS-hac">
+                                    <barButtonItem image="Regresar72.png" id="dAT-nS-hac">
                                         <connections>
                                             <action selector="CloseWindow:" destination="Pnz-FI-H2Z" id="yWh-A4-Ufv"/>
                                         </connections>
@@ -479,7 +490,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Mis Fotos" image="Picture-40.png">
+                                        <state key="normal" title="Mis Fotos" image="MisFotos72.png">
                                             <color key="titleColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -525,7 +536,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <inset key="contentEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Cámara" image="Compact Camera-40.png">
+                                        <state key="normal" title="Cámara" image="CameraInside72.png">
                                             <color key="titleColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -544,7 +555,7 @@
                                             <rect key="frame" x="16" y="-8" width="117" height="60"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                             <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                            <state key="normal" title="Reportar" image="Ok Filled-40.png">
+                                            <state key="normal" title="Reportar" image="Ok72.png">
                                                 <color key="titleColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
                                             <connections>
@@ -558,7 +569,7 @@
                                             <rect key="frame" x="181" y="2" width="123" height="40"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                             <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                            <state key="normal" title="Regresar" image="Back-Filled-40.png">
+                                            <state key="normal" title="Regresar" image="Regresar72.png">
                                                 <color key="titleColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
                                             <connections>
@@ -751,7 +762,7 @@
         <!--Navigation Controller-->
         <scene sceneID="GJx-mw-Cpo">
             <objects>
-                <navigationController definesPresentationContext="YES" id="U8t-wZ-SbQ" sceneMemberID="viewController">
+                <navigationController restorationIdentifier="zxc" storyboardIdentifier="zxc" definesPresentationContext="YES" id="U8t-wZ-SbQ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="Mobile Home Filled-50.png" id="ra8-4K-MkW"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5EB-dA-JqI">
@@ -861,7 +872,7 @@
                                             <rect key="frame" x="16" y="2" width="106" height="40"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                            <state key="normal" title="Ingresar" image="Ok Filled-40.png">
+                                            <state key="normal" title="Ingresar" image="Ok72.png">
                                                 <color key="titleColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="titleShadowColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
@@ -876,7 +887,7 @@
                                             <rect key="frame" x="191" y="2" width="113" height="40"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                            <state key="normal" title="Regresar" image="Back-Filled-40.png">
+                                            <state key="normal" title="Regresar" image="Regresar72.png">
                                                 <color key="titleColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
@@ -962,7 +973,7 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="none" highlighted="YES" adjustsFontSizeToFit="NO" id="LPS-4Y-h1F">
-                                        <rect key="frame" x="20" y="285" width="280" height="74"/>
+                                        <rect key="frame" x="20" y="326" width="280" height="74"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <string key="text">Proporcione un correo electrónico correcto para validar sus datos y posteriormente vaya a su cuenta de correo y valide el email que le fue enviado.</string>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="14"/>
@@ -970,14 +981,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Dudas o Comentarios: " lineBreakMode="wordWrap" baselineAdjustment="none" highlighted="YES" adjustsFontSizeToFit="NO" id="Wdj-Wa-ihI">
-                                        <rect key="frame" x="20" y="367" width="280" height="21"/>
+                                        <rect key="frame" x="20" y="408" width="280" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="highlightedColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" id="nda-Zl-Jyi">
-                                        <rect key="frame" x="16" y="383" width="284" height="28"/>
+                                        <rect key="frame" x="16" y="424" width="284" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                         <attributedString key="attributedText">
                                             <fragment content="centroenlinea@villahermosa.gob.mx">
@@ -991,6 +1002,13 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <dataDetectorType key="dataDetectorTypes" link="YES" address="YES" calendarEvent="YES"/>
                                     </textView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Teléfono Celular" minimumFontSize="17" clearButtonMode="whileEditing" id="jEa-k2-DPY">
+                                        <rect key="frame" x="20" y="291" width="280" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <accessibility key="accessibilityConfiguration" hint="" label=""/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
                                 </subviews>
                             </scrollView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="RuK-Hm-GTO">
@@ -1002,7 +1020,7 @@
                                             <rect key="frame" x="16" y="2" width="113" height="40"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                            <state key="normal" title="Registrar" image="Ok Filled-40.png">
+                                            <state key="normal" title="Registrar" image="Ok72.png">
                                                 <color key="titleColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
@@ -1017,7 +1035,7 @@
                                             <rect key="frame" x="191" y="2" width="113" height="40"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                            <state key="normal" title="Regresar" image="Back-Filled-40.png">
+                                            <state key="normal" title="Regresar" image="Regresar72.png">
                                                 <color key="titleColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="titleShadowColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
@@ -1032,6 +1050,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
+                        <outlet property="txtCelular" destination="jEa-k2-DPY" id="lPB-6u-Xhy"/>
                         <outlet property="txtPassword1" destination="ZRQ-N3-DU3" id="Rfh-Wx-2qN"/>
                         <outlet property="txtPassword2" destination="Mm6-tM-5On" id="rBf-lN-gDC"/>
                         <outlet property="txtUsername" destination="Zex-P6-MLN" id="WzQ-B8-Jm2"/>
@@ -1042,11 +1061,11 @@
             </objects>
             <point key="canvasLocation" x="-1407" y="-951"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Mis Reportes-->
         <scene sceneID="9gO-5v-ebW">
             <objects>
                 <navigationController id="dVw-c4-Z6S" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="Open Folder Filled-50.png" id="234-XD-gIa"/>
+                    <tabBarItem key="tabBarItem" title="Mis Reportes" image="Folder72.png" selectedImage="Folder72.png" id="234-XD-gIa"/>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -1063,28 +1082,142 @@
             </objects>
             <point key="canvasLocation" x="854" y="-180"/>
         </scene>
+        <!--User Profile View Controller-->
+        <scene sceneID="Q6g-31-PMc">
+            <objects>
+                <viewController id="Mn4-C4-tqa" customClass="UserProfileViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bTd-Hm-tf1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Wmp-Cf-VRU">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="510"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Perfil de Usuario" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ts1-zi-zR3">
+                                        <rect key="frame" x="20" y="97" width="272" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="20"/>
+                                        <color key="textColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="banner_logo_top.png" id="nCV-8h-FRb">
+                                        <rect key="frame" x="0.0" y="39" width="320" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Por favor, ingrese un número de teléfono válido donde nos podamos comunicar con usted." lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="none" highlighted="YES" adjustsFontSizeToFit="NO" id="U5M-Kl-pyr">
+                                        <rect key="frame" x="20" y="182" width="280" height="74"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="14"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Dudas o Comentarios: " lineBreakMode="wordWrap" baselineAdjustment="none" highlighted="YES" adjustsFontSizeToFit="NO" id="lGQ-GP-FPq">
+                                        <rect key="frame" x="20" y="264" width="280" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="highlightedColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" id="BpH-rE-THW">
+                                        <rect key="frame" x="16" y="280" width="284" height="28"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="centroenlinea@villahermosa.gob.mx">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <dataDetectorType key="dataDetectorTypes" link="YES" address="YES" calendarEvent="YES"/>
+                                    </textView>
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="S9A-g8-PP1">
+                                        <rect key="frame" x="0.0" y="324" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <items>
+                                            <barButtonItem style="plain" id="PFR-k9-Bzz">
+                                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="vt9-6J-hOG">
+                                                    <rect key="frame" x="16" y="2" width="113" height="40"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    <state key="normal" title="Guardar" image="Ok72.png">
+                                                        <color key="titleColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                            </barButtonItem>
+                                        </items>
+                                    </toolbar>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Teléfono Celular" minimumFontSize="17" clearButtonMode="whileEditing" id="dGA-rY-82p">
+                                        <rect key="frame" x="20" y="139" width="280" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <accessibility key="accessibilityConfiguration" hint="" label=""/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hqF-La-6ET"/>
+                    <connections>
+                        <outlet property="cmdSaveInfo" destination="vt9-6J-hOG" id="WNx-Kr-mLa"/>
+                        <outlet property="txtNumeroCelular" destination="dGA-rY-82p" id="BWM-fg-AQG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ny8-m9-S2F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="595" y="-779"/>
+        </scene>
+        <!--User Profile Controller-->
+        <scene sceneID="Muh-zZ-4Th">
+            <objects>
+                <navigationController restorationIdentifier="xcvb" storyboardIdentifier="xcvb" automaticallyAdjustsScrollViewInsets="NO" id="Pif-IX-Ibd" userLabel="User Profile Controller" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Perfil" image="User72.png" selectedImage="User60.png" id="xR6-3f-4DS" userLabel="cmdUserProfile"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="osb-ag-mUc"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wod-8V-M7w">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Mn4-C4-tqa" kind="relationship" relationship="rootViewController" id="uAJ-PP-lgd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qSJ-K9-rg9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="235" y="-1473"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="Back-Filled-40.png" width="40" height="40"/>
-        <image name="Compact Camera Filled-50.png" width="50" height="50"/>
-        <image name="Compact Camera-40.png" width="40" height="40"/>
+        <image name="Camera72.png" width="36" height="36"/>
+        <image name="CameraInside72.png" width="36" height="36"/>
+        <image name="CloseWindow72.png" width="36" height="36"/>
+        <image name="Folder72.png" width="36" height="36"/>
         <image name="Heart-icon-off.png" width="29" height="29"/>
-        <image name="Key-40.png" width="40" height="40"/>
-        <image name="Logout.png" width="25" height="25"/>
+        <image name="Lamp80.png" width="40" height="40"/>
+        <image name="Login80.png" width="40" height="40"/>
+        <image name="MisFotos72.png" width="36" height="36"/>
         <image name="Mobile Home Filled-50.png" width="50" height="50"/>
-        <image name="Ok Filled-40.png" width="40" height="40"/>
-        <image name="Open Folder Filled-50.png" width="40" height="40"/>
-        <image name="Picture-40.png" width="40" height="40"/>
-        <image name="Sign Up-40.png" width="40" height="40"/>
-        <image name="baches-repair.png" width="50" height="50"/>
+        <image name="Ok72.png" width="36" height="36"/>
+        <image name="RecoleccionBasura80.png" width="40" height="40"/>
+        <image name="Registrar80.png" width="40" height="40"/>
+        <image name="Regresar72.png" width="36" height="36"/>
+        <image name="Repair80.png" width="40" height="40"/>
+        <image name="User60.png" width="30" height="30"/>
+        <image name="User72.png" width="36" height="36"/>
+        <image name="Water80.png" width="40" height="40"/>
         <image name="banner_logo_top.png" width="300" height="100"/>
         <image name="banner_logo_top_2.png" width="640" height="120"/>
         <image name="calendar-icon-16.png" width="16" height="16"/>
         <image name="comment-58.png" width="29" height="29"/>
-        <image name="fuga-agua.png" width="50" height="50"/>
-        <image name="luminarias.png" width="50" height="50"/>
         <image name="map-marker-icon.png" width="29" height="29"/>
-        <image name="recoleccion_basura.png" width="50" height="50"/>
         <image name="reporta_tu_servicio_320x40.png" width="321" height="41"/>
         <image name="user-icon-16.png" width="16" height="16"/>
     </resources>

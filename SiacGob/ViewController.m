@@ -9,7 +9,6 @@
 #import "ViewController.h"
 #import "Singleton.h"
 
-
 @interface ViewController ()
 
 @end
@@ -43,6 +42,7 @@
     //NSLog(@"viewDidAppear 1");
 }
 
+/*
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
@@ -50,6 +50,8 @@
     //NSLog(@"viewWillAppear 2");
 
 }
+
+*/
 
 -(void)Validate{
     if([[S getUser] length]==0){

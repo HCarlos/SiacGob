@@ -11,8 +11,9 @@
 #import <MapKit/MapKit.h>
 #import "Singleton.h"
 #import "HUD.h"
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
-@interface RegistryViewController : UIViewController<NSURLConnectionDelegate, UIAlertViewDelegate, CLLocationManagerDelegate>
+@interface RegistryViewController : UIViewController<NSURLConnectionDelegate, UIAlertViewDelegate, CLLocationManagerDelegate, FBSDKLoginButtonDelegate>
 @property (strong, nonatomic) IBOutlet UITextField *txtUsername;
 
 @property (strong, nonatomic) IBOutlet UITextField *txtUsername2;
@@ -20,6 +21,9 @@
 @property (strong, nonatomic) IBOutlet UITextField *txtPassword1;
 
 @property (strong, nonatomic) IBOutlet UITextField *txtPassword2;
+@property (weak, nonatomic) IBOutlet UITextField *txtCelular;
+@property (weak, nonatomic) IBOutlet FBSDKLoginButton *loginButton;
+@property (weak, nonatomic) IBOutlet FBSDKLoginButton *FacebookButton;
 
 @property (strong, nonatomic) IBOutlet UIButton *cmdRegistry;
 @property (strong, nonatomic) IBOutlet UILabel *lblError;

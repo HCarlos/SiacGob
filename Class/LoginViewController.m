@@ -59,7 +59,8 @@
     
     [[self txtUsername]setInputAccessoryView:toolbar];
     [[self txtPassword]setInputAccessoryView:toolbar];
-    
+    [self.txtUsername becomeFirstResponder];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -120,7 +121,8 @@
     NSString *y = self.txtPassword.text;
     
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    [HUD showUIBlockingIndicatorWithText:@"Saving data"];
+    
+    // [HUD showUIBlockingIndicatorWithText:@"Login"];
     
     NSMutableDictionary *postDix=[[NSMutableDictionary alloc] init];
     [postDix setObject:[[NSString alloc] initWithFormat: @"%@",x] forKey:@"username"];
@@ -181,7 +183,7 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-    [HUD hideUIBlockingIndicator];
+    // [HUD hideUIBlockingIndicator];
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{

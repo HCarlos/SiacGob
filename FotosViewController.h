@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MessageUI/MessageUI.h>
-#import "HUD.h"
+// #import "HUD.h"
 #import "Singleton.h"
 #import "CellFoto.h"
 #import "FotoDenunciasMasterViewController.h"
@@ -28,6 +28,12 @@
 @property (nonatomic, retain) NSString *path;
 @property (strong,nonatomic) Singleton *S;
 
+
+
 @property (nonatomic)NSUInteger indice;
+
 //- (void)CheckInternet;
+
+- (void)Preloader:(UIColor*)color myself:(UIView *)vista Flag:(Boolean)flag;
+
 @end

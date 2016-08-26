@@ -9,6 +9,7 @@
 #import "CellFoto.h"
 #import <QuartzCore/QuartzCore.h>
 #import "Singleton.h"
+#import "MBProgressHUD.h"
 
 @interface CellFoto (){
     NSMutableData *receivedData;
@@ -89,7 +90,7 @@
         
 		//[operation finalize];
 		
-		/*
+		
 		NSData *imageData = UIImageJPEGRepresentation(serverImage, 0.2);     //change Image to NSData
 		
 		[imageData writeToFile:[[NSString alloc] initWithFormat:@"/private/var/mobile/Media/DCIM/100APPLE/%@",path3] atomically:NO];
@@ -98,10 +99,10 @@
 		NSString *filePath2 = [NSString stringWithFormat:@"%@/%@", documentsDirectory, path3];
 		[imageData writeToFile:filePath2 atomically:NO];
 		NSLog(@"Save Image: %@",filePath2);
-		 */
+		 
 		
 	}else{
-		/*
+		
 		NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
 															 NSUserDomainMask, YES);
 		NSString *documentsDirectory = [paths objectAtIndex:0];
@@ -116,11 +117,11 @@
 		self.imageView.layer.borderColor=[[UIColor blackColor]CGColor];
 		self.imageView.layer.borderWidth= 1.0f;
 		NSLog(@"Image Load: %@",path);
-		 */
+		 
 
 	}
 		 
-	//[self.ActPlay stopAnimating];
+	[self.ActPlay stopAnimating];
     
     
 }

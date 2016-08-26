@@ -77,7 +77,8 @@
 		[self setDatos:nil];
 		
 		[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-		[HUD showUIBlockingIndicatorWithText:@"Loading images, please wait..."];
+		
+        // [HUD showUIBlockingIndicatorWithText:@"Loading images, please wait..."];
 		
 		NSMutableDictionary *postDix=[[NSMutableDictionary alloc] init];
 		
@@ -137,7 +138,8 @@
 				 //[self.canvas reloadData];
 				 
 				 [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-				 [HUD hideUIBlockingIndicator];
+				 
+                 // [HUD hideUIBlockingIndicator];
 				 
 				 //[self.canvas setAlpha:1.0];
 				 

@@ -10,8 +10,12 @@
 #import "Singleton.h"
 #import "HUD.h"
 #import <QuartzCore/QuartzCore.h>
+#import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface FotoDenunciasMasterViewController : UIViewController
+@interface FotoDenunciasMasterViewController : UIViewController<MKMapViewDelegate>{
+    MKMapView *mapView;
+}
 
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *ActPlay;
 @property (strong, nonatomic) UIImage *Imagen;
@@ -29,10 +33,13 @@
 @property (strong, nonatomic) IBOutlet UILabel *lblFecha;
 @property (strong, nonatomic) IBOutlet UILabel *lblMeGusta;
 @property (strong, nonatomic) IBOutlet UILabel *lblDomicilio;
+@property (nonatomic, retain) IBOutlet MKMapView *mapView;
 
 @property (strong,nonatomic) Singleton *S;
 
 
 - (IBAction)DeleteItem:(id)sender;
+
+-(void)pintaMapa:(float) lat long:(float) lon;
 
 @end

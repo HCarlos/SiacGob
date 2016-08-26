@@ -106,8 +106,28 @@
 		A645FA9F1D2AF7690078E26E /* Logo_750_1334.png in Resources */ = {isa = PBXBuildFile; fileRef = A645FA9B1D2AF7690078E26E /* Logo_750_1334.png */; };
 		A645FAA01D2AF7690078E26E /* Logo_1242_2208.png in Resources */ = {isa = PBXBuildFile; fileRef = A645FA9C1D2AF7690078E26E /* Logo_1242_2208.png */; };
 		A645FAA21D2AFDBF0078E26E /* reporta_tu_servicio_320x40.png in Resources */ = {isa = PBXBuildFile; fileRef = A645FAA11D2AFDBF0078E26E /* reporta_tu_servicio_320x40.png */; };
+		A646209C1D706F2000F3B986 /* User80@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A64620991D706F2000F3B986 /* User80@2x.png */; };
+		A646209D1D706F2000F3B986 /* Folder80@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A646209A1D706F2000F3B986 /* Folder80@2x.png */; };
+		A646209E1D706F2000F3B986 /* Camera80@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A646209B1D706F2000F3B986 /* Camera80@2x.png */; };
+		A64620A01D706FCA00F3B986 /* Folder72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A646209F1D706FCA00F3B986 /* Folder72@2x.png */; };
+		A64620A31D70705A00F3B986 /* Camera72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A64620A11D70705A00F3B986 /* Camera72@2x.png */; };
+		A64620A41D70705A00F3B986 /* User72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A64620A21D70705A00F3B986 /* User72@2x.png */; };
+		A64620A61D70718700F3B986 /* Ok72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A64620A51D70718700F3B986 /* Ok72@2x.png */; };
+		A64620AA1D70732800F3B986 /* MisFotos72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A64620A71D70732800F3B986 /* MisFotos72@2x.png */; };
+		A64620AB1D70732800F3B986 /* CameraInside72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A64620A81D70732800F3B986 /* CameraInside72@2x.png */; };
+		A64620AC1D70732800F3B986 /* Regresar72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A64620A91D70732800F3B986 /* Regresar72@2x.png */; };
+		A64620B11D7074A000F3B986 /* Lamp80@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A64620AD1D7074A000F3B986 /* Lamp80@2x.png */; };
+		A64620B21D7074A000F3B986 /* Repair80@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A64620AE1D7074A000F3B986 /* Repair80@2x.png */; };
+		A64620B31D7074A000F3B986 /* Water80@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A64620AF1D7074A000F3B986 /* Water80@2x.png */; };
+		A64620B41D7074A000F3B986 /* RecoleccionBasura80@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A64620B01D7074A000F3B986 /* RecoleccionBasura80@2x.png */; };
+		A64620B61D70755900F3B986 /* CloseWindow72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A64620B51D70755900F3B986 /* CloseWindow72@2x.png */; };
+		A64620B91D7077E800F3B986 /* Login80@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A64620B71D7077E800F3B986 /* Login80@2x.png */; };
+		A64620BA1D7077E800F3B986 /* Registrar80@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A64620B81D7077E800F3B986 /* Registrar80@2x.png */; };
 		A65914371D36802100A407D5 /* Sign Up-40.png in Resources */ = {isa = PBXBuildFile; fileRef = A65914351D36802100A407D5 /* Sign Up-40.png */; };
 		A65914381D36802100A407D5 /* Key-40.png in Resources */ = {isa = PBXBuildFile; fileRef = A65914361D36802100A407D5 /* Key-40.png */; };
+		A68D8F431D5CDAC100E8CDB2 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A68D8F401D5CDAC100E8CDB2 /* FBSDKShareKit.framework */; };
+		A68D8F441D5CDAC100E8CDB2 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A68D8F411D5CDAC100E8CDB2 /* FBSDKCoreKit.framework */; };
+		A68D8F451D5CDAC100E8CDB2 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A68D8F421D5CDAC100E8CDB2 /* FBSDKLoginKit.framework */; };
 		A6AA3E8C1D2964420022F36C /* Compact Camera Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = A6AA3E8B1D2964420022F36C /* Compact Camera Filled-50.png */; };
 		A6AA3E941D2967230022F36C /* SLR Back Side Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = A6AA3E931D2967230022F36C /* SLR Back Side Filled-50.png */; };
 		A6AA3E961D2968620022F36C /* Mobile Home Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = A6AA3E951D2968620022F36C /* Mobile Home Filled-50.png */; };
@@ -116,6 +136,13 @@
 		A6AF8E2F1D2FFD5B00074880 /* Back-Filled-40.png in Resources */ = {isa = PBXBuildFile; fileRef = A6AF8E2E1D2FFD5B00074880 /* Back-Filled-40.png */; };
 		A6AF8E311D30454000074880 /* Compact Camera-40.png in Resources */ = {isa = PBXBuildFile; fileRef = A6AF8E301D30454000074880 /* Compact Camera-40.png */; };
 		A6AF8E331D3045EF00074880 /* Picture-40.png in Resources */ = {isa = PBXBuildFile; fileRef = A6AF8E321D3045EF00074880 /* Picture-40.png */; };
+		A6C2F1F91D6F640100CD066C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6C2F1F81D6F640100CD066C /* Bolts.framework */; };
+		A6C2F1FB1D6F70BE00CD066C /* User-40.png in Resources */ = {isa = PBXBuildFile; fileRef = A6C2F1FA1D6F70BE00CD066C /* User-40.png */; };
+		A6C2F2111D6F7BC200CD066C /* UserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C2F2101D6F7BC200CD066C /* UserProfileViewController.m */; };
+		A6C2F2131D6F81E400CD066C /* User-60.png in Resources */ = {isa = PBXBuildFile; fileRef = A6C2F2121D6F81E400CD066C /* User-60.png */; };
+		A6C2F2151D6F829700CD066C /* User60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6C2F2141D6F829700CD066C /* User60@2x.png */; };
+		A6C2F2181D6F83BA00CD066C /* Folder60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6C2F2161D6F83BA00CD066C /* Folder60@2x.png */; };
+		A6C2F2191D6F83BA00CD066C /* Camera60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6C2F2171D6F83BA00CD066C /* Camera60@2x.png */; };
 		A6F0A9E11D2C83D80098761A /* Logo_60_60.png in Resources */ = {isa = PBXBuildFile; fileRef = A6F0A9DE1D2C83D80098761A /* Logo_60_60.png */; };
 		A6F0A9E21D2C83D80098761A /* Logo_40_40.png in Resources */ = {isa = PBXBuildFile; fileRef = A6F0A9DF1D2C83D80098761A /* Logo_40_40.png */; };
 		A6F0A9E31D2C83D80098761A /* Logo_29_29.png in Resources */ = {isa = PBXBuildFile; fileRef = A6F0A9E01D2C83D80098761A /* Logo_29_29.png */; };
@@ -247,8 +274,28 @@
 		A645FA9B1D2AF7690078E26E /* Logo_750_1334.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Logo_750_1334.png; path = Images/Logo_750_1334.png; sourceTree = "<group>"; };
 		A645FA9C1D2AF7690078E26E /* Logo_1242_2208.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Logo_1242_2208.png; path = Images/Logo_1242_2208.png; sourceTree = "<group>"; };
 		A645FAA11D2AFDBF0078E26E /* reporta_tu_servicio_320x40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = reporta_tu_servicio_320x40.png; path = img/reporta_tu_servicio_320x40.png; sourceTree = "<group>"; };
+		A64620991D706F2000F3B986 /* User80@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "User80@2x.png"; path = "Images/User80@2x.png"; sourceTree = "<group>"; };
+		A646209A1D706F2000F3B986 /* Folder80@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Folder80@2x.png"; path = "Images/Folder80@2x.png"; sourceTree = "<group>"; };
+		A646209B1D706F2000F3B986 /* Camera80@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Camera80@2x.png"; path = "Images/Camera80@2x.png"; sourceTree = "<group>"; };
+		A646209F1D706FCA00F3B986 /* Folder72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Folder72@2x.png"; path = "Images/Folder72@2x.png"; sourceTree = "<group>"; };
+		A64620A11D70705A00F3B986 /* Camera72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Camera72@2x.png"; path = "Images/Camera72@2x.png"; sourceTree = "<group>"; };
+		A64620A21D70705A00F3B986 /* User72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "User72@2x.png"; path = "Images/User72@2x.png"; sourceTree = "<group>"; };
+		A64620A51D70718700F3B986 /* Ok72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Ok72@2x.png"; path = "Images/Ok72@2x.png"; sourceTree = "<group>"; };
+		A64620A71D70732800F3B986 /* MisFotos72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MisFotos72@2x.png"; path = "Images/MisFotos72@2x.png"; sourceTree = "<group>"; };
+		A64620A81D70732800F3B986 /* CameraInside72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "CameraInside72@2x.png"; path = "Images/CameraInside72@2x.png"; sourceTree = "<group>"; };
+		A64620A91D70732800F3B986 /* Regresar72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Regresar72@2x.png"; path = "Images/Regresar72@2x.png"; sourceTree = "<group>"; };
+		A64620AD1D7074A000F3B986 /* Lamp80@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Lamp80@2x.png"; path = "Images/Lamp80@2x.png"; sourceTree = "<group>"; };
+		A64620AE1D7074A000F3B986 /* Repair80@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Repair80@2x.png"; path = "Images/Repair80@2x.png"; sourceTree = "<group>"; };
+		A64620AF1D7074A000F3B986 /* Water80@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Water80@2x.png"; path = "Images/Water80@2x.png"; sourceTree = "<group>"; };
+		A64620B01D7074A000F3B986 /* RecoleccionBasura80@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "RecoleccionBasura80@2x.png"; path = "Images/RecoleccionBasura80@2x.png"; sourceTree = "<group>"; };
+		A64620B51D70755900F3B986 /* CloseWindow72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "CloseWindow72@2x.png"; path = "Images/CloseWindow72@2x.png"; sourceTree = "<group>"; };
+		A64620B71D7077E800F3B986 /* Login80@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Login80@2x.png"; path = "Images/Login80@2x.png"; sourceTree = "<group>"; };
+		A64620B81D7077E800F3B986 /* Registrar80@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Registrar80@2x.png"; path = "Images/Registrar80@2x.png"; sourceTree = "<group>"; };
 		A65914351D36802100A407D5 /* Sign Up-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Sign Up-40.png"; path = "Images/Sign Up-40.png"; sourceTree = "<group>"; };
 		A65914361D36802100A407D5 /* Key-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Key-40.png"; path = "Images/Key-40.png"; sourceTree = "<group>"; };
+		A68D8F401D5CDAC100E8CDB2 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "FacebookSDKs-iOS-4.14.0/FBSDKShareKit.framework"; sourceTree = "<group>"; };
+		A68D8F411D5CDAC100E8CDB2 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "FacebookSDKs-iOS-4.14.0/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
+		A68D8F421D5CDAC100E8CDB2 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "FacebookSDKs-iOS-4.14.0/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
 		A6AA3E8B1D2964420022F36C /* Compact Camera Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Compact Camera Filled-50.png"; sourceTree = "<group>"; };
 		A6AA3E931D2967230022F36C /* SLR Back Side Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SLR Back Side Filled-50.png"; sourceTree = "<group>"; };
 		A6AA3E951D2968620022F36C /* Mobile Home Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Mobile Home Filled-50.png"; path = "img/Mobile Home Filled-50.png"; sourceTree = "<group>"; };
@@ -257,6 +304,14 @@
 		A6AF8E2E1D2FFD5B00074880 /* Back-Filled-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Back-Filled-40.png"; path = "Images/Back-Filled-40.png"; sourceTree = "<group>"; };
 		A6AF8E301D30454000074880 /* Compact Camera-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Compact Camera-40.png"; path = "Images/Compact Camera-40.png"; sourceTree = "<group>"; };
 		A6AF8E321D3045EF00074880 /* Picture-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Picture-40.png"; path = "Images/Picture-40.png"; sourceTree = "<group>"; };
+		A6C2F1F81D6F640100CD066C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "FacebookSDKs-iOS-4.14.0/Bolts.framework"; sourceTree = "<group>"; };
+		A6C2F1FA1D6F70BE00CD066C /* User-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "User-40.png"; path = "Images/User-40.png"; sourceTree = "<group>"; };
+		A6C2F20F1D6F7BC200CD066C /* UserProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserProfileViewController.h; path = Class/UserProfileViewController.h; sourceTree = "<group>"; };
+		A6C2F2101D6F7BC200CD066C /* UserProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserProfileViewController.m; path = Class/UserProfileViewController.m; sourceTree = "<group>"; };
+		A6C2F2121D6F81E400CD066C /* User-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "User-60.png"; path = "Images/User-60.png"; sourceTree = "<group>"; };
+		A6C2F2141D6F829700CD066C /* User60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "User60@2x.png"; path = "Images/User60@2x.png"; sourceTree = "<group>"; };
+		A6C2F2161D6F83BA00CD066C /* Folder60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Folder60@2x.png"; path = "Images/Folder60@2x.png"; sourceTree = "<group>"; };
+		A6C2F2171D6F83BA00CD066C /* Camera60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Camera60@2x.png"; path = "Images/Camera60@2x.png"; sourceTree = "<group>"; };
 		A6F0A9DE1D2C83D80098761A /* Logo_60_60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Logo_60_60.png; path = Images/Logo_60_60.png; sourceTree = "<group>"; };
 		A6F0A9DF1D2C83D80098761A /* Logo_40_40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Logo_40_40.png; path = Images/Logo_40_40.png; sourceTree = "<group>"; };
 		A6F0A9E01D2C83D80098761A /* Logo_29_29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Logo_29_29.png; path = Images/Logo_29_29.png; sourceTree = "<group>"; };
@@ -271,6 +326,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6C2F1F91D6F640100CD066C /* Bolts.framework in Frameworks */,
+				A68D8F431D5CDAC100E8CDB2 /* FBSDKShareKit.framework in Frameworks */,
+				A68D8F441D5CDAC100E8CDB2 /* FBSDKCoreKit.framework in Frameworks */,
+				A68D8F451D5CDAC100E8CDB2 /* FBSDKLoginKit.framework in Frameworks */,
 				1420DE0617BAC72500A69E39 /* QuartzCore.framework in Frameworks */,
 				1490B36217ADC491003F4EE3 /* MessageUI.framework in Frameworks */,
 				1490B36317ADC491003F4EE3 /* SystemConfiguration.framework in Frameworks */,
@@ -310,6 +369,10 @@
 		1490B32F17ADC3B0003F4EE3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A6C2F1F81D6F640100CD066C /* Bolts.framework */,
+				A68D8F401D5CDAC100E8CDB2 /* FBSDKShareKit.framework */,
+				A68D8F411D5CDAC100E8CDB2 /* FBSDKCoreKit.framework */,
+				A68D8F421D5CDAC100E8CDB2 /* FBSDKLoginKit.framework */,
 				1420DE0517BAC72500A69E39 /* QuartzCore.framework */,
 				1490B36017ADC491003F4EE3 /* MessageUI.framework */,
 				1490B36117ADC491003F4EE3 /* SystemConfiguration.framework */,
@@ -358,6 +421,28 @@
 		1490B36417ADC534003F4EE3 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A64620B71D7077E800F3B986 /* Login80@2x.png */,
+				A64620B81D7077E800F3B986 /* Registrar80@2x.png */,
+				A64620B51D70755900F3B986 /* CloseWindow72@2x.png */,
+				A64620AD1D7074A000F3B986 /* Lamp80@2x.png */,
+				A64620AE1D7074A000F3B986 /* Repair80@2x.png */,
+				A64620AF1D7074A000F3B986 /* Water80@2x.png */,
+				A64620B01D7074A000F3B986 /* RecoleccionBasura80@2x.png */,
+				A64620A71D70732800F3B986 /* MisFotos72@2x.png */,
+				A64620A81D70732800F3B986 /* CameraInside72@2x.png */,
+				A64620A91D70732800F3B986 /* Regresar72@2x.png */,
+				A64620A51D70718700F3B986 /* Ok72@2x.png */,
+				A64620A11D70705A00F3B986 /* Camera72@2x.png */,
+				A64620A21D70705A00F3B986 /* User72@2x.png */,
+				A646209F1D706FCA00F3B986 /* Folder72@2x.png */,
+				A64620991D706F2000F3B986 /* User80@2x.png */,
+				A646209A1D706F2000F3B986 /* Folder80@2x.png */,
+				A646209B1D706F2000F3B986 /* Camera80@2x.png */,
+				A6C2F2161D6F83BA00CD066C /* Folder60@2x.png */,
+				A6C2F2171D6F83BA00CD066C /* Camera60@2x.png */,
+				A6C2F2141D6F829700CD066C /* User60@2x.png */,
+				A6C2F2121D6F81E400CD066C /* User-60.png */,
+				A6C2F1FA1D6F70BE00CD066C /* User-40.png */,
 				A65914351D36802100A407D5 /* Sign Up-40.png */,
 				A65914361D36802100A407D5 /* Key-40.png */,
 				A6AF8E321D3045EF00074880 /* Picture-40.png */,
@@ -476,6 +561,8 @@
 				1468AF5818CC37600086F09A /* TL_Cell.m */,
 				14B2B3E618CFC1AB00E22E23 /* imageViewController.h */,
 				14B2B3E718CFC1AB00E22E23 /* imageViewController.m */,
+				A6C2F20F1D6F7BC200CD066C /* UserProfileViewController.h */,
+				A6C2F2101D6F7BC200CD066C /* UserProfileViewController.m */,
 			);
 			name = Class;
 			sourceTree = "<group>";
@@ -549,10 +636,12 @@
 			files = (
 				1490B33B17ADC3B0003F4EE3 /* InfoPlist.strings in Resources */,
 				1490B34317ADC3B0003F4EE3 /* Default.png in Resources */,
+				A64620B61D70755900F3B986 /* CloseWindow72@2x.png in Resources */,
 				A6AF8E331D3045EF00074880 /* Picture-40.png in Resources */,
 				A645FA831D2AB05E0078E26E /* fuga-agua.png in Resources */,
 				1490B34517ADC3B0003F4EE3 /* Default@2x.png in Resources */,
 				A6F0A9E11D2C83D80098761A /* Logo_60_60.png in Resources */,
+				A64620B41D7074A000F3B986 /* RecoleccionBasura80@2x.png in Resources */,
 				1490B34717ADC3B0003F4EE3 /* Default-568h@2x.png in Resources */,
 				1490B34A17ADC3B0003F4EE3 /* MainStoryboard_iPhone.storyboard in Resources */,
 				1490B34D17ADC3B1003F4EE3 /* MainStoryboard_iPad.storyboard in Resources */,
@@ -561,10 +650,14 @@
 				1490B36F17ADC5CE003F4EE3 /* pub@2x.gif in Resources */,
 				1490B37417ADC5CE003F4EE3 /* pub.gif in Resources */,
 				1401FF1518CFF0D60004F860 /* home-66@2x.png in Resources */,
+				A6C2F2191D6F83BA00CD066C /* Camera60@2x.png in Resources */,
+				A6C2F2151D6F829700CD066C /* User60@2x.png in Resources */,
+				A64620BA1D7077E800F3B986 /* Registrar80@2x.png in Resources */,
 				A645FA841D2AB05E0078E26E /* recoleccion_basura.png in Resources */,
 				14B505CA17B17B2D000ED635 /* Status-dialog-error-icon.png in Resources */,
 				147D348417B19E93006BC225 /* fondoDen.gif in Resources */,
 				1468AF5618CC1E100086F09A /* UIBarButtonHome_2x.png in Resources */,
+				A64620AB1D70732800F3B986 /* CameraInside72@2x.png in Resources */,
 				A645FA8E1D2AEFBB0078E26E /* Logo_1024_1024.png in Resources */,
 				A6F0A9E81D2C85F10098761A /* Logo_180_180.png in Resources */,
 				14D25710187D89D500F2FAC9 /* siacgob-logo-152.png in Resources */,
@@ -582,6 +675,7 @@
 				A645FAA21D2AFDBF0078E26E /* reporta_tu_servicio_320x40.png in Resources */,
 				143ABE2617B2E22B00FA1083 /* close-200-64.png in Resources */,
 				143ABE2717B2E22B00FA1083 /* public-200-64.png in Resources */,
+				A64620B31D7074A000F3B986 /* Water80@2x.png in Resources */,
 				1468AF5418CBF6710086F09A /* UIBarButtonTimeline_2x.png in Resources */,
 				A6F0A9E31D2C83D80098761A /* Logo_29_29.png in Resources */,
 				143ABE2817B2E22B00FA1083 /* library-200-64.png in Resources */,
@@ -592,18 +686,29 @@
 				1409734317B3107A002010B7 /* delete-button.png in Resources */,
 				A645FA9E1D2AF7690078E26E /* Logo_768_1024.png in Resources */,
 				141A20C017B336CB0032A151 /* ingresar.png in Resources */,
+				A64620A61D70718700F3B986 /* Ok72@2x.png in Resources */,
+				A646209E1D706F2000F3B986 /* Camera80@2x.png in Resources */,
+				A646209D1D706F2000F3B986 /* Folder80@2x.png in Resources */,
 				A6AA3E941D2967230022F36C /* SLR Back Side Filled-50.png in Resources */,
 				A6AF8E311D30454000074880 /* Compact Camera-40.png in Resources */,
+				A64620AC1D70732800F3B986 /* Regresar72@2x.png in Resources */,
+				A64620A01D706FCA00F3B986 /* Folder72@2x.png in Resources */,
+				A64620B91D7077E800F3B986 /* Login80@2x.png in Resources */,
 				141A20C217B339CC0032A151 /* registrar.png in Resources */,
+				A6C2F2131D6F81E400CD066C /* User-60.png in Resources */,
 				14B2B3E318CFBCD000E22E23 /* Heart-icon_2x.png in Resources */,
+				A64620AA1D70732800F3B986 /* MisFotos72@2x.png in Resources */,
 				14781E1617B3F01B000FE8E2 /* siac-logo.png in Resources */,
 				A6AA3E961D2968620022F36C /* Mobile Home Filled-50.png in Resources */,
 				A6AA3E981D2968EB0022F36C /* Open Folder Filled-50.png in Resources */,
+				A64620B21D7074A000F3B986 /* Repair80@2x.png in Resources */,
 				14781E1B17B3FC8C000FE8E2 /* alumbrado-button.gif in Resources */,
 				14B2B3E518CFBEDE00E22E23 /* photos-icon_2x.png in Resources */,
 				14781E1C17B3FC8C000FE8E2 /* baches-button.png in Resources */,
 				1401FF1718CFF2800004F860 /* pictures-66@2x.png in Resources */,
+				A6C2F2181D6F83BA00CD066C /* Folder60@2x.png in Resources */,
 				1459BDC718D10027004F5202 /* comment-58@2x.png in Resources */,
+				A646209C1D706F2000F3B986 /* User80@2x.png in Resources */,
 				A645FAA01D2AF7690078E26E /* Logo_1242_2208.png in Resources */,
 				A645FA861D2ACB560078E26E /* Logout.png in Resources */,
 				A645FA811D2AB05E0078E26E /* baches-repair.png in Resources */,
@@ -613,9 +718,11 @@
 				A65914371D36802100A407D5 /* Sign Up-40.png in Resources */,
 				14781E1D17B3FC8C000FE8E2 /* basura-button.png in Resources */,
 				1401FF0D18CFE65A0004F860 /* Heart-icon@2x.png in Resources */,
+				A6C2F1FB1D6F70BE00CD066C /* User-40.png in Resources */,
 				14781E1E17B3FC8C000FE8E2 /* trash-button.png in Resources */,
 				A6AF8E2F1D2FFD5B00074880 /* Back-Filled-40.png in Resources */,
 				143F304417B454660055B685 /* siacgob-logo-57.png in Resources */,
+				A64620B11D7074A000F3B986 /* Lamp80@2x.png in Resources */,
 				A65914381D36802100A407D5 /* Key-40.png in Resources */,
 				14D2570D187D895C00F2FAC9 /* siacgob-logo-120.png in Resources */,
 				143F304617B4546F0055B685 /* siacgob-logo-114.png in Resources */,
@@ -632,6 +739,8 @@
 				A645FA881D2ADDFE0078E26E /* banner_logo_top.png in Resources */,
 				A6AF8E2D1D2FFAF000074880 /* Ok Filled-40.png in Resources */,
 				142D36C417BA0753002610AB /* mis-fotos-icon.png in Resources */,
+				A64620A31D70705A00F3B986 /* Camera72@2x.png in Resources */,
+				A64620A41D70705A00F3B986 /* User72@2x.png in Resources */,
 				142DEFDE17BBEAEC0047D283 /* hundimiento-button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -648,6 +757,7 @@
 				1490B35017ADC3B1003F4EE3 /* ViewController.m in Sources */,
 				1490B37717ADC781003F4EE3 /* Singleton.m in Sources */,
 				146E25F217B020A20057DD45 /* RegistryViewController.m in Sources */,
+				A6C2F2111D6F7BC200CD066C /* UserProfileViewController.m in Sources */,
 				1468AF5018CBE0A50086F09A /* TL_ViewController.m in Sources */,
 				147E196E17ECA3FE00726CFF /* AsyncImageView.m in Sources */,
 				A61C09E91A185BBA002C9D4A /* MBProgressHUD.m in Sources */,
@@ -764,6 +874,10 @@
 				CODE_SIGN_ENTITLEMENTS = SiacGob/SiacGob.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FacebookSDKs-iOS-4.14.0",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SiacGob/SiacGob-Prefix.pch";
 				INFOPLIST_FILE = "SiacGob/SiacGob-Info.plist";
@@ -786,6 +900,10 @@
 				CODE_SIGN_ENTITLEMENTS = SiacGob/SiacGob.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FacebookSDKs-iOS-4.14.0",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SiacGob/SiacGob-Prefix.pch";
 				INFOPLIST_FILE = "SiacGob/SiacGob-Info.plist";

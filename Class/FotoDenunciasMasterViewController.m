@@ -13,12 +13,15 @@
 
 @interface FotoDenunciasMasterViewController (){
     int option ;
+    float _lat;
+    float _lon;
+    UITapGestureRecognizer *letterTapRecognizer;
 }
 
 @end
 
 @implementation FotoDenunciasMasterViewController
-@synthesize lblArchivo,txtImage,txtDen,lblFec,S,ArchivoPlano;
+@synthesize lblArchivo,txtImage,txtDen,lblFec,S,ArchivoPlano, mapView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -36,19 +39,14 @@
     
     self.S  = [Singleton sharedMySingleton];
 
+    letterTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(highlightLetter:)];
     
     [self.ActPlay startAnimating];
     self.lblText.text = self.lblArchivo;
-    /*
-    self.txtDenuncia.layer.cornerRadius=8.0f;
-    self.txtDenuncia.layer.masksToBounds=YES;
-    self.txtDenuncia.backgroundColor=[UIColor lightGrayColor];
-    self.txtDenuncia.layer.borderColor=[[UIColor blackColor]CGColor];
-    self.txtDenuncia.layer.borderWidth= 1.0f;
-	 */
     
-
 }
+
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -68,12 +66,21 @@
     
     NSLog(@"PATH: %@",path);
     
-	[self.txtImage setImage: [UIImage imageWithContentsOfFile:path]];
+    BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:path];
+
+    if (fileExists)
+        [self.txtImage setImage: [UIImage imageWithContentsOfFile:path]];
+    else
+        [self.txtImage setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.lblArchivo]]]];
     
-    //[self.txtImage setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.lblArchivo]]]];
     [self getImageData];
 
 
+}
+
+- (void)highlightLetter:(UITapGestureRecognizer*)sender {
+    UIView *view = sender.view;
+    NSLog(@"TaPPED %ld", (long)view.tag);//By tag, you can find out where you had tapped.
 }
 
 - (IBAction)DeleteItem:(id)sender {
@@ -88,7 +95,8 @@
     option = 1;
 
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    [HUD showUIBlockingIndicatorWithText:@"Loading image data, please wait..."];
+    
+    // [HUD showUIBlockingIndicatorWithText:@"Loading image data, please wait..."];
     
     
     NSMutableDictionary *postDix=[[NSMutableDictionary alloc] init];
@@ -141,7 +149,8 @@
     option = 0;
     
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    [HUD showUIBlockingIndicatorWithText:@"Deleting data, please wait..."];
+    
+    // [HUD showUIBlockingIndicatorWithText:@"Deleting data, please wait..."];
     
     
     NSMutableDictionary *postDix=[[NSMutableDictionary alloc] init];
@@ -204,19 +213,33 @@
             NSString *meg  = [[jsonArray objectAtIndex:0]objectForKey:@"megusta"];
 			
 			
-			NSString *dom = [[NSString alloc] initWithFormat:@"%@ \n (%@, %@)",dm,lat,lon];
-            [self.txtDenuncia setText:[[NSString alloc] initWithFormat:@"'%@'",den]];
+            // NSString *dom = [[NSString alloc] initWithFormat:@"%@ \n (%@, %@)",dm,lat,lon];
+			NSString *dom = [[NSString alloc] initWithFormat:@"%@)",dm];
+            [self.txtDenuncia setText:[[NSString alloc] initWithFormat:@"%@",den]];
 			[self.lblDomicilio setText:dom];
 			[self.lblMeGusta setText:[[NSString alloc] initWithFormat:@"(%@) Me Gusta",meg]];
 			
             [self.lblFecha setText:[[NSString alloc] initWithFormat: @"%@ ",fec]];
+            
+            float latitude = lat.floatValue;
+            float longitude = lon.floatValue;
+            
+            self->_lat = latitude;
+            self->_lon = longitude;
+            
 			/*
             self.lblFecha.layer.borderWidth = 1;
             self.lblFecha.layer.borderColor = [[UIColor grayColor] CGColor];
             self.lblFecha.layer.cornerRadius = 3;
 			 */
+            
+            
+            [self pintaMapa:latitude long:longitude ];
+            
             [self.ActPlay stopAnimating];
+            
             break;
+            
         }
         default:
             break;
@@ -224,9 +247,23 @@
 }
 
 
+- (void)longpressToGetLocation:(UIGestureRecognizer *)gestureRecognizer
+{
+    if (gestureRecognizer.state != UIGestureRecognizerStateBegan)
+        return;
+    
+    CGPoint touchPoint = [gestureRecognizer locationInView:self.mapView];
+    CLLocationCoordinate2D location =
+    [self.mapView convertPoint:touchPoint toCoordinateFromView:self.mapView];
+    
+    NSLog(@"Location found from Map: %f %f",location.latitude,location.longitude);
+    
+}
+
+
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-    [HUD hideUIBlockingIndicator];
+    // [HUD hideUIBlockingIndicator];
 }
 
 
@@ -256,7 +293,57 @@
     }
 }
 
+-(void)pintaMapa:(float) lat long:(float) lon{
 
+    CGRect rect = self.view.frame;
+    rect.origin.x = 0;
+    rect.origin.y = 440;
+    rect.size.height = 200;
+    rect.size.width = self.view.bounds.size.width;
+    mapView.frame = rect;
+    mapView.showsUserLocation = NO;
+    mapView.mapType = MKMapTypeStandard;
+    mapView.delegate = self;
+    
+    CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(lat, lon);
+    
+    MKCoordinateSpan span = MKCoordinateSpanMake(0.1, 0.1);
+    MKCoordinateRegion region = {coord, span};
+    
+    MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+    [annotation setCoordinate:coord];
+    
+    [mapView setRegion:region];
+    [mapView addAnnotation:annotation];
+    
+    
+}
 
+- (void)mapView:(MKMapView *)mapView didAddAnnotationViews:(nonnull NSArray<MKAnnotationView *> *)views{
+    MKCoordinateRegion region;
+    MKCoordinateSpan span;
+    span.latitudeDelta = 0.005;
+    span.longitudeDelta = 0.005;
+    CLLocationCoordinate2D location;
+    location.latitude = self->_lat;
+    location.longitude = self->_lon;
+    region.span = span;
+    region.center = location;
+    [self.mapView setRegion:region animated:YES];
+    
+}
+
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
+    MKCoordinateRegion region;
+    MKCoordinateSpan span;
+    span.latitudeDelta = 0.005;
+    span.longitudeDelta = 0.005;
+    CLLocationCoordinate2D location;
+    location.latitude = userLocation.coordinate.latitude;
+    location.longitude = userLocation.coordinate.longitude;
+    region.span = span;
+    region.center = location;
+    [self.mapView setRegion:region animated:YES];
+}
 
 @end

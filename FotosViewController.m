@@ -8,7 +8,7 @@
 
 #import "FotosViewController.h"
 #import <MessageUI/MessageUI.h>
-#import "HUD.h"
+// #import "HUD.h"
 #import "Singleton.h"
 #import "CellFoto.h"
 #import "FotoDenunciasMasterViewController.h"
@@ -21,8 +21,8 @@
     int intentos;
     BOOL isInternet;
 	NSString *username;
+    UIView *myPreloaderView;
 }
-
 
 @end
 @implementation FotosViewController
@@ -53,8 +53,53 @@
 	[self.canvas setDelegate:self];
 	//[self.canvas setDataSource:self];
 	
-   [self getData];
+    CGRect imageFrame = self.view.frame;
+    imageFrame.origin.y = self.view.bounds.size.height;
+    
+    [UIView animateWithDuration:0.5
+                          delay:1.0
+                        options: UIViewAnimationOptionAllowAnimatedContent
+                     animations:^{
+                         self.view.frame = imageFrame;
+                     } 
+                     completion:^(BOOL finished){
+                         NSLog(@"Done!");
+                     }];
+    
+    [self getData];
+    
+}
 
+- (void)Preloader:(UIColor*)color myself:(UIView *)vista Flag:(Boolean)flag{
+    
+    if (flag){
+        myPreloaderView = [[UIView alloc] initWithFrame:CGRectMake(vista.frame.size.width/2,  vista.frame.size.height/2, 100, 100)];
+        myPreloaderView.layer.cornerRadius = 5;
+        myPreloaderView.layer.masksToBounds = YES;
+        myPreloaderView.backgroundColor = color;
+        myPreloaderView.autoresizingMask = (UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin);
+        
+        UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        [activityIndicator startAnimating];
+        [myPreloaderView addSubview:activityIndicator];
+        activityIndicator.center = CGPointMake(myPreloaderView.frame.size.width  / 2,
+                                               myPreloaderView.frame.size.height / 2);
+        
+        UILabel *myLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 70, 300, 20)];
+        
+        [myLabel setTextColor:[UIColor blackColor]];
+        [myLabel setBackgroundColor:[UIColor clearColor]];
+        [myLabel setFont:[UIFont fontWithName: @"Trebuchet MS" size: 14.0f]];
+        myLabel.text = @"Cargando...";
+        [myPreloaderView addSubview:myLabel];
+        
+        
+        [vista addSubview:myPreloaderView];
+        
+        myPreloaderView.center = CGPointMake(vista.frame.size.width  / 2,
+                                    vista.frame.size.height / 2);
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -111,11 +156,10 @@
         
         FotoDenunciasMasterViewController *divc = (FotoDenunciasMasterViewController *)[segue destinationViewController];
 		
-        //NSString *path2 = [[NSString alloc] initWithFormat: @"http://dc.tabascoweb.com/php/01/uploads/%@",[[self.datos objectAtIndex:i ]objectForKey:@"imagen"]];
-        
         NSString *path2 = [[NSString alloc] initWithFormat: @"http://siac.tabascoweb.com/upload/%@",[[self.datos objectAtIndex:i ]objectForKey:@"imagen"]];
         divc.lblArchivo =  path2;
         divc.ArchivoPlano = cell.ArchivoPlano;
+        NSLog(@"Archivo Plato 22222. %@",cell.ArchivoPlano);
     }
 };
 
@@ -140,9 +184,11 @@
     
     //if (isInternet==YES){
     
+        [self Preloader:[UIColor whiteColor] myself:self.view Flag:YES];
+
         [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-        [HUD showUIBlockingIndicatorWithText:@"Loading images, please wait..."];
     
+        // [HUD showUIBlockingIndicatorWithText:@"Loading images, please wait..."];
     
     
     
@@ -161,7 +207,7 @@
 		//[request setHTTPShouldHandleCookies:NO];
     
         [request setCachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData];
-		[request setTimeoutInterval:10.0];
+		[request setTimeoutInterval:1000.0];
     
 		[request setValue:[NSString stringWithFormat:@"%lu", (unsigned long)postData.length] forHTTPHeaderField:@"Content-Length"];
         [request setValue:@"application/x-www-form-urlencoded charset=utf-8" forHTTPHeaderField:@"Content-Type"];
@@ -169,74 +215,7 @@
     
         NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request  delegate:self startImmediately:NO];
 		[connection start];
-/*
-		NSOperationQueue *queue = [[NSOperationQueue alloc] init];
-		[NSURLConnection sendAsynchronousRequest:request queue:queue  completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) 
-		 {
-		 if ([data length] > 0 && error == nil){
-			 
-			 //[self.canvas setDataSource:nil ];
-			 
-			 [queue cancelAllOperations];
-			 [queue setSuspended:YES];
-			 
-			 [request cancel];
 
-			 NSError *jsonError = nil;
-			 id jsonObject = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
-			 
-			 NSArray *jsonArray = (NSArray *)jsonObject;
-			 
-			 
-			 NSString *msg = [[NSString alloc] initWithFormat:@"%@",[[jsonArray objectAtIndex:0]objectForKey:@"msg"]] ;
-			 NSArray *arrExplode = [self.S explodeString:msg WithDelimiter:@"."];
-			 msg = [arrExplode objectAtIndex: 0];
-			 
-			 NSLog(@"%@",msg);
-			 
-			 self.datos = jsonArray;
-			 
-			 NSLog(@"Total de Registros: %i",[self.datos count]);
-			 NSLog(@"Contenido del JSON-Table: %@", jsonArray);
-			 
-
-			 
-			 if ([msg isEqualToString:@"OK"]) {
-				 
-				 [self.canvas reloadData];
-
-				 [self.canvas setDelegate:self];
-				 [self.canvas setDataSource:self];
-				 
-				 
-			 }else{
-				 
-				 [self alertStatus:@"Error" Mensaje:@"No ha subido ninguna imagen." Button1:nil Button2:@"Aceptar"];
-				 
-				 
-				 //self.datos = [[NSArray alloc] initWithObjects:nil];
-				 
-			 }
-
-			 
-		 }else if ([data length] == 0 && error == nil){
-			 //[self emptyReply];
-			 NSLog(@"vacio");
-		 }else if (error != nil && error.code == NSURLErrorTimedOut){ //used this NSURLErrorTimedOut from foundation error responses
-			 //[self timedOut];
-			 NSLog(@"tiempo terminado");
-		 }else if (error != nil){
-			 // [self downloadError:error];
-			 NSLog(@"errror");
-		 }
-		
-			 
-		 [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-		 [HUD hideUIBlockingIndicator];
-		 
-		 }];
-	
-	*/
 	
         
     //}
@@ -282,22 +261,28 @@
 		if ([msg isEqualToString:@"OK"]) {
 			
 			[self.canvas reloadData];
+            [myPreloaderView removeFromSuperview];
 
 		}else{
     
 			[self alertStatus:@"Error" Mensaje:@"No ha subido ninguna imagen." Button1:nil Button2:@"Aceptar"];
         
 			self.datos = [[NSArray alloc] init];
-			//sectionTitles = [[NSMutableArray alloc] init];
+			[myPreloaderView removeFromSuperview];
 		}
+        
+        
 		
 	}else{
 		//[connection finalize];
-		//[self getData];
+		[myPreloaderView removeFromSuperview];
 	}
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-    [HUD hideUIBlockingIndicator];
+    
+    // [HUD hideUIBlockingIndicator];
 	
+    
+    
 	[connection cancel];
 }
 
@@ -305,7 +290,9 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     //[connection finalize];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-    [HUD hideUIBlockingIndicator];
+    [myPreloaderView removeFromSuperview];
+    // [HUD hideUIBlockingIndicator];
+
 }
 
 
@@ -317,7 +304,9 @@
                      [error localizedDescription],
                      [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]];
     [self alertStatus:@"Error.." Mensaje:msg Button1:nil Button2:@"OK"];
-
+    
+    [myPreloaderView removeFromSuperview];
+    
     [connection finalize];
     
 }

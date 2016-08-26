@@ -8,6 +8,8 @@
 
 #import "OptionsViewController.h"
 #import "Singleton.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 @interface OptionsViewController ()
 
@@ -147,6 +149,12 @@
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if ( buttonIndex == 0 ){
         [S deleteUser];
+        
+        FBSDKLoginManager *loginManager = [[FBSDKLoginManager alloc] init];
+        [loginManager logOut];
+        
+        [FBSDKAccessToken setCurrentAccessToken:nil];
+        
         [self dismissViewControllerAnimated:YES completion:nil];
 
     }

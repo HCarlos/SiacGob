@@ -11,11 +11,12 @@
 #import <MapKit/MapKit.h>
 #import "Singleton.h"
 #import "HUD.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 @interface RegistryViewController (){
     NSMutableData *receivedData_;
 }
-
 
 @end
 
@@ -43,18 +44,15 @@
     
     [manager startUpdatingLocation];
     
-    
     self.S  = [Singleton sharedMySingleton];
     
     UIToolbar *toolbar = [[UIToolbar alloc] init];
     [toolbar setBarStyle:UIBarStyleBlack];
     [toolbar sizeToFit];
     
-    
     UIBarButtonItem *space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
     
     UIBarButtonItem *closebuttom = [[UIBarButtonItem alloc] initWithTitle:@"Ocultar" style:UIBarButtonItemStyleDone target:self action:@selector(HideKeyBoard)];
-    
     
     [toolbar setItems:[NSArray arrayWithObjects:space,closebuttom, nil]];
     
@@ -62,14 +60,69 @@
     [[self txtUsername2]setInputAccessoryView:toolbar];
     [[self txtPassword1]setInputAccessoryView:toolbar];
     [[self txtPassword2]setInputAccessoryView:toolbar];
+    [[self txtCelular]setInputAccessoryView:toolbar];
     
-
+    [self.txtUsername becomeFirstResponder];
+    
+    /*
+    [FBSDKProfile enableUpdatesOnAccessTokenChange:YES];
+    
+    if ([FBSDKAccessToken currentAccessToken]) {
+        
+        [self validLogFB];
+        
+    }else{
+        
+        [self loginFB];
+    
+    }
+     */
+    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void) loginFB{
+
+    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
+    [loginButton setDelegate:self];
+    [loginButton setFrame:CGRectMake(20, 450, 250, 40)];
+    [self.view addSubview:loginButton];
+    loginButton.readPermissions =@[@"public_profile", @"email", @"user_friends"];
+    
+}
+
+-(void) validLogFB{
+
+    [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:@{@"fields": @"picture, email, first_name, last_name, name"}]
+     startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+         if (!error) {
+             NSLog(@"fetched user:%@", result);
+             [self.txtUsername setText:[result objectForKey:@"email"]];
+             [self.txtUsername2 setText:[result objectForKey:@"email"]];
+             [self loginFB];
+         }
+     }];
+    
+}
+
+- (void)  loginButton:  (FBSDKLoginButton *)loginButton
+didCompleteWithResult:  (FBSDKLoginManagerLoginResult *)result
+                error:  (NSError *)error{
+    
+    [self validLogFB];
+    
+}
+
+- (void) loginButtonDidLogOut:(FBSDKLoginButton *)loginButton{
+    [self.txtUsername setText:@""];
+    [self.txtUsername2 setText:@""];
+    [self.txtPassword1 setText:@""];
+    [self.txtPassword2 setText:@""];
 }
 
 - (IBAction)setRegistry:(id)sender {
@@ -80,8 +133,12 @@
         
             if ([self.txtPassword1.text isEqualToString:self.txtPassword2.text] ){
                 if ((pl1 > 3 && pl1 <= 13) && (pl2 > 3 && pl2 <= 13)){
-                    [self Registry];
-
+                    NSInteger celular = [self.txtCelular.text length];
+                    if (celular > 0){
+                        [self Registry];
+                    }else{
+                        [self alertStatus:@"Error" Mensaje:@"Proporcione su número celular" Button1:nil Button2:@"OK"];
+                    }
                 }else{
                     [self alertStatus:@"Error" Mensaje:@"Su password debe tener una longitud entre 4 y 14 caracteres..." Button1:nil Button2:@"OK"];
                 }
@@ -94,7 +151,6 @@
     }else{
         [self alertStatus:@"Error" Mensaje:@"Correo NO Válido" Button1:nil Button2:@"OK"];
     }
-    
     
 }
 
@@ -133,13 +189,14 @@
     NSString *x = self.txtUsername.text;
     NSString *y = self.txtPassword1.text;
     NSString *name = [self.S getDeviceData:0];
-    NSString *phone = [self.S getDeviceData:1];
+    NSString *phone = self.txtCelular.text; // [self.S getDeviceData:1];
     NSString *iD = [self.S getDeviceData:2];
     NSString *la = [[NSString alloc] initWithFormat:@"%f", self.S.loSelf.coordinate.latitude];
     NSString *lo = [[NSString alloc] initWithFormat:@"%f", self.S.loSelf.coordinate.longitude];
     
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    [HUD showUIBlockingIndicatorWithText:@"Saving data"];
+    
+    // [HUD showUIBlockingIndicatorWithText:@"Saving data"];
     
     NSMutableDictionary *postDix=[[NSMutableDictionary alloc] init];
     [postDix setObject:[[NSString alloc] initWithFormat: @"%@",x] forKey:@"username"];
@@ -200,7 +257,7 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-    [HUD hideUIBlockingIndicator];
+    // [HUD hideUIBlockingIndicator];
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
