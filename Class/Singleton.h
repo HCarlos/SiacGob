@@ -97,7 +97,15 @@
 -(void)setPlist;
 -(void)insertUser:(NSString *) User;
 -(void)deleteUser;
+
+-(void)insertDataUser:(NSString *) numcell Domicilio:(NSString *) Domicilio FullName:(NSString * ) fullname;
+
 -(NSString *) getUser;
+-(NSString *) getFullName;
+-(NSString *) getDomicilio;
+-(NSString *) getNumCell;
+
+
 -(NSArray*)explodeString:(NSString*)stringToBeExploded WithDelimiter:(NSString*)delimiter;
 
 -(void)alertStatus:(NSString *)titulo Mensaje:(NSString *)mensaje Button1:(NSString *)btn1 Button2:(NSString *)btn2;

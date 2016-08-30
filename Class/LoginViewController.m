@@ -166,9 +166,9 @@
         if ([msg isEqualToString:@"OK"]){
             [S insertUser:self.txtUsername.text];
             [S getUser];
-            //[self alertStatus:@"Congratulation" Mensaje:@"Login correct..." Button1:nil Button2:@"OK"];
 
             [self dismissViewControllerAnimated:YES completion:nil];
+            
         }else{
             [self alertStatus:@"Error" Mensaje:msg Button1:nil Button2:@"OK"];
         }

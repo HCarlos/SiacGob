@@ -1107,21 +1107,21 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Por favor, ingrese un número de teléfono válido donde nos podamos comunicar con usted." lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="none" highlighted="YES" adjustsFontSizeToFit="NO" id="U5M-Kl-pyr">
-                                        <rect key="frame" x="20" y="182" width="280" height="74"/>
+                                        <rect key="frame" x="20" y="265" width="280" height="55"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="14"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Dudas o Comentarios: " lineBreakMode="wordWrap" baselineAdjustment="none" highlighted="YES" adjustsFontSizeToFit="NO" id="lGQ-GP-FPq">
-                                        <rect key="frame" x="20" y="264" width="280" height="21"/>
+                                        <rect key="frame" x="20" y="328" width="280" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="highlightedColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" id="BpH-rE-THW">
-                                        <rect key="frame" x="16" y="280" width="284" height="28"/>
+                                        <rect key="frame" x="16" y="343" width="284" height="25"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                         <attributedString key="attributedText">
                                             <fragment content="centroenlinea@villahermosa.gob.mx">
@@ -1135,8 +1135,22 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <dataDetectorType key="dataDetectorTypes" link="YES" address="YES" calendarEvent="YES"/>
                                     </textView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Teléfono Celular" minimumFontSize="17" clearButtonMode="whileEditing" id="dGA-rY-82p">
+                                        <rect key="frame" x="20" y="226" width="280" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <accessibility key="accessibilityConfiguration" hint="" label=""/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Domicilio" minimumFontSize="17" clearButtonMode="whileEditing" id="j30-tZ-5I9">
+                                        <rect key="frame" x="20" y="188" width="280" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <accessibility key="accessibilityConfiguration" hint="" label=""/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                     <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="S9A-g8-PP1">
-                                        <rect key="frame" x="0.0" y="324" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="387" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <items>
                                             <barButtonItem style="plain" id="PFR-k9-Bzz">
@@ -1148,18 +1162,24 @@
                                                         <color key="titleColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="cmdSaveData:" destination="Mn4-C4-tqa" eventType="touchUpInside" id="YWe-zt-bm1"/>
+                                                    </connections>
                                                 </button>
                                             </barButtonItem>
                                         </items>
                                     </toolbar>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Teléfono Celular" minimumFontSize="17" clearButtonMode="whileEditing" id="dGA-rY-82p">
-                                        <rect key="frame" x="20" y="139" width="280" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre Completo" minimumFontSize="17" clearButtonMode="whileEditing" id="WHJ-II-82a">
+                                        <rect key="frame" x="20" y="150" width="280" height="30"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <accessibility key="accessibilityConfiguration" hint="" label=""/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
+                                <connections>
+                                    <outlet property="delegate" destination="Mn4-C4-tqa" id="9Tv-6P-YEK"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1167,6 +1187,8 @@
                     <navigationItem key="navigationItem" id="hqF-La-6ET"/>
                     <connections>
                         <outlet property="cmdSaveInfo" destination="vt9-6J-hOG" id="WNx-Kr-mLa"/>
+                        <outlet property="txtDomicilio" destination="j30-tZ-5I9" id="PEF-6V-k7h"/>
+                        <outlet property="txtFullName" destination="WHJ-II-82a" id="I1t-Rp-PkW"/>
                         <outlet property="txtNumeroCelular" destination="dGA-rY-82p" id="BWM-fg-AQG"/>
                     </connections>
                 </viewController>

@@ -74,6 +74,7 @@ static Singleton* _sharedMySingleton = nil;
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
     //NSLog(@"ERROR LOADING WEBPAGE: %@", error);
 }
+
 - (void) webViewDidFinishLoad:(UIWebView*)webView
 {
     //NSLog(@"finished");
@@ -85,7 +86,6 @@ static Singleton* _sharedMySingleton = nil;
 	self.limCant = 200;
     self.tokenUser = @"";
 }
-
 
 + (id)allocWithZone:(NSZone *)zone {
 	@synchronized([Singleton class]) {
@@ -99,7 +99,6 @@ static Singleton* _sharedMySingleton = nil;
 - (id)copyWithZone:(NSZone *)zone {
 	return self;
 }
-
 
 - (void)viewDidUnload {
 	self.loSelf = nil;
@@ -121,10 +120,12 @@ static Singleton* _sharedMySingleton = nil;
 	
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+    
 }
  
 
 - (void)dealloc {
+    
     /*
     [NombreEmpresa release];
     [rutaDB release];
@@ -132,6 +133,7 @@ static Singleton* _sharedMySingleton = nil;
 	[arrAcum release];
     [super dealloc];
      */
+    
 }
 
 
@@ -155,7 +157,7 @@ static Singleton* _sharedMySingleton = nil;
             sRet = [[UIDevice currentDevice] name];
             break;
         case 1:
-            sRet =  [self phoneNumber];//[[NSUserDefaults standardUserDefaults] stringForKey:@"SBFormattedPhoneNumber"];
+            sRet =  [self phoneNumber]; // [[NSUserDefaults standardUserDefaults] stringForKey:@"SBFormattedPhoneNumber"];
             break;
         case 2:
             sRet = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
@@ -178,18 +180,17 @@ static Singleton* _sharedMySingleton = nil;
 	if (phone  == NULL){
 		phone = @"iOS7";
 	}
-		
-	
-	
+    
 	//NSLog(@"Cell Phone %@",phone );
 	
-	
     return phone;
+    
 }
 
 
 -(NSString*) sha1:(NSString*)input
 {
+    
     const char *cstr = [input cStringUsingEncoding:NSUTF8StringEncoding];
     NSData *data = [NSData dataWithBytes:cstr length:input.length];
     
@@ -203,7 +204,7 @@ static Singleton* _sharedMySingleton = nil;
         [output appendFormat:@"%02x", digest[i]];
     
     return output;
-    
+
 }
 
 -(void)setPlist{
@@ -219,7 +220,7 @@ static Singleton* _sharedMySingleton = nil;
         //NSLog(@"Creado" );
     }else{
         //NSLog(@"Ya estaba Creado" );
-        
+    
     }
     
     fileManager = [NSFileManager defaultManager];
@@ -257,8 +258,13 @@ static Singleton* _sharedMySingleton = nil;
     [dataPList removeObjectForKey:@"user"];
     [dataPList writeToFile:pathPList atomically:YES];
     
-    
-    
+}
+
+-(void)insertDataUser:(NSString *) numcell Domicilio:(NSString *) Domicilio FullName:(NSString * ) fullname{
+    [dataPList setObject:[NSString stringWithString:numcell] forKey:@"NumCell"];
+    [dataPList setObject:[NSString stringWithString:Domicilio] forKey:@"Domicilio"];
+    [dataPList setObject:[NSString stringWithString:fullname] forKey:@"FullName"];
+    [dataPList writeToFile: pathPList atomically:YES];
 }
 
 -(NSString *) getUser{
@@ -274,6 +280,21 @@ static Singleton* _sharedMySingleton = nil;
     //[savedStock release];
     return value1;
 
+}
+
+-(NSString *) getFullName{
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithContentsOfFile: pathPList];
+    return [dic objectForKey:@"FullName"];
+}
+
+-(NSString *) getDomicilio{
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithContentsOfFile: pathPList];
+    return [dic objectForKey:@"Domicilio"];
+}
+
+-(NSString *) getNumCell{
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithContentsOfFile: pathPList];
+    return [dic objectForKey:@"NumCell"];
 }
 
 -(BOOL) validateEmail: (NSString *) candidate {

@@ -137,7 +137,7 @@ didCompleteWithResult:  (FBSDKLoginManagerLoginResult *)result
                     if (celular > 0){
                         [self Registry];
                     }else{
-                        [self alertStatus:@"Error" Mensaje:@"Proporcione su número celular" Button1:nil Button2:@"OK"];
+                        [self alertStatus:@"Error" Mensaje:@"Proporcione su número de celular" Button1:nil Button2:@"OK"];
                     }
                 }else{
                     [self alertStatus:@"Error" Mensaje:@"Su password debe tener una longitud entre 4 y 14 caracteres..." Button1:nil Button2:@"OK"];
@@ -242,6 +242,7 @@ didCompleteWithResult:  (FBSDKLoginManagerLoginResult *)result
         NSString *msg = [[NSString alloc] initWithFormat:@"%@",[[jsonArray objectAtIndex:0]objectForKey:@"msg"]] ;
         if ([msg isEqualToString:@"OK"]){
             //[self alertStatus:@"Congratulation" Mensaje:@"Registry correct..." Button1:nil Button2:@"OK"];
+            [S insertDataUser:@"" Domicilio:@"" FullName:_txtCelular.text ];
             [self dismissViewControllerAnimated:YES completion:nil];
         }else{
             [self alertStatus:@"Error" Mensaje:msg Button1:nil Button2:@"OK"];
