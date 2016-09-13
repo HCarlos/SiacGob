@@ -256,6 +256,9 @@ static Singleton* _sharedMySingleton = nil;
     //    NSMutableDictionary *plist = [NSMutableDictionary dictionaryWithCOntentsOfFile:pathToPlist];
     
     [dataPList removeObjectForKey:@"user"];
+    [dataPList removeObjectForKey:@"NumCell"];
+    [dataPList removeObjectForKey:@"Domicilio"];
+    [dataPList removeObjectForKey:@"FullName"];
     [dataPList writeToFile:pathPList atomically:YES];
     
 }
